@@ -1,11 +1,13 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import Services from "../components/Services";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
+      <Services />
 
       <main className="min-h-screen bg-slate-950 text-white flex flex-col items-center justify-center">
 

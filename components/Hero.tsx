@@ -7,7 +7,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-xl text-gray-300">
-                Premium CNC Routing, Laser Cutting, Custom Woodworking,
+                Premium Laser Cutting, Custom Woodworking,
                 Personalized Gifts, and Business Signage.
             </p>
 
