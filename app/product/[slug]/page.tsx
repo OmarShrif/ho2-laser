@@ -89,8 +89,7 @@ export default async function ProductPage({
 
 
                         <Link
-                            href="https://wa.me/201094244235"
-                            target="_blank"
+                            href={`/quote?product=${encodeURIComponent(product.title)}`}
                             className="inline-block mt-12 bg-yellow-400 text-black px-10 py-4 rounded-xl font-bold hover:bg-yellow-300 transition"
                         >
                             Request This Design
