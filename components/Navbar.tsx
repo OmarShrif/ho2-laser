@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -24,11 +25,26 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="text-3xl font-extrabold tracking-wide"
+                    className="flex items-center gap-3"
                     onClick={() => setMenuOpen(false)}
                 >
-                    <span className="text-yellow-400">HO2</span>{" "}
-                    <span className="text-white">Creations</span>
+                    <Image
+                        src="/logo/logo.png"
+                        alt="HO2 Laser"
+                        width={55}
+                        height={55}
+                        priority
+                    />
+
+                    <div>
+                        <h1 className="text-2xl font-bold text-white">
+                            HO2 <span className="text-yellow-400">Laser</span>
+                        </h1>
+
+                        <p className="text-xs text-gray-400 tracking-widest">
+                            CUSTOM LASER CUTTING
+                        </p>
+                    </div>
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -38,8 +54,8 @@ export default function Navbar() {
                             key={link.href}
                             href={link.href}
                             className={`transition ${pathname === link.href
-                                    ? "text-yellow-400"
-                                    : "text-gray-300 hover:text-yellow-400"
+                                ? "text-yellow-400"
+                                : "text-gray-300 hover:text-yellow-400"
                                 }`}
                         >
                             {link.name}
@@ -77,8 +93,8 @@ export default function Navbar() {
                                 href={link.href}
                                 onClick={() => setMenuOpen(false)}
                                 className={`text-lg transition ${pathname === link.href
-                                        ? "text-yellow-400"
-                                        : "text-gray-300 hover:text-yellow-400"
+                                    ? "text-yellow-400"
+                                    : "text-gray-300 hover:text-yellow-400"
                                     }`}
                             >
                                 {link.name}
