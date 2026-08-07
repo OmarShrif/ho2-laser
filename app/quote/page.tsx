@@ -10,6 +10,7 @@ export default function QuotePage() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+
         const form = e.currentTarget;
         const data = new FormData(form);
 
