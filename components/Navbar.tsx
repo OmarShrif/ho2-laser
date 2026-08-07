@@ -24,28 +24,28 @@ export default function Navbar() {
                     </Link>
 
                     <Link
-                        href="#services"
+                        href="/services"
                         className="hover:text-yellow-400 transition"
                     >
                         Services
                     </Link>
 
                     <Link
-                        href="#portfolio"
+                        href="/portfolio"
                         className="hover:text-yellow-400 transition"
                     >
                         Portfolio
                     </Link>
 
                     <Link
-                        href="#about"
+                        href="/about"
                         className="hover:text-yellow-400 transition"
                     >
                         About
                     </Link>
 
                     <Link
-                        href="#contact"
+                        href="/contact"
                         className="hover:text-yellow-400 transition"
                     >
                         Contact
