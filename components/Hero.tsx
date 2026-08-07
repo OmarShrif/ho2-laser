@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -28,13 +29,19 @@ export default function Hero() {
 
                         <div className="mt-12 flex flex-wrap gap-5">
 
-                            <button className="bg-yellow-400 text-black px-8 py-4 rounded-xl font-bold hover:bg-yellow-300 transition">
+                            <Link
+                                href="/portfolio"
+                                className="bg-yellow-400 text-black px-8 py-4 rounded-xl font-bold hover:bg-yellow-300 transition"
+                            >
                                 View Portfolio
-                            </button>
+                            </Link>
 
-                            <button className="border border-yellow-400 text-yellow-400 px-8 py-4 rounded-xl hover:bg-yellow-400 hover:text-black transition">
+                            <Link
+                                href="/quote"
+                                className="border border-yellow-400 text-yellow-400 px-8 py-4 rounded-xl hover:bg-yellow-400 hover:text-black transition"
+                            >
                                 Request Custom Design
-                            </button>
+                            </Link>
 
                         </div>
 

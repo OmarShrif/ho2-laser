@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CTA() {
     return (
         <section className="bg-gradient-to-r from-yellow-500 to-yellow-400 py-24">
@@ -23,9 +25,12 @@ export default function CTA() {
                         Chat on WhatsApp
                     </a>
 
-                    <button className="border-2 border-black text-black px-10 py-4 rounded-xl font-bold hover:bg-black hover:text-white transition">
-                        Request a Quote
-                    </button>
+                    <Link
+                        href="/quote"
+                        className="border-2 border-black text-black px-10 py-4 rounded-xl font-bold hover:bg-black hover:text-white transition"
+                    >
+                        Request Custom Design
+                    </Link>
 
                 </div>
 
