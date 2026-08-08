@@ -23,9 +23,9 @@ export default function Footer() {
 
                     <ul className="space-y-2">
                         <li><Link href="/">Home</Link></li>
-                        <li><Link href="/">Services</Link></li>
-                        <li><Link href="/">Portfolio</Link></li>
-                        <li><Link href="/">Contact</Link></li>
+                        <li><Link href="/services">Services</Link></li>
+                        <li><Link href="/portfolio">Portfolio</Link></li>
+                        <li><Link href="/contact">Contact</Link></li>
                     </ul>
                 </div>
 
