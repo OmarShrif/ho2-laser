@@ -3,18 +3,28 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+
 import { products } from "@/data/products";
+import { useQuote } from "@/context/QuoteContext";
+import ProductLightbox from "@/components/ProductLightbox";
 
 const categories = [
   "All",
   "MDF Wall Art",
   "Custom Gifts",
   "Business Signs",
-  "Interior Decoration"
+  "Interior Decoration",
+  "Laser Cutting",
 ];
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+
+  const [selectedProduct, setSelectedProduct] = useState<
+    (typeof products)[number] | null
+  >(null);
+
+  const { addToQuote, removeFromQuote, isInQuote } = useQuote();
 
   const filteredProducts =
     activeCategory === "All"
@@ -61,8 +71,8 @@ export default function PortfolioPage() {
               key={category}
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-3 rounded-full font-semibold transition ${activeCategory === category
-                ? "bg-yellow-400 text-black"
-                : "bg-slate-900 text-gray-300 border border-slate-700 hover:border-yellow-400 hover:text-yellow-400"
+                  ? "bg-yellow-400 text-black"
+                  : "bg-slate-900 text-gray-300 border border-slate-700 hover:border-yellow-400 hover:text-yellow-400"
                 }`}
             >
               {category}
@@ -76,13 +86,17 @@ export default function PortfolioPage() {
         {/* Products Count */}
 
         <div className="mt-12 mb-6 text-gray-500">
+
           Showing{" "}
+
           <span className="text-yellow-400 font-semibold">
             {filteredProducts.length}
           </span>{" "}
+
           {filteredProducts.length === 1
             ? "product"
             : "products"}
+
         </div>
 
 
@@ -90,20 +104,25 @@ export default function PortfolioPage() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          {filteredProducts.map((product) => (
+          {filteredProducts.map((product) => {
 
-            <div
-              key={product.slug}
-              className="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-yellow-400/50 hover:-translate-y-2 transition duration-300"
-            >
+            const alreadyAdded = isInQuote(product.slug);
 
-              {/* Image */}
+            return (
 
-              <Link
-                href={`/product/${product.slug}`}
+              <div
+                key={product.slug}
+                className="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-yellow-400/50 transition duration-300"
               >
 
-                <div className="relative h-80 overflow-hidden">
+                {/* Product Image */}
+
+                <div
+                  className="relative h-80 overflow-hidden cursor-zoom-in"
+                  onClick={() =>
+                    setSelectedProduct(product)
+                  }
+                >
 
                   <Image
                     src={product.image}
@@ -112,40 +131,74 @@ export default function PortfolioPage() {
                     className="object-cover hover:scale-105 transition duration-500"
                   />
 
+                  <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition flex items-center justify-center pointer-events-none">
+
+                    <span className="opacity-0 group-hover:opacity-100 text-white bg-black/60 px-4 py-2 rounded-full">
+                      Click to enlarge
+                    </span>
+
+                  </div>
+
                 </div>
 
-              </Link>
+
+                {/* Details */}
+
+                <div className="p-6">
+
+                  <p className="text-yellow-400 text-sm uppercase tracking-wider">
+                    {product.category}
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-2">
+                    {product.title}
+                  </h2>
+
+                  <p className="text-gray-400 mt-3 line-clamp-2">
+                    {product.description}
+                  </p>
 
 
-              {/* Details */}
+                  {/* Buttons */}
 
-              <div className="p-6">
+                  <div className="flex flex-col gap-3 mt-6">
 
-                <p className="text-yellow-400 text-sm uppercase tracking-wider">
-                  {product.category}
-                </p>
-
-                <h2 className="text-2xl font-bold mt-2">
-                  {product.title}
-                </h2>
-
-                <p className="text-gray-400 mt-3 line-clamp-2">
-                  {product.description}
-                </p>
+                    <Link
+                      href={`/product/${product.slug}`}
+                      className="text-center border border-slate-700 text-white py-3 rounded-xl font-semibold hover:border-yellow-400 hover:text-yellow-400 transition"
+                    >
+                      View Details
+                    </Link>
 
 
-                <Link
-                  href={`/product/${product.slug}`}
-                  className="inline-block mt-6 text-yellow-400 font-semibold hover:text-yellow-300 transition"
-                >
-                  View Details →
-                </Link>
+                    <button
+                      onClick={() => {
+                        if (alreadyAdded) {
+                          removeFromQuote(
+                            product.slug
+                          );
+                        } else {
+                          addToQuote(product);
+                        }
+                      }}
+                      className={`py-3 rounded-xl font-bold transition ${alreadyAdded
+                          ? "bg-slate-700 text-gray-300 hover:bg-red-500 hover:text-white"
+                          : "bg-yellow-400 text-black hover:bg-yellow-300"
+                        }`}
+                    >
+                      {alreadyAdded
+                        ? "✓ Added to Quote"
+                        : "+ Add to Quote"}
+                    </button>
+
+                  </div>
+
+                </div>
 
               </div>
 
-            </div>
-
-          ))}
+            );
+          })}
 
         </div>
 
@@ -169,6 +222,19 @@ export default function PortfolioPage() {
         )}
 
       </div>
+
+
+      {/* Lightbox */}
+
+      {selectedProduct && (
+
+        <ProductLightbox
+          image={selectedProduct.image}
+          title={selectedProduct.title}
+          onClose={() => setSelectedProduct(null)}
+        />
+
+      )}
 
     </main>
   );

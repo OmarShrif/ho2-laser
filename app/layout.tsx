@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { QuoteProvider } from "@/context/QuoteContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,14 +33,19 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
 
-        <Navbar />
+        <QuoteProvider>
 
-        <main className="flex-1">
-          {children}
-        </main>
+          <Navbar />
 
-        <Footer />
-        <WhatsAppButton />
+          <main className="flex-1">
+            {children}
+          </main>
+
+          <Footer />
+
+          <WhatsAppButton />
+
+        </QuoteProvider>
 
       </body>
     </html>
