@@ -10,7 +10,6 @@ export default function QuotePage() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-
         const form = e.currentTarget;
         const data = new FormData(form);
 
@@ -23,7 +22,6 @@ export default function QuotePage() {
         const message = data.get("message");
 
         const whatsappMessage = `New HO2 Laser Quote Request
-
 
 Product:
 ${product ?? "Custom Design"}
@@ -49,6 +47,7 @@ ${quantity}
 Details:
 ${message}`;
 
+
         sendWhatsAppMessage(
             "201094244235",
             whatsappMessage
@@ -61,16 +60,27 @@ ${message}`;
         <main className="min-h-screen bg-slate-950 text-white py-32">
             <div className="max-w-6xl mx-auto px-6">
 
+                {/* Heading */}
+
                 <h1 className="text-6xl font-bold text-center">
-                    Request Your <span className="text-yellow-400">Custom</span> Design
+                    Request Your{" "}
+                    <span className="text-yellow-400">
+                        Custom
+                    </span>{" "}
+                    Design
                 </h1>
 
                 <p className="text-center text-gray-400 text-xl mt-6">
-                    Tell us about your design and we will create a custom solution for you.
+                    Tell us about your design and we will create a custom
+                    solution for you.
                 </p>
+
+
+                {/* Selected Product */}
 
                 {product && (
                     <div className="mt-10 bg-slate-900 border border-yellow-400 rounded-2xl p-6 text-center">
+
                         <p className="text-gray-400">
                             You are requesting:
                         </p>
@@ -78,8 +88,12 @@ ${message}`;
                         <h2 className="text-3xl font-bold text-yellow-400 mt-2">
                             {product}
                         </h2>
+
                     </div>
                 )}
+
+
+                {/* Form */}
 
                 <div className="bg-slate-900 rounded-3xl border border-slate-800 p-10 mt-16">
 
@@ -88,74 +102,126 @@ ${message}`;
                         className="grid md:grid-cols-2 gap-6"
                     >
 
+                        {/* Name */}
+
                         <input
                             name="name"
                             type="text"
                             placeholder="Full Name"
                             required
-                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4"
+                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 outline-none focus:border-yellow-400 transition"
                         />
+
+
+                        {/* Phone */}
 
                         <input
                             name="phone"
                             type="tel"
                             placeholder="Phone Number"
                             required
-                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4"
+                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 outline-none focus:border-yellow-400 transition"
                         />
+
+
+                        {/* Email */}
 
                         <input
                             name="email"
                             type="email"
                             placeholder="Email Address"
                             required
-                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4"
+                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 outline-none focus:border-yellow-400 transition"
                         />
+
+
+                        {/* Service */}
 
                         <select
                             name="service"
-                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4"
                             required
+                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 outline-none focus:border-yellow-400 transition"
                         >
-                            <option value="">Select Service</option>
-                            <option>Laser Cutting</option>
-                            <option>Custom Gifts</option>
-                            <option>MDF Wall Art</option>
-                            <option>Business Signs</option>
-                            <option>Interior Decoration</option>
+                            <option value="">
+                                Select Service
+                            </option>
+
+                            <option value="Laser Cutting">
+                                Laser Cutting
+                            </option>
+
+                            <option value="Custom Gifts">
+                                Custom Gifts
+                            </option>
+
+                            <option value="MDF Wall Art">
+                                MDF Wall Art
+                            </option>
+
+                            <option value="Business Signs">
+                                Business Signs
+                            </option>
+
+                            <option value="Interior Decoration">
+                                Interior Decoration
+                            </option>
                         </select>
+
+
+                        {/* Size */}
 
                         <input
                             name="size"
                             type="text"
                             placeholder="Required Size (Example: 50x70 cm)"
-                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4"
+                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 outline-none focus:border-yellow-400 transition"
                         />
+
+
+                        {/* Quantity */}
 
                         <input
                             name="quantity"
                             type="number"
+                            min="1"
                             placeholder="Quantity"
-                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4"
+                            className="bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 outline-none focus:border-yellow-400 transition"
                         />
+
+
+                        {/* Details */}
 
                         <textarea
                             name="message"
                             placeholder="Describe your idea..."
                             rows={6}
-                            className="md:col-span-2 bg-slate-950 border border-slate-700 rounded-xl px-5 py-4"
+                            className="md:col-span-2 bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 outline-none focus:border-yellow-400 transition"
                         />
 
-                        <div className="md:col-span-2">
-                            <label className="block mb-3 text-gray-300">
-                                Upload Design (Optional)
-                            </label>
 
-                            <input
-                                type="file"
-                                className="bg-slate-950 border border-slate-700 rounded-xl p-4 w-full"
-                            />
+                        {/* WhatsApp Design Note */}
+
+                        <div className="md:col-span-2 bg-slate-950 border border-yellow-400/40 rounded-xl p-5">
+
+                            <h3 className="text-yellow-400 font-semibold text-lg">
+                                Have a design or reference image?
+                            </h3>
+
+                            <p className="text-gray-400 text-sm mt-2 leading-6">
+                                If you have an image, drawing, reference,
+                                or design file, you can attach it directly
+                                in WhatsApp after submitting your request.
+                            </p>
+
+                            <p className="text-gray-500 text-sm mt-2">
+                                Supported files can include images, PDF,
+                                SVG, DXF, or other design formats.
+                            </p>
+
                         </div>
+
+
+                        {/* Submit */}
 
                         <button
                             type="submit"
