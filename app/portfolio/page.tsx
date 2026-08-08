@@ -13,8 +13,7 @@ const categories = [
   "MDF Wall Art",
   "Custom Gifts",
   "Business Signs",
-  "Interior Decoration",
-  "Laser Cutting",
+  "Interior Decoration"
 ];
 
 export default function PortfolioPage() {
@@ -71,8 +70,8 @@ export default function PortfolioPage() {
               key={category}
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-3 rounded-full font-semibold transition ${activeCategory === category
-                  ? "bg-yellow-400 text-black"
-                  : "bg-slate-900 text-gray-300 border border-slate-700 hover:border-yellow-400 hover:text-yellow-400"
+                ? "bg-yellow-400 text-black"
+                : "bg-slate-900 text-gray-300 border border-slate-700 hover:border-yellow-400 hover:text-yellow-400"
                 }`}
             >
               {category}
@@ -182,8 +181,8 @@ export default function PortfolioPage() {
                         }
                       }}
                       className={`py-3 rounded-xl font-bold transition ${alreadyAdded
-                          ? "bg-slate-700 text-gray-300 hover:bg-red-500 hover:text-white"
-                          : "bg-yellow-400 text-black hover:bg-yellow-300"
+                        ? "bg-slate-700 text-gray-300 hover:bg-red-500 hover:text-white"
+                        : "bg-yellow-400 text-black hover:bg-yellow-300"
                         }`}
                     >
                       {alreadyAdded
