@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HO2 Laser | Custom Laser Cutting & MDF Designs",
+  title: "HO2 Laser",
   description:
     "Premium laser cutting, MDF wall art, business signs, custom gifts, and interior decoration crafted with precision.",
 };
