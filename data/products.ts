@@ -421,10 +421,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/coffee-pulse.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "20 × 68 cm",
         description:
             "A creative coffee-inspired laser-cut artwork designed for coffee lovers and modern interior spaces.",
-        price: 250,
+        price: 190,
         featured: false,
     },
 
