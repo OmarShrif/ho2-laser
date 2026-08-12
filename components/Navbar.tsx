@@ -273,7 +273,7 @@ export default function Navbar() {
                         >
 
                             <span>
-                                Quote
+                                Cart 🛒
                             </span>
 
                             {totalQuantity > 0 && (
