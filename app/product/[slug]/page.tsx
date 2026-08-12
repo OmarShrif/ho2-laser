@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 
 import { products } from "@/data/products";
@@ -23,13 +22,9 @@ export default function ProductPage() {
         isInQuote,
     } = useQuote();
 
-    const [added, setAdded] = useState(false);
-
-    useEffect(() => {
-        if (product) {
-            setAdded(isInQuote(product.slug));
-        }
-    }, [product, isInQuote]);
+    /*
+     * Product not found
+     */
 
     if (!product) {
         return (
@@ -54,24 +49,29 @@ export default function ProductPage() {
         );
     }
 
+    /*
+     * Check if product is already in Cart
+     */
+
+    const added = isInQuote(product.slug);
+
+    /*
+     * Add / Remove product
+     */
 
     const handleQuote = () => {
 
-        if (isInQuote(product.slug)) {
+        if (added) {
 
             removeFromQuote(product.slug);
-
-            setAdded(false);
 
         } else {
 
             addToQuote(product);
 
-            setAdded(true);
-
         }
-    };
 
+    };
 
     return (
         <main className="min-h-screen bg-slate-950 text-white py-32">
@@ -81,7 +81,9 @@ export default function ProductPage() {
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
 
 
-                    {/* Product Image */}
+                    {/* =========================
+                        Product Image
+                    ========================= */}
 
                     <div className="relative h-[500px] lg:h-[600px]">
 
@@ -96,7 +98,9 @@ export default function ProductPage() {
                     </div>
 
 
-                    {/* Product Details */}
+                    {/* =========================
+                        Product Details
+                    ========================= */}
 
                     <div>
 
@@ -121,9 +125,28 @@ export default function ProductPage() {
                         </p>
 
 
-                        {/* Product Information */}
+                        {/* =========================
+                            Price
+                        ========================= */}
 
-                        <div className="mt-10 space-y-5 text-lg">
+                        <div className="mt-8">
+
+                            <p className="text-gray-400 text-sm uppercase tracking-wider">
+                                Price
+                            </p>
+
+                            <p className="text-4xl font-bold text-yellow-400 mt-1">
+                                {product.price} LE
+                            </p>
+
+                        </div>
+
+
+                        {/* =========================
+                            Product Information
+                        ========================= */}
+
+                        <div className="mt-8 space-y-5 text-lg">
 
                             <p>
                                 🪵{" "}
@@ -151,7 +174,9 @@ export default function ProductPage() {
                         </div>
 
 
-                        {/* Actions */}
+                        {/* =========================
+                            Actions
+                        ========================= */}
 
                         <div className="flex flex-col sm:flex-row gap-4 mt-12">
 
@@ -161,27 +186,41 @@ export default function ProductPage() {
                             <button
                                 onClick={handleQuote}
                                 className={`px-8 py-4 rounded-xl font-bold transition ${added
-                                        ? "bg-slate-700 text-white hover:bg-red-500"
-                                        : "bg-yellow-400 text-black hover:bg-yellow-300"
+                                    ? "bg-slate-700 text-white hover:bg-red-500"
+                                    : "bg-yellow-400 text-black hover:bg-yellow-300"
                                     }`}
                             >
 
                                 {added
-                                    ? "✓ Added to Quote"
-                                    : "+ Add to Quote"}
+                                    ? "✓ Added to Cart"
+                                    : "+ Add to Cart"}
 
                             </button>
 
 
-                            {/* View Quote */}
+                            {/* View Cart */}
 
                             <Link
                                 href="/quote"
                                 className="px-8 py-4 rounded-xl border border-slate-700 text-white font-semibold text-center hover:border-yellow-400 hover:text-yellow-400 transition"
                             >
-                                View Quote
+                                🛒 View Cart
                             </Link>
 
+                        </div>
+
+
+                        {/* =========================
+                            Info
+                        ========================= */}
+
+                        <div className="mt-8 bg-slate-900 border border-slate-800 rounded-2xl p-5">
+
+                            <p className="text-gray-400 text-sm leading-6">
+                                💡 You can add multiple products to your cart
+                                and adjust the quantity before submitting your
+                                request.
+                            </p>
 
                         </div>
 

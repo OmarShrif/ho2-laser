@@ -173,7 +173,7 @@ export default function Footer() {
                             </p>
 
                             <a
-                                href="tel:+201094244235"
+                                href="tel:+201158636667"
                                 className="block hover:text-yellow-400 transition"
                             >
                                 📞 +20 115 863 6667
@@ -204,5 +204,5 @@ export default function Footer() {
             </div>
 
         </footer>
-    ); 
+    );
 }

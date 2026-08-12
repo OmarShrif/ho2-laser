@@ -14,7 +14,7 @@ const categories = [
     "MDF Wall Art",
     "Custom Gifts",
     "Business Signs",
-    "Interior Decoration"
+    "Interior Decoration",
 ];
 
 export default function PortfolioContent() {
@@ -170,17 +170,55 @@ export default function PortfolioContent() {
 
                                     <div className="p-6">
 
+                                        {/* Category */}
+
                                         <p className="text-yellow-400 text-sm uppercase tracking-wider">
                                             {product.category}
                                         </p>
+
+
+                                        {/* Title */}
 
                                         <h2 className="text-2xl font-bold mt-2">
                                             {product.title}
                                         </h2>
 
+
+                                        {/* Price */}
+
+                                        <div className="mt-4">
+
+                                            <span className="text-3xl font-bold text-yellow-400">
+                                                {product.price}
+                                            </span>
+
+                                            <span className="text-gray-400 ml-2 text-lg">
+                                                LE
+                                            </span>
+
+                                        </div>
+
+
+                                        {/* Description */}
+
                                         <p className="text-gray-400 mt-3 line-clamp-2">
                                             {product.description}
                                         </p>
+
+
+                                        {/* Product Information */}
+
+                                        <div className="flex flex-wrap gap-2 mt-4">
+
+                                            <span className="bg-slate-950 border border-slate-700 text-gray-300 text-sm px-3 py-1.5 rounded-full">
+                                                {product.material}
+                                            </span>
+
+                                            <span className="bg-slate-950 border border-slate-700 text-gray-300 text-sm px-3 py-1.5 rounded-full">
+                                                {product.size}
+                                            </span>
+
+                                        </div>
 
 
                                         {/* Buttons */}
@@ -218,11 +256,9 @@ export default function PortfolioContent() {
                                                     : "bg-yellow-400 text-black hover:bg-yellow-300"
                                                     }`}
                                             >
-
                                                 {alreadyAdded
-                                                    ? "✓ Added to Quote"
-                                                    : "+ Add to Quote"}
-
+                                                    ? "✓ Added to Cart"
+                                                    : "+ Add to Cart"}
                                             </button>
 
                                         </div>
@@ -232,6 +268,7 @@ export default function PortfolioContent() {
                                 </div>
 
                             );
+
                         })}
 
                     </div>
@@ -264,6 +301,7 @@ export default function PortfolioContent() {
                     </div>
 
                 )}
+
 
             </div>
 

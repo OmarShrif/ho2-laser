@@ -51,8 +51,8 @@ export default function Navbar() {
                     <Link
                         href="/"
                         className={`transition hover:text-yellow-400 ${pathname === "/"
-                                ? "text-yellow-400"
-                                : ""
+                            ? "text-yellow-400"
+                            : ""
                             }`}
                     >
                         Home
@@ -62,8 +62,8 @@ export default function Navbar() {
                     <Link
                         href="/services"
                         className={`transition hover:text-yellow-400 ${pathname === "/services"
-                                ? "text-yellow-400"
-                                : ""
+                            ? "text-yellow-400"
+                            : ""
                             }`}
                     >
                         Services
@@ -73,8 +73,8 @@ export default function Navbar() {
                     <Link
                         href="/portfolio"
                         className={`transition hover:text-yellow-400 ${pathname === "/portfolio"
-                                ? "text-yellow-400"
-                                : ""
+                            ? "text-yellow-400"
+                            : ""
                             }`}
                     >
                         Portfolio
@@ -84,8 +84,8 @@ export default function Navbar() {
                     <Link
                         href="/about"
                         className={`transition hover:text-yellow-400 ${pathname === "/about"
-                                ? "text-yellow-400"
-                                : ""
+                            ? "text-yellow-400"
+                            : ""
                             }`}
                     >
                         About
@@ -95,24 +95,24 @@ export default function Navbar() {
                     <Link
                         href="/contact"
                         className={`transition hover:text-yellow-400 ${pathname === "/contact"
-                                ? "text-yellow-400"
-                                : ""
+                            ? "text-yellow-400"
+                            : ""
                             }`}
                     >
                         Contact
                     </Link>
 
 
-                    {/* Desktop Quote */}
+                    {/* Desktop Cart */}
 
                     <Link
                         href="/quote"
                         className={`relative transition hover:text-yellow-400 ${pathname === "/quote"
-                                ? "text-yellow-400"
-                                : ""
+                            ? "text-yellow-400"
+                            : ""
                             }`}
                     >
-                        Quote
+                        Cart 🛒
 
                         {totalQuantity > 0 && (
                             <span className="absolute -top-3 -right-5 min-w-5 h-5 px-1 flex items-center justify-center bg-yellow-400 text-black text-xs font-bold rounded-full">
@@ -168,22 +168,22 @@ export default function Navbar() {
 
                         <span
                             className={`block w-6 h-0.5 bg-current transition-transform duration-300 ${menuOpen
-                                    ? "translate-y-2 rotate-45"
-                                    : ""
+                                ? "translate-y-2 rotate-45"
+                                : ""
                                 }`}
                         />
 
                         <span
                             className={`block w-6 h-0.5 bg-current transition-opacity duration-300 ${menuOpen
-                                    ? "opacity-0"
-                                    : "opacity-100"
+                                ? "opacity-0"
+                                : "opacity-100"
                                 }`}
                         />
 
                         <span
                             className={`block w-6 h-0.5 bg-current transition-transform duration-300 ${menuOpen
-                                    ? "-translate-y-2 -rotate-45"
-                                    : ""
+                                ? "-translate-y-2 -rotate-45"
+                                : ""
                                 }`}
                         />
 
@@ -205,8 +205,8 @@ export default function Navbar() {
                             href="/"
                             onClick={closeMenu}
                             className={`px-4 py-3 rounded-xl transition ${pathname === "/"
-                                    ? "bg-yellow-400 text-black"
-                                    : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
+                                ? "bg-yellow-400 text-black"
+                                : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
                                 }`}
                         >
                             Home
@@ -217,8 +217,8 @@ export default function Navbar() {
                             href="/services"
                             onClick={closeMenu}
                             className={`px-4 py-3 rounded-xl transition ${pathname === "/services"
-                                    ? "bg-yellow-400 text-black"
-                                    : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
+                                ? "bg-yellow-400 text-black"
+                                : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
                                 }`}
                         >
                             Services
@@ -229,8 +229,8 @@ export default function Navbar() {
                             href="/portfolio"
                             onClick={closeMenu}
                             className={`px-4 py-3 rounded-xl transition ${pathname === "/portfolio"
-                                    ? "bg-yellow-400 text-black"
-                                    : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
+                                ? "bg-yellow-400 text-black"
+                                : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
                                 }`}
                         >
                             Portfolio
@@ -241,8 +241,8 @@ export default function Navbar() {
                             href="/about"
                             onClick={closeMenu}
                             className={`px-4 py-3 rounded-xl transition ${pathname === "/about"
-                                    ? "bg-yellow-400 text-black"
-                                    : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
+                                ? "bg-yellow-400 text-black"
+                                : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
                                 }`}
                         >
                             About
@@ -253,8 +253,8 @@ export default function Navbar() {
                             href="/contact"
                             onClick={closeMenu}
                             className={`px-4 py-3 rounded-xl transition ${pathname === "/contact"
-                                    ? "bg-yellow-400 text-black"
-                                    : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
+                                ? "bg-yellow-400 text-black"
+                                : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
                                 }`}
                         >
                             Contact
@@ -267,8 +267,8 @@ export default function Navbar() {
                             href="/quote"
                             onClick={closeMenu}
                             className={`px-4 py-3 rounded-xl flex items-center justify-between transition ${pathname === "/quote"
-                                    ? "bg-yellow-400 text-black"
-                                    : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
+                                ? "bg-yellow-400 text-black"
+                                : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
                                 }`}
                         >
 
@@ -278,8 +278,8 @@ export default function Navbar() {
 
                             {totalQuantity > 0 && (
                                 <span className={`min-w-6 h-6 px-1 flex items-center justify-center rounded-full text-xs font-bold ${pathname === "/quote"
-                                        ? "bg-black text-yellow-400"
-                                        : "bg-yellow-400 text-black"
+                                    ? "bg-black text-yellow-400"
+                                    : "bg-yellow-400 text-black"
                                     }`}>
                                     {totalQuantity}
                                 </span>

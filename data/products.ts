@@ -6,6 +6,7 @@ export interface Product {
     material: string;
     size: string;
     description: string;
+    price: number;
     featured: boolean;
 }
 
@@ -20,6 +21,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "A premium laser-cut wall art featuring two wolves in a modern layered design.",
+        price: 250,
         featured: true,
     },
 
@@ -32,6 +34,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Elegant deer wall decoration with a natural artistic style, perfect for modern interiors.",
+        price: 250,
         featured: false,
     },
 
@@ -44,6 +47,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Laser-cut horse silhouette designed to add a bold artistic touch to any space.",
+        price: 250,
         featured: false,
     },
 
@@ -56,6 +60,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Laser-cut Batman logo decoration, ideal for gaming rooms, bedrooms, and offices.",
+        price: 200,
         featured: false,
     },
 
@@ -68,6 +73,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Nautical anchor wall decoration inspired by the sea and coastal lifestyle.",
+        price: 250,
         featured: false,
     },
 
@@ -80,6 +86,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Minimalist laser-cut cat artwork designed for modern homes and stylish spaces.",
+        price: 250,
         featured: false,
     },
 
@@ -92,6 +99,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "A second artistic cat design created with precision laser cutting for decorative interiors.",
+        price: 250,
         featured: true,
     },
 
@@ -104,6 +112,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "A stylish laser-cut cat artwork that brings a unique decorative character to your space.",
+        price: 250,
         featured: false,
     },
 
@@ -116,6 +125,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "A custom football-inspired laser-cut artwork designed for fans and sports enthusiasts.",
+        price: 250,
         featured: true,
     },
 
@@ -128,6 +138,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Elegant dolphin artwork with a clean laser-cut design inspired by the beauty of the sea.",
+        price: 250,
         featured: false,
     },
 
@@ -140,6 +151,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Decorative fish artwork suitable for coastal, marine, and modern interior spaces.",
+        price: 250,
         featured: false,
     },
 
@@ -152,6 +164,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "A precision laser-cut Formula racing inspired design for motorsport enthusiasts.",
+        price: 250,
         featured: true,
     },
 
@@ -164,6 +177,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Laser-cut billiards artwork created for game rooms, entertainment spaces, and sports fans.",
+        price: 250,
         featured: true,
     },
 
@@ -176,6 +190,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Detailed laser-cut bow artwork with a strong decorative presence and artistic character.",
+        price: 250,
         featured: false,
     },
 
@@ -188,6 +203,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Bold lion wall art designed with precision laser cutting for a powerful modern look.",
+        price: 250,
         featured: false,
     },
 
@@ -197,9 +213,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/penguins.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "28 × 65 cm",
         description:
             "Charming penguin artwork with a clean decorative design suitable for homes and gifts.",
+        price: 200,
         featured: false,
     },
 
@@ -212,6 +229,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Striking phoenix artwork representing strength and transformation through detailed laser cutting.",
+        price: 250,
         featured: false,
     },
 
@@ -221,9 +239,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/pulse-of-life.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "20 × 68 cm",
         description:
             "A creative decorative design inspired by life, movement, and modern artistic expression.",
+        price: 250,
         featured: true,
     },
 
@@ -236,6 +255,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Dynamic racing-inspired laser-cut artwork designed for motorsport and speed enthusiasts.",
+        price: 250,
         featured: false,
     },
 
@@ -245,9 +265,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/spiderman.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "25 × 64 cm",
         description:
             "Laser-cut Spider-Man inspired artwork, perfect for bedrooms, gaming rooms, and collectors.",
+        price: 250,
         featured: false,
     },
 
@@ -260,6 +281,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Ocean-inspired starfish decoration perfect for coastal and beach-themed interiors.",
+        price: 250,
         featured: false,
     },
 
@@ -272,6 +294,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "A relaxing sunset-inspired wall decoration designed to add warmth and character to interiors.",
+        price: 250,
         featured: false,
     },
 
@@ -284,6 +307,8 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Elegant tree artwork combining natural inspiration with precision laser-cut craftsmanship.",
+        price: 250,
         featured: false,
     },
+
 ];

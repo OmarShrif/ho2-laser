@@ -10,7 +10,6 @@ import {
 
 import { Product } from "@/data/products";
 
-
 /*
  * Quote Item
  *
@@ -21,7 +20,6 @@ export type QuoteItem = {
     product: Product;
     quantity: number;
 };
-
 
 /*
  * Context Type
@@ -41,17 +39,22 @@ type QuoteContextType = {
     isInQuote: (slug: string) => boolean;
 
     clearQuote: () => void;
-};
 
+    /*
+     * Price calculations
+     */
+
+    getItemSubtotal: (item: QuoteItem) => number;
+
+    getTotal: () => number;
+};
 
 const QuoteContext =
     createContext<QuoteContextType | undefined>(
         undefined
     );
 
-
 const STORAGE_KEY = "ho2-quote-items";
-
 
 /*
  * Provider
@@ -88,34 +91,34 @@ export function QuoteProvider({
 
                 /*
                  * Support old format if necessary.
-                 *
-                 * If the old localStorage contained
-                 * products directly, convert them to:
-                 *
-                 * {
-                 *   product: product,
-                 *   quantity: 1
-                 * }
                  */
 
                 if (Array.isArray(parsedItems)) {
 
                     const convertedItems =
-                        parsedItems.map((item) => {
+                        parsedItems
+                            .map((item) => {
 
-                            if (
-                                item.product &&
-                                typeof item.quantity === "number"
-                            ) {
-                                return item;
-                            }
+                                if (
+                                    item.product &&
+                                    typeof item.quantity === "number"
+                                ) {
 
-                            return {
-                                product: item,
-                                quantity: 1,
-                            };
+                                    return item;
 
-                        });
+                                }
+
+                                return {
+                                    product: item,
+                                    quantity: 1,
+                                };
+
+                            })
+                            .filter(
+                                (item) =>
+                                    item.product &&
+                                    typeof item.product.price === "number"
+                            );
 
                     setQuoteItems(
                         convertedItems
@@ -184,7 +187,7 @@ export function QuoteProvider({
 
             /*
              * If product already exists,
-             * increase quantity instead.
+             * increase quantity.
              */
 
             if (existingItem) {
@@ -310,6 +313,39 @@ export function QuoteProvider({
 
 
     /*
+     * Calculate Item Subtotal
+     */
+
+    const getItemSubtotal = (
+        item: QuoteItem
+    ) => {
+
+        return (
+            item.product.price *
+            item.quantity
+        );
+
+    };
+
+
+    /*
+     * Calculate Total
+     */
+
+    const getTotal = () => {
+
+        return quoteItems.reduce(
+            (total, item) =>
+                total +
+                item.product.price *
+                item.quantity,
+            0
+        );
+
+    };
+
+
+    /*
      * Clear Quote
      */
 
@@ -337,6 +373,10 @@ export function QuoteProvider({
                 isInQuote,
 
                 clearQuote,
+
+                getItemSubtotal,
+
+                getTotal,
             }}
         >
 
