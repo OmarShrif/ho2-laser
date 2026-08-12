@@ -21,7 +21,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "A premium laser-cut wall art featuring two wolves in a modern layered design.",
-        price: 250,
+        price: 400,
         featured: true,
     },
 
@@ -44,10 +44,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/horse.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "30 × 40 cm",
         description:
             "Laser-cut horse silhouette designed to add a bold artistic touch to any space.",
-        price: 250,
+        price: 200,
         featured: false,
     },
 
@@ -73,7 +73,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Nautical anchor wall decoration inspired by the sea and coastal lifestyle.",
-        price: 250,
+        price: 220,
         featured: false,
     },
 
@@ -135,10 +135,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/dolphin.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "30 × 40 cm",
         description:
             "Elegant dolphin artwork with a clean laser-cut design inspired by the beauty of the sea.",
-        price: 250,
+        price: 150,
         featured: false,
     },
 
@@ -268,7 +268,7 @@ export const products: Product[] = [
         size: "25 × 64 cm",
         description:
             "Laser-cut Spider-Man inspired artwork, perfect for bedrooms, gaming rooms, and collectors.",
-        price: 250,
+        price: 150,
         featured: false,
     },
 
@@ -278,10 +278,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/starfish.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "30 × 40 cm",
         description:
             "Ocean-inspired starfish decoration perfect for coastal and beach-themed interiors.",
-        price: 250,
+        price: 150,
         featured: false,
     },
 
