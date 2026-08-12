@@ -28,7 +28,7 @@ ${email}
 Message:
 ${message}`;
 
-        const whatsappNumber = "201094244235";
+        const whatsappNumber = "201158636667";
 
         sendWhatsAppMessage(
             whatsappNumber,
@@ -68,7 +68,7 @@ ${message}`;
                                 </p>
 
                                 <p className="text-gray-300 mt-2">
-                                    +20 109 424 4235
+                                    +20 115 863 6667
                                 </p>
                             </div>
 
@@ -105,7 +105,7 @@ ${message}`;
                         </div>
 
                         <a
-                            href="https://wa.me/201094244235"
+                            href="https://wa.me/201158636667"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block mt-10 bg-yellow-400 text-black px-8 py-4 rounded-xl font-bold hover:bg-yellow-300 transition"

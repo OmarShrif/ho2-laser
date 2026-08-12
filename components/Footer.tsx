@@ -176,7 +176,7 @@ export default function Footer() {
                                 href="tel:+201094244235"
                                 className="block hover:text-yellow-400 transition"
                             >
-                                📞 +20 109 424 4235
+                                📞 +20 115 863 6667
                             </a>
 
                             <a
