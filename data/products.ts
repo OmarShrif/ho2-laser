@@ -31,10 +31,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/deer.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "46 × 63 cm",
         description:
             "Elegant deer wall decoration with a natural artistic style, perfect for modern interiors.",
-        price: 250,
+        price: 280,
         featured: false,
     },
 
@@ -83,10 +83,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/cat.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "37 × 70 cm",
         description:
             "Minimalist laser-cut cat artwork designed for modern homes and stylish spaces.",
-        price: 250,
+        price: 230,
         featured: false,
     },
 
