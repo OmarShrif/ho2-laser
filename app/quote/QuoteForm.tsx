@@ -1093,7 +1093,7 @@ file directly in WhatsApp.
                                         font-bold
                                         mt-4
                                     ">
-                                        40 LE
+                                        50 LE
                                     </p>
 
                                 </button>
