@@ -95,7 +95,6 @@ const metroStations = [
     "Al-Tawfiqia",
     "Wadi El-Nil",
     "Gameat El-Dewal",
-    "Cairo University",
     "Boulaq El-Dakrour",
 ];
 
@@ -207,7 +206,7 @@ export default function QuoteForm() {
         if (deliveryMethod === "warehouse") {
             deliveryMessage =
                 `Delivery Method: Warehouse Pickup\n` +
-                `Location: Ain Shams Metro Station\n` +
+                `Location: Aviation Sports Club – Heliopolis Branch – El Nozha Section\n` +
                 `Shipping Cost: FREE`;
         }
 
@@ -1033,8 +1032,7 @@ file directly in WhatsApp.
                                         text-sm
                                         mt-2
                                     ">
-                                        Pickup from Ain Shams
-                                        Metro Station
+                                        Pickup from Aviation Sports Club – Heliopolis Branch – El Nozha Section
                                     </p>
 
                                     <p className="
