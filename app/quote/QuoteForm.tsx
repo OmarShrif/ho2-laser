@@ -141,7 +141,7 @@ export default function QuoteForm() {
         deliveryMethod === "warehouse"
             ? 0
             : deliveryMethod === "metro"
-                ? 40
+                ? 50
                 : 150;
 
     // =========================
