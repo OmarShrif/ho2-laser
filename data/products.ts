@@ -57,10 +57,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/batman-logo.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "47 × 70 cm",
         description:
             "Laser-cut Batman logo decoration, ideal for gaming rooms, bedrooms, and offices.",
-        price: 200,
+        price: 230,
         featured: false,
     },
 
@@ -70,10 +70,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/anchor.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "43 × 47 cm",
         description:
             "Nautical anchor wall decoration inspired by the sea and coastal lifestyle.",
-        price: 220,
+        price: 240,
         featured: false,
     },
 
@@ -135,10 +135,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/dolphin.jpeg",
         material: "7mm MDF",
-        size: "30 × 40 cm",
+        size: "32 × 39 cm",
         description:
             "Elegant dolphin artwork with a clean laser-cut design inspired by the beauty of the sea.",
-        price: 150,
+        price: 160,
         featured: false,
     },
 
@@ -216,7 +216,7 @@ export const products: Product[] = [
         size: "28 × 65 cm",
         description:
             "Charming penguin artwork with a clean decorative design suitable for homes and gifts.",
-        price: 200,
+        price: 190,
         featured: false,
     },
 
@@ -242,7 +242,7 @@ export const products: Product[] = [
         size: "20 × 68 cm",
         description:
             "A creative decorative design inspired by life, movement, and modern artistic expression.",
-        price: 250,
+        price: 190,
         featured: true,
     },
 
@@ -265,10 +265,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/spiderman.jpeg",
         material: "7mm MDF",
-        size: "25 × 64 cm",
+        size: "25 × 55 cm",
         description:
             "Laser-cut Spider-Man inspired artwork, perfect for bedrooms, gaming rooms, and collectors.",
-        price: 150,
+        price: 170,
         featured: false,
     },
 
@@ -278,10 +278,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/starfish.jpeg",
         material: "7mm MDF",
-        size: "30 × 40 cm",
+        size: "38 × 38 cm",
         description:
             "Ocean-inspired starfish decoration perfect for coastal and beach-themed interiors.",
-        price: 150,
+        price: 160,
         featured: false,
     },
 
