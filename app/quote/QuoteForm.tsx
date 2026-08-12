@@ -214,7 +214,7 @@ export default function QuoteForm() {
             deliveryMessage =
                 `Delivery Method: Nearest Metro Station\n` +
                 `Selected Station: ${metroStation}\n` +
-                `Shipping Cost: 40 LE`;
+                `Shipping Cost: 50 LE`;
         }
 
         if (deliveryMethod === "home") {
