@@ -24,10 +24,35 @@ export const products: Product[] = [
         price: 400,
         featured: true,
     },
+        {
+        slug: "wolf",
+        title: "Wolf",
+        category: "MDF Wall Art",
+        image: "/products/wolf.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "Bold wolf wall art featuring a strong artistic silhouette, perfect for modern interior decoration.",
+        price: 250,
+        featured: false,
+    },
+
+    {
+        slug: "wolf-2",
+        title: "Wolf II",
+        category: "MDF Wall Art",
+        image: "/products/wolf2.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "A second wolf-inspired laser-cut artwork with a distinctive artistic style for modern wall decoration.",
+        price: 250,
+        featured: false,
+    },
 
     {
         slug: "deer-wall-art",
-        title: "Deer Wall Art",
+        title: "Deer", 
         category: "MDF Wall Art",
         image: "/products/deer.jpeg",
         material: "7mm MDF",
@@ -35,6 +60,32 @@ export const products: Product[] = [
         description:
             "Elegant deer wall decoration with a natural artistic style, perfect for modern interiors.",
         price: 280,
+        featured: false,
+    },
+
+    {
+        slug: "deer-2",
+        title: "Deer II",
+        category: "MDF Wall Art",
+        image: "/products/deer2.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "A detailed deer silhouette created with precision laser cutting for elegant and natural wall decoration.",
+        price: 250,
+        featured: false,
+    },
+
+    {
+        slug: "batman-logo",
+        title: "Batman Logo",
+        category: "Custom Gifts",
+        image: "/products/batman-logo.jpeg",
+        material: "7mm MDF",
+        size: "47 × 70 cm",
+        description:
+            "Laser-cut Batman logo decoration, ideal for gaming rooms, bedrooms, and offices.",
+        price: 230,
         featured: false,
     },
 
@@ -52,15 +103,15 @@ export const products: Product[] = [
     },
 
     {
-        slug: "batman-logo",
-        title: "Batman Logo",
-        category: "Custom Gifts",
-        image: "/products/batman-logo.jpeg",
+        slug: "horse-2",
+        title: "Horse II",
+        category: "MDF Wall Art",
+        image: "/products/horse2.jpeg",
         material: "7mm MDF",
-        size: "47 × 70 cm",
+        size: "50 × 70 cm",
         description:
-            "Laser-cut Batman logo decoration, ideal for gaming rooms, bedrooms, and offices.",
-        price: 230,
+            "A second horse-inspired laser-cut artwork designed to add an elegant artistic character to modern interiors.",
+        price: 250,
         featured: false,
     },
 
@@ -117,6 +168,19 @@ export const products: Product[] = [
     },
 
     {
+        slug: "cat-4",
+        title: "Cat Design IV",
+        category: "MDF Wall Art",
+        image: "/products/cat4.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "A detailed laser-cut cat artwork with a modern decorative style, perfect for animal lovers and contemporary interiors.",
+        price: 250,
+        featured: false,
+    },
+
+    {
         slug: "cr7",
         title: "CR7",
         category: "Custom Gifts",
@@ -125,6 +189,19 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "A custom football-inspired laser-cut artwork designed for fans and sports enthusiasts.",
+        price: 250,
+        featured: true,
+    },
+
+    {
+        slug: "formula",
+        title: "Formula",
+        category: "Custom Gifts",
+        image: "/products/formula.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "A precision laser-cut Formula racing inspired design for motorsport enthusiasts.",
         price: 250,
         featured: true,
     },
@@ -156,16 +233,16 @@ export const products: Product[] = [
     },
 
     {
-        slug: "formula",
-        title: "Formula",
-        category: "Custom Gifts",
-        image: "/products/formula.jpeg",
+        slug: "starfish",
+        title: "Starfish",
+        category: "Interior Decoration",
+        image: "/products/starfish.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "38 × 38 cm",
         description:
-            "A precision laser-cut Formula racing inspired design for motorsport enthusiasts.",
-        price: 250,
-        featured: true,
+            "Ocean-inspired starfish decoration perfect for coastal and beach-themed interiors.",
+        price: 160,
+        featured: false,
     },
 
     {
@@ -273,15 +350,15 @@ export const products: Product[] = [
     },
 
     {
-        slug: "starfish",
-        title: "Starfish",
-        category: "Interior Decoration",
-        image: "/products/starfish.jpeg",
+        slug: "peter-and-gwen",
+        title: "Peter & Gwen",
+        category: "Custom Gifts",
+        image: "/products/peter-and-gwen.jpeg",
         material: "7mm MDF",
-        size: "38 × 38 cm",
+        size: "50 × 70 cm",
         description:
-            "Ocean-inspired starfish decoration perfect for coastal and beach-themed interiors.",
-        price: 160,
+            "Peter & Gwen inspired laser-cut artwork created as a unique decorative piece for fans and collectors.",
+        price: 250,
         featured: false,
     },
 
@@ -307,6 +384,98 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Elegant tree artwork combining natural inspiration with precision laser-cut craftsmanship.",
+        price: 550,
+        featured: false,
+    },
+
+    {
+        slug: "toothless-dragon",
+        title: "Toothless Dragon",
+        category: "Custom Gifts",
+        image: "/products/toothless-dragon.jpeg",
+        material: "7mm MDF",
+        size: "36 × 43 cm",
+        description:
+            "Toothless-inspired laser-cut artwork designed for fans and fantasy-themed interior decoration.",
+        price: 170,
+        featured: false,
+    },
+
+
+    {
+        slug: "captain-america-shield",
+        title: "Captain America's Shield",
+        category: "Custom Gifts",
+        image: "/products/captain-america-shield.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "Captain America's Shield inspired laser-cut artwork, perfect for fans, bedrooms, gaming rooms, and collectors.",
+        price: 250,
+        featured: false,
+    },
+
+    {
+        slug: "coffee-pulse",
+        title: "Coffee Pulse",
+        category: "Interior Decoration",
+        image: "/products/coffee-pulse.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "A creative coffee-inspired laser-cut artwork designed for coffee lovers and modern interior spaces.",
+        price: 250,
+        featured: false,
+    },
+
+    {
+        slug: "dragon",
+        title: "Dragon",
+        category: "MDF Wall Art",
+        image: "/products/dragon.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "A powerful dragon-inspired laser-cut artwork designed for fantasy lovers and bold interior decoration.",
+        price: 250,
+        featured: false,
+    },
+
+    {
+        slug: "goku",
+        title: "Goku",
+        category: "Custom Gifts",
+        image: "/products/goku.jpeg",
+        material: "7mm MDF",
+        size: "34 × 68 cm",
+        description:
+            "Goku-inspired laser-cut artwork, perfect for anime fans, bedrooms, gaming rooms, and collectors.",
+        price: 320,
+        featured: false,
+    },
+
+    {
+        slug: "honeybee",
+        title: "Honeybee",
+        category: "MDF Wall Art",
+        image: "/products/honeybee.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "Detailed honeybee wall art combining a natural theme with precise laser-cut craftsmanship.",
+        price: 250,
+        featured: false,
+    },
+
+    {
+        slug: "pikachu",
+        title: "Pikachu",
+        category: "Custom Gifts",
+        image: "/products/pikachu.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "Pikachu-inspired laser-cut artwork, perfect for anime fans, bedrooms, gaming rooms, and collectors.",
         price: 250,
         featured: false,
     },
