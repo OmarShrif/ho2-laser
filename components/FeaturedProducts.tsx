@@ -31,6 +31,7 @@ export default function FeaturedProducts() {
                         : "Featured Products"}
                 </h2>
 
+
                 {/* ========================= */}
                 {/* Description */}
                 {/* ========================= */}
@@ -41,6 +42,7 @@ export default function FeaturedProducts() {
                         : "A selection of our most popular laser-cut designs."}
                 </p>
 
+
                 {/* ========================= */}
                 {/* Products */}
                 {/* ========================= */}
@@ -49,10 +51,23 @@ export default function FeaturedProducts() {
 
                     {featuredProducts.map((product) => {
 
+                        /*
+                         * =========================
+                         * Product Translation
+                         * =========================
+                         */
+
                         const translation =
                             productTranslations[
                             product.slug as keyof typeof productTranslations
                             ]?.[language];
+
+
+                        /*
+                         * =========================
+                         * Translated Data
+                         * =========================
+                         */
 
                         const title =
                             translation?.title ??
@@ -66,7 +81,21 @@ export default function FeaturedProducts() {
                             translation?.description ??
                             product.description;
 
+
+                        /*
+                         * =========================
+                         * Price
+                         * =========================
+                         */
+
+                        const formattedPrice =
+                            isArabic
+                                ? product.price.toLocaleString("ar-EG")
+                                : product.price.toLocaleString("en-US");
+
+
                         return (
+
                             <div
                                 key={product.slug}
                                 className="
@@ -95,37 +124,114 @@ export default function FeaturedProducts() {
 
                                 </div>
 
+
                                 {/* ========================= */}
                                 {/* Product Info */}
                                 {/* ========================= */}
 
                                 <div className="p-6">
 
+                                    {/* ========================= */}
                                     {/* Category */}
+                                    {/* ========================= */}
 
-                                    <p className="text-yellow-400 text-sm uppercase tracking-wider">
+                                    <p
+                                        className="
+                                            text-yellow-400
+                                            text-sm
+                                            uppercase
+                                            tracking-wider
+                                        "
+                                    >
                                         {category}
                                     </p>
 
-                                    {/* Title */}
 
-                                    <h3 className="text-2xl font-bold text-white mt-2">
+                                    {/* ========================= */}
+                                    {/* Title */}
+                                    {/* ========================= */}
+
+                                    <h3
+                                        className="
+                                            text-2xl
+                                            font-bold
+                                            text-white
+                                            mt-2
+                                        "
+                                    >
                                         {title}
                                     </h3>
 
-                                    {/* Description */}
 
-                                    <p className="text-gray-400 mt-2 leading-7">
+                                    {/* ========================= */}
+                                    {/* Description */}
+                                    {/* ========================= */}
+
+                                    <p
+                                        className="
+                                            text-gray-400
+                                            mt-2
+                                            leading-7
+                                        "
+                                    >
                                         {description}
                                     </p>
 
+
+                                    {/* ========================= */}
                                     {/* Price */}
+                                    {/* ========================= */}
 
-                                    <p className="text-yellow-400 font-bold text-xl mt-4">
-                                        {product.price} LE
-                                    </p>
+                                    <div
+                                        className={`
+                                            mt-4
+                                            flex
+                                            items-center
+                                            gap-2
+                                            ${isArabic
+                                                ? "justify-start"
+                                                : "justify-start"
+                                            }
+                                        `}
+                                    >
 
+                                        <span
+                                            className="
+                                                text-yellow-400
+                                                font-bold
+                                                text-xl
+                                            "
+                                        >
+                                            <bdi
+                                                dir={
+                                                    isArabic
+                                                        ? "rtl"
+                                                        : "ltr"
+                                                }
+                                            >
+                                                {formattedPrice}
+                                            </bdi>
+                                        </span>
+
+
+                                        <span
+                                            className="
+                                                text-yellow-400
+                                                font-bold
+                                                text-xl
+                                            "
+                                        >
+                                            {isArabic
+                                                ? "جنيه"
+                                                : "LE"}
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* ========================= */}
                                     {/* View Details */}
+                                    {/* ========================= */}
 
                                     <Link
                                         href={`/product/${product.slug}`}
@@ -145,7 +251,9 @@ export default function FeaturedProducts() {
                                 </div>
 
                             </div>
+
                         );
+
                     })}
 
                 </div>
