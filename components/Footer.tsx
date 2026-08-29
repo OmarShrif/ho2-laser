@@ -58,7 +58,7 @@ export default function Footer() {
                                     href="/portfolio"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    Portfolio
+                                    Products
                                 </Link>
                             </li>
 

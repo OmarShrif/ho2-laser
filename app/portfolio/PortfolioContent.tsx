@@ -67,7 +67,7 @@ export default function PortfolioContent() {
                     <h1 className="text-5xl md:text-6xl font-bold mt-4">
                         Our{" "}
                         <span className="text-yellow-400">
-                            Portfolio
+                            Products
                         </span>
                     </h1>
 

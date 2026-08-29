@@ -77,7 +77,7 @@ export default function Navbar() {
                             : ""
                             }`}
                     >
-                        Portfolio
+                        Products
                     </Link>
 
 
@@ -233,7 +233,7 @@ export default function Navbar() {
                                 : "text-gray-300 hover:bg-slate-900 hover:text-yellow-400"
                                 }`}
                         >
-                            Portfolio
+                            Products
                         </Link>
 
 
