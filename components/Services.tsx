@@ -1,77 +1,105 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Services() {
+    const { isArabic } = useLanguage();
 
     const services = [
-
         {
-            title: "Laser Cutting",
+            title: isArabic
+                ? "قص الليزر"
+                : "Laser Cutting",
 
-            description:
-                "High-precision laser cutting for wood, MDF, acrylic, leather, and more.",
+            description: isArabic
+                ? "قص بالليزر عالي الدقة للخشب وMDF والأكريليك والجلد وغيرها من الخامات."
+                : "High-precision laser cutting for wood, MDF, acrylic, leather, and more.",
 
             category: "Laser Cutting",
         },
 
         {
-            title: "Custom Gifts",
+            title: isArabic
+                ? "الهدايا المخصصة"
+                : "Custom Gifts",
 
-            description:
-                "Personalized gifts with custom names, logos, and unique designs.",
+            description: isArabic
+                ? "هدايا مميزة بأسماء وشعارات وتصميمات خاصة تناسب كل مناسبة."
+                : "Personalized gifts with custom names, logos, and unique designs.",
 
             category: "Custom Gifts",
         },
 
         {
-            title: "MDF Wall Art",
+            title: isArabic
+                ? "ديكورات MDF للحائط"
+                : "MDF Wall Art",
 
-            description:
-                "Modern decorative wall art for homes, offices, and commercial spaces.",
+            description: isArabic
+                ? "ديكورات حائط عصرية للمنازل والمكاتب والمساحات التجارية."
+                : "Modern decorative wall art for homes, offices, and commercial spaces.",
 
             category: "MDF Wall Art",
         },
 
         {
-            title: "Business Signs",
+            title: isArabic
+                ? "اللافتات التجارية"
+                : "Business Signs",
 
-            description:
-                "Professional indoor and outdoor signs for shops, cafés, and companies.",
+            description: isArabic
+                ? "لافتات احترافية داخلية وخارجية للمحلات والكافيهات والشركات."
+                : "Professional indoor and outdoor signs for shops, cafés, and companies.",
 
             category: "Business Signs",
         },
 
         {
-            title: "Interior Decoration",
+            title: isArabic
+                ? "الديكور الداخلي"
+                : "Interior Decoration",
 
-            description:
-                "Creative decorative pieces and customized interior design elements.",
+            description: isArabic
+                ? "قطع ديكورية إبداعية وعناصر تصميم داخلي مخصصة حسب احتياجاتك."
+                : "Creative decorative pieces and customized interior design elements.",
 
             category: "Interior Decoration",
         },
-
     ];
 
-
     return (
-
-        <section className="bg-slate-900 text-white py-24 px-6">
-
+        <section
+            className="
+                bg-slate-900
+                text-white
+                py-24
+                px-6
+            "
+        >
             <div className="max-w-6xl mx-auto">
 
-
+                {/* ========================= */}
                 {/* Heading */}
+                {/* ========================= */}
 
                 <h2 className="text-5xl font-bold text-center text-yellow-400">
-                    Our Services
+                    {isArabic
+                        ? "خدماتنا"
+                        : "Our Services"}
                 </h2>
 
 
                 <p className="text-center text-gray-400 mt-4">
-                    Everything you need for professional laser and CNC manufacturing.
+                    {isArabic
+                        ? "كل ما تحتاجه لتصنيع احترافي باستخدام الليزر وCNC."
+                        : "Everything you need for professional laser and CNC manufacturing."}
                 </p>
 
 
+                {/* ========================= */}
                 {/* Services */}
+                {/* ========================= */}
 
                 <div className="grid md:grid-cols-3 gap-8 mt-16">
 
@@ -86,21 +114,58 @@ export default function Services() {
                         >
 
                             <div
-                                className="h-full bg-slate-800 rounded-2xl p-8 border border-transparent hover:border-yellow-400/50 hover:scale-105 transition duration-300 cursor-pointer"
+                                className="
+                                    h-full
+                                    bg-slate-800
+                                    rounded-2xl
+                                    p-8
+                                    border
+                                    border-transparent
+                                    hover:border-yellow-400/50
+                                    hover:scale-105
+                                    transition
+                                    duration-300
+                                    cursor-pointer
+                                "
                             >
 
-                                <h3 className="text-2xl font-bold text-yellow-400 group-hover:text-yellow-300 transition">
+                                {/* Service Title */}
+
+                                <h3
+                                    className="
+                                        text-2xl
+                                        font-bold
+                                        text-yellow-400
+                                        group-hover:text-yellow-300
+                                        transition
+                                    "
+                                >
                                     {service.title}
                                 </h3>
 
 
-                                <p className="text-gray-300 mt-4">
+                                {/* Description */}
+
+                                <p className="text-gray-300 mt-4 leading-7">
                                     {service.description}
                                 </p>
 
 
-                                <div className="mt-6 text-yellow-400 font-semibold opacity-0 group-hover:opacity-100 transition">
-                                    Explore Designs →
+                                {/* Explore */}
+
+                                <div
+                                    className="
+                                        mt-6
+                                        text-yellow-400
+                                        font-semibold
+                                        opacity-0
+                                        group-hover:opacity-100
+                                        transition
+                                    "
+                                >
+                                    {isArabic
+                                        ? "استكشف التصميمات ←"
+                                        : "Explore Designs →"}
                                 </div>
 
                             </div>
@@ -112,8 +177,6 @@ export default function Services() {
                 </div>
 
             </div>
-
         </section>
-
     );
 }

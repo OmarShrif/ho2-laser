@@ -3,10 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { sendWhatsAppMessage } from "@/lib/whatsapp";
 import { useSearchParams } from "next/navigation";
 
+import { sendWhatsAppMessage } from "@/lib/whatsapp";
 import { useQuote } from "@/context/QuoteContext";
+import { useLanguage } from "@/context/LanguageContext";
+import { productTranslations } from "@/data/productTranslations";
 
 const metroStations = [
     // Line 1
@@ -103,6 +105,8 @@ export default function QuoteForm() {
 
     const productFromUrl = searchParams.get("product");
 
+    const { language, isArabic } = useLanguage();
+
     const {
         quoteItems,
         increaseQuantity,
@@ -145,6 +149,38 @@ export default function QuoteForm() {
                 : 150;
 
     // =========================
+    // Product Translation
+    // =========================
+
+    const getProductTranslation = (
+        slug: string,
+        fallbackTitle: string,
+        fallbackCategory: string
+    ) => {
+        const translation =
+            productTranslations[
+            slug as keyof typeof productTranslations
+            ];
+
+        if (!translation) {
+            return {
+                title: fallbackTitle,
+                category: fallbackCategory,
+            };
+        }
+
+        return {
+            title:
+                translation[language]?.title ??
+                fallbackTitle,
+
+            category:
+                translation[language]?.category ??
+                fallbackCategory,
+        };
+    };
+
+    // =========================
     // Handle Submit
     // =========================
 
@@ -176,16 +212,40 @@ export default function QuoteForm() {
                 const subtotal =
                     getItemSubtotal(item);
 
-                productsMessage +=
-                    `${index + 1}. ${item.product.title}\n` +
-                    `   Quantity: ${item.quantity}\n` +
-                    `   Price: ${item.product.price} LE\n` +
-                    `   Subtotal: ${subtotal} LE\n\n`;
+                const translatedProduct =
+                    getProductTranslation(
+                        item.product.slug,
+                        item.product.title,
+                        item.product.category
+                    );
+
+                if (isArabic) {
+                    productsMessage +=
+                        `${index + 1}. ${translatedProduct.title}\n` +
+                        `   الكمية: ${item.quantity}\n` +
+                        `   السعر: ${item.product.price} جنيه\n` +
+                        `   الإجمالي: ${subtotal} جنيه\n\n`;
+                } else {
+                    productsMessage +=
+                        `${index + 1}. ${translatedProduct.title}\n` +
+                        `   Quantity: ${item.quantity}\n` +
+                        `   Price: ${item.product.price} LE\n` +
+                        `   Subtotal: ${subtotal} LE\n\n`;
+                }
             });
         } else {
-            productsMessage =
-                `1. ${productFromUrl ?? "Custom Design"}\n` +
-                `   Quantity: ${quantity ?? 1}\n`;
+            const customProductName =
+                productFromUrl ?? "Custom Design";
+
+            if (isArabic) {
+                productsMessage =
+                    `1. ${customProductName}\n` +
+                    `   الكمية: ${quantity ?? 1}\n`;
+            } else {
+                productsMessage =
+                    `1. ${customProductName}\n` +
+                    `   Quantity: ${quantity ?? 1}\n`;
+            }
         }
 
         // =========================
@@ -204,24 +264,45 @@ export default function QuoteForm() {
         let deliveryMessage = "";
 
         if (deliveryMethod === "warehouse") {
-            deliveryMessage =
-                `Delivery Method: Warehouse Pickup\n` +
-                `Location: Aviation Sports Club – Heliopolis Branch – El Nozha Section\n` +
-                `Shipping Cost: FREE`;
+            if (isArabic) {
+                deliveryMessage =
+                    `طريقة التوصيل: الاستلام من الموقع\n` +
+                    `الموقع: نادي الطيران الرياضي – فرع مصر الجديدة – قسم النزهة\n` +
+                    `تكلفة التوصيل: مجانًا`;
+            } else {
+                deliveryMessage =
+                    `Delivery Method: Warehouse Pickup\n` +
+                    `Location: Aviation Sports Club – Heliopolis Branch – El Nozha Section\n` +
+                    `Shipping Cost: FREE`;
+            }
         }
 
         if (deliveryMethod === "metro") {
-            deliveryMessage =
-                `Delivery Method: Nearest Metro Station\n` +
-                `Selected Station: ${metroStation}\n` +
-                `Shipping Cost: 50 LE`;
+            if (isArabic) {
+                deliveryMessage =
+                    `طريقة التوصيل: أقرب محطة مترو\n` +
+                    `المحطة المختارة: ${metroStation}\n` +
+                    `تكلفة التوصيل: 50 جنيه`;
+            } else {
+                deliveryMessage =
+                    `Delivery Method: Nearest Metro Station\n` +
+                    `Selected Station: ${metroStation}\n` +
+                    `Shipping Cost: 50 LE`;
+            }
         }
 
         if (deliveryMethod === "home") {
-            deliveryMessage =
-                `Delivery Method: Home Delivery\n` +
-                `Address: ${deliveryAddress}\n` +
-                `Shipping Cost: 150 LE`;
+            if (isArabic) {
+                deliveryMessage =
+                    `طريقة التوصيل: التوصيل للمنزل\n` +
+                    `العنوان: ${deliveryAddress}\n` +
+                    `تكلفة التوصيل: 150 جنيه`;
+            } else {
+                deliveryMessage =
+                    `Delivery Method: Home Delivery\n` +
+                    `Address: ${deliveryAddress}\n` +
+                    `Shipping Cost: 150 LE`;
+            }
         }
 
         // =========================
@@ -235,7 +316,72 @@ export default function QuoteForm() {
         // WhatsApp Message
         // =========================
 
-        const whatsappMessage = `
+        let whatsappMessage = "";
+
+        if (isArabic) {
+            whatsappMessage = `
+طلب تصميم جديد من HO2 Laser
+
+━━━━━━━━━━━━━━━━━━
+
+المنتجات المختارة
+
+${productsMessage}
+
+━━━━━━━━━━━━━━━━━━
+
+إجمالي المنتجات:
+${quoteItems.length > 0
+                    ? `${productsTotal} جنيه`
+                    : "السعر حسب التصميم"}
+
+التوصيل:
+${deliveryMethod === "warehouse"
+                    ? "مجانًا"
+                    : `${shippingCost} جنيه`}
+
+${quoteItems.length > 0
+                    ? `الإجمالي النهائي:\n${finalTotal} جنيه`
+                    : "السعر النهائي:\nسيتم تحديده"}
+
+━━━━━━━━━━━━━━━━━━
+
+تفاصيل التوصيل
+
+${deliveryMessage}
+
+━━━━━━━━━━━━━━━━━━
+
+بيانات العميل
+
+الاسم:
+${name}
+
+الهاتف:
+${phone}
+
+البريد الإلكتروني:
+${email}
+
+الخدمة:
+${service}
+
+المقاس المطلوب:
+${size || "غير محدد"}
+
+الكمية المطلوبة:
+${quantity || "غير محددة"}
+
+التفاصيل:
+${message || "لا توجد تفاصيل إضافية"}
+
+━━━━━━━━━━━━━━━━━━
+
+يمكن للعميل إرفاق التصميم أو الصورة المرجعية
+مباشرة في WhatsApp قبل إرسال الرسالة.
+`;
+        } else {
+            whatsappMessage = `
 New HO2 Laser Design Request
 
 ━━━━━━━━━━━━━━━━━━
@@ -248,17 +394,17 @@ ${productsMessage}
 
 PRODUCTS TOTAL:
 ${quoteItems.length > 0
-                ? `${productsTotal} LE`
-                : "Custom Price"}
+                    ? `${productsTotal} LE`
+                    : "Custom Price"}
 
 SHIPPING:
 ${deliveryMethod === "warehouse"
-                ? "FREE"
-                : `${shippingCost} LE`}
+                    ? "FREE"
+                    : `${shippingCost} LE`}
 
 ${quoteItems.length > 0
-                ? `FINAL TOTAL:\n${finalTotal} LE`
-                : "FINAL PRICE:\nTo be determined"}
+                    ? `FINAL TOTAL:\n${finalTotal} LE`
+                    : "FINAL PRICE:\nTo be determined"}
 
 ━━━━━━━━━━━━━━━━━━
 
@@ -296,6 +442,7 @@ ${message || "No additional details"}
 The customer may attach a design or reference
 file directly in WhatsApp.
 `;
+        }
 
         // =========================
         // Open WhatsApp
@@ -346,8 +493,11 @@ file directly in WhatsApp.
     };
 
     return (
-        <main className="min-h-screen bg-slate-950 text-white py-32">
-
+        <main
+            className={`min-h-screen bg-slate-950 text-white py-32 ${isArabic ? "text-right" : "text-left"
+                }`}
+            dir={isArabic ? "rtl" : "ltr"}
+        >
             <div className="max-w-6xl mx-auto px-6">
 
                 {/* ========================= */}
@@ -357,30 +507,36 @@ file directly in WhatsApp.
                 <div className="text-center">
 
                     <p className="text-yellow-400 uppercase tracking-[0.3em] text-sm font-semibold">
-                        Get Your Design
+                        {isArabic
+                            ? "اطلب تصميمك"
+                            : "Get Your Design"}
                     </p>
 
                     <h1 className="text-5xl md:text-6xl font-bold mt-4">
 
-                        Request Your{" "}
+                        {isArabic
+                            ? "اطلب تصميمك "
+                            : "Request Your "}
 
                         <span className="text-yellow-400">
-                            Custom
-                        </span>{" "}
+                            {isArabic
+                                ? "المخصص"
+                                : "Custom"}
+                        </span>
 
-                        Design
+                        {!isArabic && " Design"}
 
                     </h1>
 
                     <p className="text-gray-400 text-lg md:text-xl mt-6 max-w-2xl mx-auto">
 
-                        Tell us about your project and we will
-                        prepare a custom solution for you.
+                        {isArabic
+                            ? "أخبرنا بتفاصيل مشروعك وسنجهز لك الحل المناسب."
+                            : "Tell us about your project and we will prepare a custom solution for you."}
 
                     </p>
 
                 </div>
-
 
                 {/* ========================= */}
                 {/* Success Message */}
@@ -421,28 +577,32 @@ file directly in WhatsApp.
                             ✓
                         </div>
 
-
-                        <h2 className="
-                            text-2xl
-                            md:text-3xl
-                            font-bold
-                            text-green-400
-                            mt-5
-                        ">
-                            Your request has been prepared successfully.
+                        <h2
+                            className="
+                                text-2xl
+                                md:text-3xl
+                                font-bold
+                                text-green-400
+                                mt-5
+                            "
+                        >
+                            {isArabic
+                                ? "تم تجهيز طلبك بنجاح."
+                                : "Your request has been prepared successfully."}
                         </h2>
 
-
-                        <p className="
-                            text-gray-300
-                            mt-4
-                            text-base
-                            md:text-lg
-                        ">
-                            WhatsApp has been opened with your
-                            request details.
+                        <p
+                            className="
+                                text-gray-300
+                                mt-4
+                                text-base
+                                md:text-lg
+                            "
+                        >
+                            {isArabic
+                                ? "تم فتح WhatsApp مع تفاصيل طلبك."
+                                : "WhatsApp has been opened with your request details."}
                         </p>
-
 
                         <div
                             className="
@@ -456,24 +616,30 @@ file directly in WhatsApp.
                         >
 
                             <p className="text-white font-semibold">
-                                📎 Don't forget your design!
+
+                                {isArabic
+                                    ? "📎 لا تنسَ إرفاق التصميم!"
+                                    : "📎 Don't forget your design!"}
+
                             </p>
 
-                            <p className="
-                                text-gray-400
-                                text-sm
-                                md:text-base
-                                mt-2
-                                leading-7
-                            ">
-                                Please attach your image, drawing,
-                                reference, PDF, SVG, DXF, or any
-                                other design file directly in WhatsApp
-                                before sending the message.
+                            <p
+                                className="
+                                    text-gray-400
+                                    text-sm
+                                    md:text-base
+                                    mt-2
+                                    leading-7
+                                "
+                            >
+
+                                {isArabic
+                                    ? "يرجى إرفاق الصورة أو الرسم أو الملف المرجعي أو PDF أو SVG أو DXF أو أي ملف تصميم آخر مباشرة في WhatsApp قبل إرسال الرسالة."
+                                    : "Please attach your image, drawing, reference, PDF, SVG, DXF, or any other design file directly in WhatsApp before sending the message."}
+
                             </p>
 
                         </div>
-
 
                         <Link
                             href="/portfolio"
@@ -490,12 +656,13 @@ file directly in WhatsApp.
                                 transition
                             "
                         >
-                            Continue Shopping
+                            {isArabic
+                                ? "متابعة التسوق"
+                                : "Continue Shopping"}
                         </Link>
 
                     </div>
                 )}
-
 
                 {/* ================================================== */}
                 {/* EVERYTHING BELOW IS HIDDEN AFTER SUBMIT */}
@@ -515,44 +682,55 @@ file directly in WhatsApp.
 
                                 {/* Cart Header */}
 
-                                <div className="
-                                    flex
-                                    flex-col
-                                    sm:flex-row
-                                    sm:items-center
-                                    sm:justify-between
-                                    gap-4
-                                    mb-7
-                                ">
+                                <div
+                                    className="
+                                        flex
+                                        flex-col
+                                        sm:flex-row
+                                        sm:items-center
+                                        sm:justify-between
+                                        gap-4
+                                        mb-7
+                                    "
+                                >
 
                                     <div>
 
-                                        <p className="
-                                            text-gray-500
-                                            text-sm
-                                            uppercase
-                                            tracking-wider
-                                        ">
-                                            Your Selection
+                                        <p
+                                            className="
+                                                text-gray-500
+                                                text-sm
+                                                uppercase
+                                                tracking-wider
+                                            "
+                                        >
+                                            {isArabic
+                                                ? "اختياراتك"
+                                                : "Your Selection"}
                                         </p>
 
-                                        <h2 className="
-                                            text-3xl
-                                            md:text-4xl
-                                            font-bold
-                                            mt-1
-                                        ">
+                                        <h2
+                                            className="
+                                                text-3xl
+                                                md:text-4xl
+                                                font-bold
+                                                mt-1
+                                            "
+                                        >
 
-                                            Your{" "}
+                                            {isArabic
+                                                ? "سلة "
+                                                : "Your "}
 
                                             <span className="text-yellow-400">
-                                                Cart
+                                                {isArabic
+                                                    ? "الطلبات"
+                                                    : "Cart"}
                                             </span>
 
                                         </h2>
 
                                     </div>
-
 
                                     <div className="flex items-center gap-4">
 
@@ -560,12 +738,15 @@ file directly in WhatsApp.
 
                                             {quoteItems.length}{" "}
 
-                                            {quoteItems.length === 1
-                                                ? "product"
-                                                : "products"}
+                                            {isArabic
+                                                ? quoteItems.length === 1
+                                                    ? "منتج"
+                                                    : "منتجات"
+                                                : quoteItems.length === 1
+                                                    ? "product"
+                                                    : "products"}
 
                                         </span>
-
 
                                         <button
                                             type="button"
@@ -583,13 +764,14 @@ file directly in WhatsApp.
                                                 rounded-lg
                                             "
                                         >
-                                            Clear Cart
+                                            {isArabic
+                                                ? "مسح السلة"
+                                                : "Clear Cart"}
                                         </button>
 
                                     </div>
 
                                 </div>
-
 
                                 {/* Cart Items */}
 
@@ -599,6 +781,13 @@ file directly in WhatsApp.
 
                                         const subtotal =
                                             getItemSubtotal(item);
+
+                                        const translatedProduct =
+                                            getProductTranslation(
+                                                item.product.slug,
+                                                item.product.title,
+                                                item.product.category
+                                            );
 
                                         return (
 
@@ -644,76 +833,89 @@ file directly in WhatsApp.
 
                                                         <Image
                                                             src={item.product.image}
-                                                            alt={item.product.title}
+                                                            alt={translatedProduct.title}
                                                             fill
                                                             className="object-cover"
                                                         />
 
                                                     </div>
 
-
                                                     {/* Product Info */}
 
-                                                    <div className="
-                                                        flex-1
-                                                        min-w-0
-                                                    ">
+                                                    <div className="flex-1 min-w-0">
 
-                                                        <p className="
-                                                            text-yellow-400
-                                                            text-xs
-                                                            uppercase
-                                                            tracking-wider
-                                                        ">
-                                                            {item.product.category}
+                                                        <p
+                                                            className="
+                                                                text-yellow-400
+                                                                text-xs
+                                                                uppercase
+                                                                tracking-wider
+                                                            "
+                                                        >
+                                                            {
+                                                                translatedProduct.category
+                                                            }
                                                         </p>
 
-
-                                                        <h3 className="
-                                                            text-xl
-                                                            md:text-2xl
-                                                            font-bold
-                                                            mt-1
-                                                        ">
-                                                            {item.product.title}
+                                                        <h3
+                                                            className="
+                                                                text-xl
+                                                                md:text-2xl
+                                                                font-bold
+                                                                mt-1
+                                                            "
+                                                        >
+                                                            {
+                                                                translatedProduct.title
+                                                            }
                                                         </h3>
 
-
-                                                        <p className="
-                                                            text-gray-400
-                                                            text-sm
-                                                            mt-2
-                                                        ">
-                                                            {item.product.price} LE / item
+                                                        <p
+                                                            className="
+                                                                text-gray-400
+                                                                text-sm
+                                                                mt-2
+                                                            "
+                                                        >
+                                                            {item.product.price}{" "}
+                                                            {isArabic
+                                                                ? "جنيه / قطعة"
+                                                                : "LE / item"}
                                                         </p>
 
                                                     </div>
 
-
                                                     {/* Quantity */}
 
-                                                    <div className="
-                                                        flex
-                                                        items-center
-                                                        justify-between
-                                                        md:justify-center
-                                                        gap-4
-                                                    ">
-
-                                                        <span className="
-                                                            text-gray-500
-                                                            text-sm
-                                                            md:hidden
-                                                        ">
-                                                            Quantity
-                                                        </span>
-
-
-                                                        <div className="
+                                                    <div
+                                                        className="
                                                             flex
                                                             items-center
-                                                            gap-3
-                                                        ">
+                                                            justify-between
+                                                            md:justify-center
+                                                            gap-4
+                                                        "
+                                                    >
+
+                                                        <span
+                                                            className="
+                                                                text-gray-500
+                                                                text-sm
+                                                                md:hidden
+                                                            "
+                                                        >
+                                                            {isArabic
+                                                                ? "الكمية"
+                                                                : "Quantity"}
+                                                        </span>
+
+                                                        <div
+                                                            className="
+                                                                flex
+                                                                items-center
+                                                                gap-3
+                                                            "
+                                                        >
 
                                                             <button
                                                                 type="button"
@@ -739,16 +941,16 @@ file directly in WhatsApp.
                                                                 −
                                                             </button>
 
-
-                                                            <span className="
-                                                                text-lg
-                                                                font-bold
-                                                                min-w-[30px]
-                                                                text-center
-                                                            ">
+                                                            <span
+                                                                className="
+                                                                    text-lg
+                                                                    font-bold
+                                                                    min-w-[30px]
+                                                                    text-center
+                                                                "
+                                                            >
                                                                 {item.quantity}
                                                             </span>
-
 
                                                             <button
                                                                 type="button"
@@ -778,7 +980,6 @@ file directly in WhatsApp.
 
                                                     </div>
 
-
                                                     {/* Subtotal */}
 
                                                     <div
@@ -793,26 +994,34 @@ file directly in WhatsApp.
                                                         "
                                                     >
 
-                                                        <p className="
-                                                            text-gray-500
-                                                            text-xs
-                                                            uppercase
-                                                            tracking-wider
-                                                        ">
-                                                            Subtotal
+                                                        <p
+                                                            className="
+                                                                text-gray-500
+                                                                text-xs
+                                                                uppercase
+                                                                tracking-wider
+                                                            "
+                                                        >
+                                                            {isArabic
+                                                                ? "الإجمالي"
+                                                                : "Subtotal"}
                                                         </p>
 
-                                                        <p className="
-                                                            text-2xl
-                                                            font-bold
-                                                            text-yellow-400
-                                                            mt-1
-                                                        ">
-                                                            {subtotal} LE
+                                                        <p
+                                                            className="
+                                                                text-2xl
+                                                                font-bold
+                                                                text-yellow-400
+                                                                mt-1
+                                                            "
+                                                        >
+                                                            {subtotal}{" "}
+                                                            {isArabic
+                                                                ? "جنيه"
+                                                                : "LE"}
                                                         </p>
 
                                                     </div>
-
 
                                                     {/* Remove */}
 
@@ -834,7 +1043,11 @@ file directly in WhatsApp.
                                                             hover:bg-red-500/10
                                                             transition
                                                         "
-                                                        title="Remove product"
+                                                        title={
+                                                            isArabic
+                                                                ? "إزالة المنتج"
+                                                                : "Remove product"
+                                                        }
                                                     >
                                                         ✕
                                                     </button>
@@ -848,15 +1061,9 @@ file directly in WhatsApp.
 
                                 </div>
 
-                                {/* IMPORTANT:
-                                    No Total here.
-                                    Total appears after Delivery Method.
-                                */}
-
                             </div>
 
                         )}
-
 
                         {/* ================================================== */}
                         {/* CUSTOM ORDER */}
@@ -866,79 +1073,97 @@ file directly in WhatsApp.
 
                             <div className="mt-12">
 
-                                <div className="
-                                    bg-slate-900
-                                    border
-                                    border-yellow-400/40
-                                    rounded-2xl
-                                    p-6
-                                    md:p-8
-                                ">
+                                <div
+                                    className="
+                                        bg-slate-900
+                                        border
+                                        border-yellow-400/40
+                                        rounded-2xl
+                                        p-6
+                                        md:p-8
+                                    "
+                                >
 
                                     <div className="flex gap-4">
 
-                                        <div className="
-                                            w-12
-                                            h-12
-                                            rounded-xl
-                                            bg-yellow-400/10
-                                            border
-                                            border-yellow-400/30
-                                            flex
-                                            items-center
-                                            justify-center
-                                            text-2xl
-                                            flex-shrink-0
-                                        ">
+                                        <div
+                                            className="
+                                                w-12
+                                                h-12
+                                                rounded-xl
+                                                bg-yellow-400/10
+                                                border
+                                                border-yellow-400/30
+                                                flex
+                                                items-center
+                                                justify-center
+                                                text-2xl
+                                                flex-shrink-0
+                                            "
+                                        >
                                             🎨
                                         </div>
 
-
                                         <div>
 
-                                            <h2 className="
-                                                text-2xl
-                                                font-bold
-                                            ">
+                                            <h2
+                                                className="
+                                                    text-2xl
+                                                    font-bold
+                                                "
+                                            >
 
-                                                Custom{" "}
+                                                {isArabic
+                                                    ? "طلب "
+                                                    : "Custom "}
 
                                                 <span className="text-yellow-400">
-                                                    Order
+                                                    {isArabic
+                                                        ? "مخصص"
+                                                        : "Order"}
                                                 </span>
 
                                             </h2>
 
+                                            <p
+                                                className="
+                                                    text-gray-400
+                                                    mt-2
+                                                    leading-7
+                                                "
+                                            >
 
-                                            <p className="
-                                                text-gray-400
-                                                mt-2
-                                                leading-7
-                                            ">
-
-                                                Don't see what you're
-                                                looking for?
-
-                                                <br />
-
-                                                Send us your image,
-                                                drawing, or reference
-                                                and we will provide
-                                                you with a custom price.
+                                                {isArabic ? (
+                                                    <>
+                                                        لا تجد ما تبحث عنه؟
+                                                        <br />
+                                                        أرسل لنا الصورة أو الرسم أو المرجع الخاص بك وسنقدم لك سعرًا مخصصًا.
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        Don't see what you're
+                                                        looking for?
+                                                        <br />
+                                                        Send us your image,
+                                                        drawing, or reference
+                                                        and we will provide
+                                                        you with a custom price.
+                                                    </>
+                                                )}
 
                                             </p>
 
+                                            <p
+                                                className="
+                                                    text-gray-500
+                                                    text-sm
+                                                    mt-3
+                                                "
+                                            >
 
-                                            <p className="
-                                                text-gray-500
-                                                text-sm
-                                                mt-3
-                                            ">
-
-                                                The final price will be
-                                                determined based on the
-                                                design, size, material,
-                                                and quantity.
+                                                {isArabic
+                                                    ? "سيتم تحديد السعر النهائي بناءً على التصميم والمقاس والخامة والكمية."
+                                                    : "The final price will be determined based on the design, size, material, and quantity."}
 
                                             </p>
 
@@ -952,7 +1177,6 @@ file directly in WhatsApp.
 
                         )}
 
-
                         {/* ================================================== */}
                         {/* DELIVERY METHOD */}
                         {/* ================================================== */}
@@ -961,37 +1185,41 @@ file directly in WhatsApp.
 
                             <div className="mb-6">
 
-                                <h2 className="
-                                    text-2xl
-                                    md:text-3xl
-                                    font-bold
-                                ">
+                                <h2
+                                    className="
+                                        text-2xl
+                                        md:text-3xl
+                                        font-bold
+                                    "
+                                >
 
-                                    Delivery{" "}
+                                    {isArabic
+                                        ? "طريقة "
+                                        : "Delivery "}
 
                                     <span className="text-yellow-400">
-                                        Method
+                                        {isArabic
+                                            ? "التوصيل"
+                                            : "Method"}
                                     </span>
 
                                 </h2>
 
-
-                                <p className="
-                                    text-gray-400
-                                    mt-2
-                                ">
-                                    Choose how you would like to
-                                    receive your order.
+                                <p className="text-gray-400 mt-2">
+                                    {isArabic
+                                        ? "اختر الطريقة التي تفضل استلام طلبك بها."
+                                        : "Choose how you would like to receive your order."}
                                 </p>
 
                             </div>
 
-
-                            <div className="
-                                grid
-                                md:grid-cols-3
-                                gap-4
-                            ">
+                            <div
+                                className="
+                                    grid
+                                    md:grid-cols-3
+                                    gap-4
+                                "
+                            >
 
                                 {/* Warehouse */}
 
@@ -1008,6 +1236,7 @@ file directly in WhatsApp.
                                         p-5
                                         border
                                         transition
+                                        ${isArabic ? "text-right" : "text-left"}
                                         ${deliveryMethod === "warehouse"
                                             ? "border-yellow-400 bg-yellow-400/10"
                                             : "border-slate-700 bg-slate-900 hover:border-yellow-400/50"
@@ -1019,32 +1248,25 @@ file directly in WhatsApp.
                                         🏭
                                     </div>
 
-                                    <h3 className="
-                                        text-xl
-                                        font-bold
-                                        mt-4
-                                    ">
-                                        Warehouse
+                                    <h3 className="text-xl font-bold mt-4">
+                                        {isArabic
+                                            ? "الاستلام من الموقع"
+                                            : "Warehouse Pickup"}
                                     </h3>
 
-                                    <p className="
-                                        text-gray-400
-                                        text-sm
-                                        mt-2
-                                    ">
-                                        Pickup from Aviation Sports Club – Heliopolis Branch – El Nozha Section
+                                    <p className="text-gray-400 text-sm mt-2">
+                                        {isArabic
+                                            ? "الاستلام من نادي الطيران الرياضي – فرع مصر الجديدة – قسم النزهة"
+                                            : "Pickup from Aviation Sports Club – Heliopolis Branch – El Nozha Section"}
                                     </p>
 
-                                    <p className="
-                                        text-green-400
-                                        font-bold
-                                        mt-4
-                                    ">
-                                        FREE
+                                    <p className="text-green-400 font-bold mt-4">
+                                        {isArabic
+                                            ? "مجانًا"
+                                            : "FREE"}
                                     </p>
 
                                 </button>
-
 
                                 {/* Metro */}
 
@@ -1055,11 +1277,11 @@ file directly in WhatsApp.
                                         setDeliveryAddress("");
                                     }}
                                     className={`
-                                        text-left
                                         rounded-2xl
                                         p-5
                                         border
                                         transition
+                                        ${isArabic ? "text-right" : "text-left"}
                                         ${deliveryMethod === "metro"
                                             ? "border-yellow-400 bg-yellow-400/10"
                                             : "border-slate-700 bg-slate-900 hover:border-yellow-400/50"
@@ -1071,33 +1293,25 @@ file directly in WhatsApp.
                                         🚇
                                     </div>
 
-                                    <h3 className="
-                                        text-xl
-                                        font-bold
-                                        mt-4
-                                    ">
-                                        Nearest Metro Station
+                                    <h3 className="text-xl font-bold mt-4">
+                                        {isArabic
+                                            ? "أقرب محطة مترو"
+                                            : "Nearest Metro Station"}
                                     </h3>
 
-                                    <p className="
-                                        text-gray-400
-                                        text-sm
-                                        mt-2
-                                    ">
-                                        Meet at your selected
-                                        metro station
+                                    <p className="text-gray-400 text-sm mt-2">
+                                        {isArabic
+                                            ? "مقابلة العميل في محطة المترو التي يحددها"
+                                            : "Meet at your selected metro station"}
                                     </p>
 
-                                    <p className="
-                                        text-yellow-400
-                                        font-bold
-                                        mt-4
-                                    ">
-                                        50 LE
+                                    <p className="text-yellow-400 font-bold mt-4">
+                                        {isArabic
+                                            ? "50 جنيه"
+                                            : "50 LE"}
                                     </p>
 
                                 </button>
-
 
                                 {/* Home */}
 
@@ -1108,11 +1322,11 @@ file directly in WhatsApp.
                                         setMetroStation("");
                                     }}
                                     className={`
-                                        text-left
                                         rounded-2xl
                                         p-5
                                         border
                                         transition
+                                        ${isArabic ? "text-right" : "text-left"}
                                         ${deliveryMethod === "home"
                                             ? "border-yellow-400 bg-yellow-400/10"
                                             : "border-slate-700 bg-slate-900 hover:border-yellow-400/50"
@@ -1124,35 +1338,27 @@ file directly in WhatsApp.
                                         🏠
                                     </div>
 
-                                    <h3 className="
-                                        text-xl
-                                        font-bold
-                                        mt-4
-                                    ">
-                                        Home Delivery
+                                    <h3 className="text-xl font-bold mt-4">
+                                        {isArabic
+                                            ? "التوصيل للمنزل"
+                                            : "Home Delivery"}
                                     </h3>
 
-                                    <p className="
-                                        text-gray-400
-                                        text-sm
-                                        mt-2
-                                    ">
-                                        Delivery directly to
-                                        your home
+                                    <p className="text-gray-400 text-sm mt-2">
+                                        {isArabic
+                                            ? "توصيل الطلب مباشرة إلى منزلك"
+                                            : "Delivery directly to your home"}
                                     </p>
 
-                                    <p className="
-                                        text-yellow-400
-                                        font-bold
-                                        mt-4
-                                    ">
-                                        150 LE
+                                    <p className="text-yellow-400 font-bold mt-4">
+                                        {isArabic
+                                            ? "150 جنيه"
+                                            : "150 LE"}
                                     </p>
 
                                 </button>
 
                             </div>
-
 
                             {/* Metro Station Select */}
 
@@ -1160,15 +1366,18 @@ file directly in WhatsApp.
 
                                 <div className="mt-5">
 
-                                    <label className="
-                                        block
-                                        text-gray-300
-                                        font-semibold
-                                        mb-2
-                                    ">
-                                        Select Metro Station
+                                    <label
+                                        className="
+                                            block
+                                            text-gray-300
+                                            font-semibold
+                                            mb-2
+                                        "
+                                    >
+                                        {isArabic
+                                            ? "اختر محطة المترو"
+                                            : "Select Metro Station"}
                                     </label>
-
 
                                     <select
                                         value={metroStation}
@@ -1193,7 +1402,9 @@ file directly in WhatsApp.
                                     >
 
                                         <option value="">
-                                            Select your metro station
+                                            {isArabic
+                                                ? "اختر محطة المترو"
+                                                : "Select your metro station"}
                                         </option>
 
                                         {metroStations.map(
@@ -1213,22 +1424,24 @@ file directly in WhatsApp.
 
                             )}
 
-
                             {/* Home Address */}
 
                             {deliveryMethod === "home" && (
 
                                 <div className="mt-5">
 
-                                    <label className="
-                                        block
-                                        text-gray-300
-                                        font-semibold
-                                        mb-2
-                                    ">
-                                        Delivery Address
+                                    <label
+                                        className="
+                                            block
+                                            text-gray-300
+                                            font-semibold
+                                            mb-2
+                                        "
+                                    >
+                                        {isArabic
+                                            ? "عنوان التوصيل"
+                                            : "Delivery Address"}
                                     </label>
-
 
                                     <textarea
                                         value={deliveryAddress}
@@ -1239,7 +1452,11 @@ file directly in WhatsApp.
                                         }
                                         required
                                         rows={3}
-                                        placeholder="Enter your full delivery address..."
+                                        placeholder={
+                                            isArabic
+                                                ? "اكتب عنوان التوصيل بالتفصيل..."
+                                                : "Enter your full delivery address..."
+                                        }
                                         className="
                                             w-full
                                             bg-slate-950
@@ -1260,69 +1477,85 @@ file directly in WhatsApp.
 
                         </div>
 
-
                         {/* ================================================== */}
-                        {/* ORDER SUMMARY - PRODUCTS ONLY */}
+                        {/* ORDER SUMMARY */}
                         {/* ================================================== */}
 
                         {quoteItems.length > 0 && (
 
                             <div className="mt-8">
 
-                                <div className="
-                                    bg-slate-900
-                                    border
-                                    border-yellow-400/30
-                                    rounded-2xl
-                                    p-6
-                                    md:p-7
-                                ">
+                                <div
+                                    className="
+                                        bg-slate-900
+                                        border
+                                        border-yellow-400/30
+                                        rounded-2xl
+                                        p-6
+                                        md:p-7
+                                    "
+                                >
 
-                                    <h2 className="
-                                        text-2xl
-                                        font-bold
-                                        mb-6
-                                    ">
+                                    <h2
+                                        className="
+                                            text-2xl
+                                            font-bold
+                                            mb-6
+                                        "
+                                    >
 
-                                        Order{" "}
+                                        {isArabic
+                                            ? "ملخص "
+                                            : "Order "}
 
                                         <span className="text-yellow-400">
-                                            Summary
+                                            {isArabic
+                                                ? "الطلب"
+                                                : "Summary"}
                                         </span>
 
                                     </h2>
 
-
                                     {/* Products Total */}
 
-                                    <div className="
-                                        flex
-                                        items-center
-                                        justify-between
-                                    ">
+                                    <div
+                                        className="
+                                            flex
+                                            items-center
+                                            justify-between
+                                        "
+                                    >
 
                                         <span className="text-gray-400">
-                                            Products Total
+                                            {isArabic
+                                                ? "إجمالي المنتجات"
+                                                : "Products Total"}
                                         </span>
 
                                         <span className="font-semibold">
-                                            {getTotal()} LE
+                                            {getTotal()}{" "}
+                                            {isArabic
+                                                ? "جنيه"
+                                                : "LE"}
                                         </span>
 
                                     </div>
 
-
                                     {/* Shipping */}
 
-                                    <div className="
-                                        flex
-                                        items-center
-                                        justify-between
-                                        mt-4
-                                    ">
+                                    <div
+                                        className="
+                                            flex
+                                            items-center
+                                            justify-between
+                                            mt-4
+                                        "
+                                    >
 
                                         <span className="text-gray-400">
-                                            Shipping
+                                            {isArabic
+                                                ? "التوصيل"
+                                                : "Shipping"}
                                         </span>
 
                                         <span
@@ -1333,44 +1566,59 @@ file directly in WhatsApp.
                                             }
                                         >
                                             {deliveryMethod === "warehouse"
-                                                ? "FREE"
-                                                : `${shippingCost} LE`}
+                                                ? isArabic
+                                                    ? "مجانًا"
+                                                    : "FREE"
+                                                : `${shippingCost} ${isArabic
+                                                    ? "جنيه"
+                                                    : "LE"
+                                                }`}
                                         </span>
 
                                     </div>
 
-
                                     {/* Divider */}
 
-                                    <div className="
-                                        border-t
-                                        border-slate-800
-                                        my-5
-                                    " />
-
+                                    <div
+                                        className="
+                                            border-t
+                                            border-slate-800
+                                            my-5
+                                        "
+                                    />
 
                                     {/* Final Total */}
 
-                                    <div className="
-                                        flex
-                                        items-center
-                                        justify-between
-                                    ">
+                                    <div
+                                        className="
+                                            flex
+                                            items-center
+                                            justify-between
+                                        "
+                                    >
 
-                                        <span className="
-                                            text-lg
-                                            font-bold
-                                        ">
-                                            Final Total
+                                        <span
+                                            className="
+                                                text-lg
+                                                font-bold
+                                            "
+                                        >
+                                            {isArabic
+                                                ? "الإجمالي النهائي"
+                                                : "Final Total"}
                                         </span>
 
-
-                                        <span className="
-                                            text-3xl
-                                            font-bold
-                                            text-yellow-400
-                                        ">
-                                            {getTotal() + shippingCost} LE
+                                        <span
+                                            className="
+                                                text-3xl
+                                                font-bold
+                                                text-yellow-400
+                                            "
+                                        >
+                                            {getTotal() + shippingCost}{" "}
+                                            {isArabic
+                                                ? "جنيه"
+                                                : "LE"}
                                         </span>
 
                                     </div>
@@ -1380,7 +1628,6 @@ file directly in WhatsApp.
                             </div>
 
                         )}
-
 
                         {/* ================================================== */}
                         {/* CUSTOMER FORM */}
@@ -1400,30 +1647,32 @@ file directly in WhatsApp.
 
                             <div className="mb-8">
 
-                                <h2 className="
-                                    text-3xl
-                                    font-bold
-                                ">
+                                <h2
+                                    className="
+                                        text-3xl
+                                        font-bold
+                                    "
+                                >
 
-                                    Project{" "}
+                                    {isArabic
+                                        ? "تفاصيل "
+                                        : "Project "}
 
                                     <span className="text-yellow-400">
-                                        Details
+                                        {isArabic
+                                            ? "المشروع"
+                                            : "Details"}
                                     </span>
 
                                 </h2>
 
-
-                                <p className="
-                                    text-gray-400
-                                    mt-2
-                                ">
-                                    Fill in your information and tell
-                                    us what you need.
+                                <p className="text-gray-400 mt-2">
+                                    {isArabic
+                                        ? "أدخل بياناتك وأخبرنا بما تحتاج إليه."
+                                        : "Fill in your information and tell us what you need."}
                                 </p>
 
                             </div>
-
 
                             <form
                                 onSubmit={handleSubmit}
@@ -1435,7 +1684,11 @@ file directly in WhatsApp.
                                 <input
                                     name="name"
                                     type="text"
-                                    placeholder="Full Name"
+                                    placeholder={
+                                        isArabic
+                                            ? "الاسم بالكامل"
+                                            : "Full Name"
+                                    }
                                     required
                                     className="
                                         bg-slate-950
@@ -1449,14 +1702,17 @@ file directly in WhatsApp.
                                         transition
                                     "
                                 />
-
 
                                 {/* Phone */}
 
                                 <input
                                     name="phone"
                                     type="tel"
-                                    placeholder="Phone Number"
+                                    placeholder={
+                                        isArabic
+                                            ? "رقم الهاتف"
+                                            : "Phone Number"
+                                    }
                                     required
                                     className="
                                         bg-slate-950
@@ -1470,14 +1726,17 @@ file directly in WhatsApp.
                                         transition
                                     "
                                 />
-
 
                                 {/* Email */}
 
                                 <input
                                     name="email"
                                     type="email"
-                                    placeholder="Email Address"
+                                    placeholder={
+                                        isArabic
+                                            ? "البريد الإلكتروني"
+                                            : "Email Address"
+                                    }
                                     required
                                     className="
                                         bg-slate-950
@@ -1491,7 +1750,6 @@ file directly in WhatsApp.
                                         transition
                                     "
                                 />
-
 
                                 {/* Service */}
 
@@ -1512,38 +1770,53 @@ file directly in WhatsApp.
                                 >
 
                                     <option value="">
-                                        Select Service
+                                        {isArabic
+                                            ? "اختر الخدمة"
+                                            : "Select Service"}
                                     </option>
 
                                     <option value="Laser Cutting">
-                                        Laser Cutting
+                                        {isArabic
+                                            ? "القص بالليزر"
+                                            : "Laser Cutting"}
                                     </option>
 
                                     <option value="Custom Gifts">
-                                        Custom Gifts
+                                        {isArabic
+                                            ? "هدايا مخصصة"
+                                            : "Custom Gifts"}
                                     </option>
 
                                     <option value="MDF Wall Art">
-                                        MDF Wall Art
+                                        {isArabic
+                                            ? "ديكورات حائط MDF"
+                                            : "MDF Wall Art"}
                                     </option>
 
                                     <option value="Business Signs">
-                                        Business Signs
+                                        {isArabic
+                                            ? "لافتات الأعمال"
+                                            : "Business Signs"}
                                     </option>
 
                                     <option value="Interior Decoration">
-                                        Interior Decoration
+                                        {isArabic
+                                            ? "ديكور داخلي"
+                                            : "Interior Decoration"}
                                     </option>
 
                                 </select>
-
 
                                 {/* Size */}
 
                                 <input
                                     name="size"
                                     type="text"
-                                    placeholder="Required Size (Example: 50x70 cm)"
+                                    placeholder={
+                                        isArabic
+                                            ? "المقاس المطلوب (مثال: 50×70 سم)"
+                                            : "Required Size (Example: 50x70 cm)"
+                                    }
                                     className="
                                         bg-slate-950
                                         border
@@ -1556,7 +1829,6 @@ file directly in WhatsApp.
                                         transition
                                     "
                                 />
-
 
                                 {/* Quantity */}
 
@@ -1564,7 +1836,11 @@ file directly in WhatsApp.
                                     name="quantity"
                                     type="number"
                                     min="1"
-                                    placeholder="Quantity"
+                                    placeholder={
+                                        isArabic
+                                            ? "الكمية"
+                                            : "Quantity"
+                                    }
                                     className="
                                         bg-slate-950
                                         border
@@ -1578,12 +1854,15 @@ file directly in WhatsApp.
                                     "
                                 />
 
-
                                 {/* Details */}
 
                                 <textarea
                                     name="message"
-                                    placeholder="Describe your idea..."
+                                    placeholder={
+                                        isArabic
+                                            ? "صف لنا فكرتك..."
+                                            : "Describe your idea..."
+                                    }
                                     rows={6}
                                     className="
                                         md:col-span-2
@@ -1598,7 +1877,6 @@ file directly in WhatsApp.
                                         transition
                                     "
                                 />
-
 
                                 {/* WhatsApp Design Note */}
 
@@ -1620,29 +1898,31 @@ file directly in WhatsApp.
                                             📎
                                         </div>
 
-
                                         <div>
 
-                                            <h3 className="
-                                                text-yellow-400
-                                                font-semibold
-                                                text-lg
-                                            ">
-                                                Have a design or reference?
+                                            <h3
+                                                className="
+                                                    text-yellow-400
+                                                    font-semibold
+                                                    text-lg
+                                                "
+                                            >
+                                                {isArabic
+                                                    ? "لديك تصميم أو صورة مرجعية؟"
+                                                    : "Have a design or reference?"}
                                             </h3>
 
-
-                                            <p className="
-                                                text-gray-400
-                                                text-sm
-                                                mt-2
-                                                leading-6
-                                            ">
-                                                Please attach your image,
-                                                drawing, reference, PDF,
-                                                SVG, DXF, or other design
-                                                file directly in WhatsApp
-                                                after submitting your request.
+                                            <p
+                                                className="
+                                                    text-gray-400
+                                                    text-sm
+                                                    mt-2
+                                                    leading-6
+                                                "
+                                            >
+                                                {isArabic
+                                                    ? "يرجى إرفاق الصورة أو الرسم أو المرجع أو PDF أو SVG أو DXF أو أي ملف تصميم آخر مباشرة في WhatsApp بعد إرسال الطلب."
+                                                    : "Please attach your image, drawing, reference, PDF, SVG, DXF, or other design file directly in WhatsApp after submitting your request."}
                                             </p>
 
                                         </div>
@@ -1650,7 +1930,6 @@ file directly in WhatsApp.
                                     </div>
 
                                 </div>
-
 
                                 {/* Submit */}
 
@@ -1668,7 +1947,9 @@ file directly in WhatsApp.
                                         transition
                                     "
                                 >
-                                    Submit Request
+                                    {isArabic
+                                        ? "إرسال الطلب"
+                                        : "Submit Request"}
                                 </button>
 
                             </form>

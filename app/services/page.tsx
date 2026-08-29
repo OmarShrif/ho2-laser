@@ -1,69 +1,106 @@
+"use client";
+
 import Link from "next/link";
-
-const services = [
-    {
-        title: "Laser Cutting",
-        icon: "⚡",
-        description:
-            "High precision laser cutting for MDF, wood, acrylic and custom materials.",
-        category: "Laser Cutting",
-    },
-
-    {
-        title: "Custom Gifts",
-        icon: "🎁",
-        description:
-            "Personalized gifts designed especially for birthdays, events and special occasions.",
-        category: "Custom Gifts",
-    },
-
-    {
-        title: "MDF Wall Art",
-        icon: "🖼️",
-        description:
-            "Modern decorative wall art with unique laser-cut patterns.",
-        category: "MDF Wall Art",
-    },
-
-    {
-        title: "Business Signs",
-        icon: "🏢",
-        description:
-            "Professional signs and logos for shops, offices and brands.",
-        category: "Business Signs",
-    },
-
-    {
-        title: "Interior Decoration",
-        icon: "🏠",
-        description:
-            "Custom decorative pieces that add a special touch to your space.",
-        category: "Interior Decoration",
-    },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function ServicesPage() {
+    const { isArabic } = useLanguage();
+
+    const services = [
+        {
+            title: isArabic
+                ? "قص الليزر"
+                : "Laser Cutting",
+
+            icon: "⚡",
+
+            description: isArabic
+                ? "قص بالليزر عالي الدقة للـ MDF والخشب والأكريليك والخامات المختلفة حسب التصميم."
+                : "High precision laser cutting for MDF, wood, acrylic and custom materials.",
+
+            category: "Laser Cutting",
+        },
+
+        {
+            title: isArabic
+                ? "هدايا مخصصة"
+                : "Custom Gifts",
+
+            icon: "🎁",
+
+            description: isArabic
+                ? "هدايا مخصصة بتصميمات مميزة لأعياد الميلاد والمناسبات والأحداث الخاصة."
+                : "Personalized gifts designed especially for birthdays, events and special occasions.",
+
+            category: "Custom Gifts",
+        },
+
+        {
+            title: isArabic
+                ? "ديكورات حائط MDF"
+                : "MDF Wall Art",
+
+            icon: "🖼️",
+
+            description: isArabic
+                ? "ديكورات حائط عصرية بتصميمات فريدة يتم تنفيذها بدقة باستخدام القطع بالليزر."
+                : "Modern decorative wall art with unique laser-cut patterns.",
+
+            category: "MDF Wall Art",
+        },
+
+        {
+            title: isArabic
+                ? "لافتات الشركات"
+                : "Business Signs",
+
+            icon: "🏢",
+
+            description: isArabic
+                ? "لافتات وشعارات احترافية للمحلات والمكاتب والعلامات التجارية."
+                : "Professional signs and logos for shops, offices and brands.",
+
+            category: "Business Signs",
+        },
+
+        {
+            title: isArabic
+                ? "ديكور داخلي"
+                : "Interior Decoration",
+
+            icon: "🏠",
+
+            description: isArabic
+                ? "قطع ديكورية مخصصة تضيف لمسة مميزة وأنيقة إلى المساحات الداخلية."
+                : "Custom decorative pieces that add a special touch to your space.",
+
+            category: "Interior Decoration",
+        },
+    ];
+
     return (
         <main className="min-h-screen bg-slate-950 text-white py-32">
 
             <div className="max-w-7xl mx-auto px-6">
 
-
                 {/* Header */}
 
                 <h1 className="text-6xl font-bold text-center">
 
-                    Our{" "}
+                    {isArabic ? "خدماتنا" : "Our "}
 
-                    <span className="text-yellow-400">
-                        Services
-                    </span>
+                    {!isArabic && (
+                        <span className="text-yellow-400">
+                            Services
+                        </span>
+                    )}
 
                 </h1>
 
-
                 <p className="text-center text-gray-400 text-xl mt-6 max-w-2xl mx-auto">
-                    Professional laser cutting solutions for personal and business projects.
+                    {isArabic
+                        ? "حلول احترافية للقص بالليزر لمشروعاتك الشخصية والتجارية."
+                        : "Professional laser cutting solutions for personal and business projects."}
                 </p>
 
 
@@ -121,7 +158,9 @@ export default function ServicesPage() {
                                 {/* Explore */}
 
                                 <div className="mt-8 text-yellow-400 font-semibold opacity-0 group-hover:opacity-100 transition duration-300">
-                                    Explore Designs →
+                                    {isArabic
+                                        ? "استكشف التصميمات ←"
+                                        : "Explore Designs →"}
                                 </div>
 
                             </div>

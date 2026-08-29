@@ -2,61 +2,29 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useQuote } from "@/context/QuoteContext";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navbar() {
     const pathname = usePathname();
 
     const [menuOpen, setMenuOpen] = useState(false);
-
-    const [language, setLanguage] = useState<"en" | "ar">("en");
-
     const [languageOpen, setLanguageOpen] = useState(false);
 
     const { quoteItems } = useQuote();
+
+    const {
+        language,
+        setLanguage,
+        isArabic,
+    } = useLanguage();
 
     const totalQuantity = quoteItems.reduce(
         (total, item) => total + item.quantity,
         0
     );
-
-
-    /*
-     * Load saved language
-     */
-
-    useEffect(() => {
-        const savedLanguage =
-            localStorage.getItem("ho2-language");
-
-        if (
-            savedLanguage === "ar" ||
-            savedLanguage === "en"
-        ) {
-            setLanguage(savedLanguage);
-        }
-    }, []);
-
-
-    /*
-     * Change language
-     */
-
-    const changeLanguage = (
-        newLanguage: "en" | "ar"
-    ) => {
-        setLanguage(newLanguage);
-
-        localStorage.setItem(
-            "ho2-language",
-            newLanguage
-        );
-
-        setLanguageOpen(false);
-    };
-
 
     /*
      * Close mobile menu
@@ -66,6 +34,56 @@ export default function Navbar() {
         setMenuOpen(false);
     };
 
+    /*
+     * Change language
+     */
+
+    const changeLanguage = (
+        newLanguage: "en" | "ar"
+    ) => {
+        setLanguage(newLanguage);
+        setLanguageOpen(false);
+    };
+
+    /*
+     * Navigation translations
+     */
+
+    const nav = {
+        home: isArabic ? "الرئيسية" : "Home",
+
+        services: isArabic
+            ? "الخدمات"
+            : "Services",
+
+        products: isArabic
+            ? "المنتجات"
+            : "Products",
+
+        about: isArabic
+            ? "من نحن"
+            : "About",
+
+        contact: isArabic
+            ? "تواصل معنا"
+            : "Contact",
+
+        cart: isArabic
+            ? "السلة"
+            : "Cart",
+
+        requestDesign: isArabic
+            ? "اطلب تصميمك"
+            : "Request Custom Design",
+
+        language: isArabic
+            ? "اللغة"
+            : "Language",
+
+        english: "English",
+
+        arabic: "العربية",
+    };
 
     return (
         <header
@@ -121,7 +139,6 @@ export default function Navbar() {
                 </Link>
 
 
-
                 {/* ========================= */}
                 {/* Desktop Navigation */}
                 {/* ========================= */}
@@ -138,6 +155,8 @@ export default function Navbar() {
                     "
                 >
 
+                    {/* Home */}
+
                     <Link
                         href="/"
                         className={`
@@ -149,9 +168,11 @@ export default function Navbar() {
                             }
                         `}
                     >
-                        Home
+                        {nav.home}
                     </Link>
 
+
+                    {/* Services */}
 
                     <Link
                         href="/services"
@@ -164,9 +185,11 @@ export default function Navbar() {
                             }
                         `}
                     >
-                        Services
+                        {nav.services}
                     </Link>
 
+
+                    {/* Products */}
 
                     <Link
                         href="/portfolio"
@@ -179,9 +202,11 @@ export default function Navbar() {
                             }
                         `}
                     >
-                        Products
+                        {nav.products}
                     </Link>
 
+
+                    {/* About */}
 
                     <Link
                         href="/about"
@@ -194,9 +219,11 @@ export default function Navbar() {
                             }
                         `}
                     >
-                        About
+                        {nav.about}
                     </Link>
 
+
+                    {/* Contact */}
 
                     <Link
                         href="/contact"
@@ -209,9 +236,8 @@ export default function Navbar() {
                             }
                         `}
                     >
-                        Contact
+                        {nav.contact}
                     </Link>
-
 
 
                     {/* ========================= */}
@@ -231,7 +257,7 @@ export default function Navbar() {
                         `}
                     >
 
-                        Cart 🛒
+                        {nav.cart} 🛒
 
                         {totalQuantity > 0 && (
                             <span
@@ -259,9 +285,8 @@ export default function Navbar() {
                     </Link>
 
 
-
                     {/* ========================= */}
-                    {/* Language Selector */}
+                    {/* Desktop Language */}
                     {/* ========================= */}
 
                     <div className="relative">
@@ -305,13 +330,11 @@ export default function Navbar() {
                         </button>
 
 
-
                         {languageOpen && (
 
                             <div
-                                className="
+                                className={`
                                     absolute
-                                    right-0
                                     top-12
                                     w-36
                                     bg-slate-900
@@ -320,8 +343,14 @@ export default function Navbar() {
                                     rounded-xl
                                     shadow-xl
                                     overflow-hidden
-                                "
+                                    ${isArabic
+                                        ? "left-0"
+                                        : "right-0"
+                                    }
+                                `}
                             >
+
+                                {/* English */}
 
                                 <button
                                     type="button"
@@ -343,6 +372,8 @@ export default function Navbar() {
                                     🇬🇧 English
                                 </button>
 
+
+                                {/* Arabic */}
 
                                 <button
                                     type="button"
@@ -373,7 +404,6 @@ export default function Navbar() {
                 </nav>
 
 
-
                 {/* ========================= */}
                 {/* Desktop CTA */}
                 {/* ========================= */}
@@ -393,9 +423,8 @@ export default function Navbar() {
                         transition
                     "
                 >
-                    Request Custom Design
+                    {nav.requestDesign}
                 </Link>
-
 
 
                 {/* ========================= */}
@@ -426,7 +455,7 @@ export default function Navbar() {
                         "
                     >
 
-                        Cart 🛒
+                        {nav.cart} 🛒
 
                         {totalQuantity > 0 && (
                             <span
@@ -452,7 +481,6 @@ export default function Navbar() {
                         )}
 
                     </Link>
-
 
 
                     {/* Mobile Language */}
@@ -489,7 +517,6 @@ export default function Navbar() {
                             : "EN"}
 
                     </button>
-
 
 
                     {/* Hamburger */}
@@ -571,7 +598,6 @@ export default function Navbar() {
             </div>
 
 
-
             {/* ========================= */}
             {/* Mobile Menu */}
             {/* ========================= */}
@@ -597,6 +623,8 @@ export default function Navbar() {
                         "
                     >
 
+                        {/* Home */}
+
                         <Link
                             href="/"
                             onClick={closeMenu}
@@ -611,9 +639,11 @@ export default function Navbar() {
                                 }
                             `}
                         >
-                            Home
+                            {nav.home}
                         </Link>
 
+
+                        {/* Services */}
 
                         <Link
                             href="/services"
@@ -629,9 +659,11 @@ export default function Navbar() {
                                 }
                             `}
                         >
-                            Services
+                            {nav.services}
                         </Link>
 
+
+                        {/* Products */}
 
                         <Link
                             href="/portfolio"
@@ -647,9 +679,11 @@ export default function Navbar() {
                                 }
                             `}
                         >
-                            Products
+                            {nav.products}
                         </Link>
 
+
+                        {/* About */}
 
                         <Link
                             href="/about"
@@ -665,9 +699,11 @@ export default function Navbar() {
                                 }
                             `}
                         >
-                            About
+                            {nav.about}
                         </Link>
 
+
+                        {/* Contact */}
 
                         <Link
                             href="/contact"
@@ -683,7 +719,7 @@ export default function Navbar() {
                                 }
                             `}
                         >
-                            Contact
+                            {nav.contact}
                         </Link>
 
 
@@ -708,7 +744,7 @@ export default function Navbar() {
                         >
 
                             <span>
-                                Cart 🛒
+                                {nav.cart} 🛒
                             </span>
 
 
@@ -739,7 +775,6 @@ export default function Navbar() {
                         </Link>
 
 
-
                         {/* Mobile Language */}
 
                         <div
@@ -752,11 +787,13 @@ export default function Navbar() {
                         >
 
                             <p className="text-gray-500 text-xs uppercase tracking-wider px-4 mb-2">
-                                Language
+                                {nav.language}
                             </p>
 
 
                             <div className="grid grid-cols-2 gap-2">
+
+                                {/* English */}
 
                                 <button
                                     type="button"
@@ -775,9 +812,11 @@ export default function Navbar() {
                                         }
                                     `}
                                 >
-                                    🇬🇧 English
+                                    🇬🇧 {nav.english}
                                 </button>
 
+
+                                {/* Arabic */}
 
                                 <button
                                     type="button"
@@ -796,7 +835,7 @@ export default function Navbar() {
                                         }
                                     `}
                                 >
-                                    🇪🇬 العربية
+                                    🇪🇬 {nav.arabic}
                                 </button>
 
                             </div>

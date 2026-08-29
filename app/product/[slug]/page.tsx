@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 
 import { products } from "@/data/products";
 import { useQuote } from "@/context/QuoteContext";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function ProductPage() {
     const params = useParams();
@@ -22,8 +23,56 @@ export default function ProductPage() {
         isInQuote,
     } = useQuote();
 
+    const { isArabic } = useLanguage();
+
     /*
-     * Product not found
+     * =========================
+     * Product Page Translations
+     * =========================
+     */
+
+    const text = {
+        productNotFound: isArabic
+            ? "المنتج غير موجود"
+            : "Product Not Found",
+
+        backToPortfolio: isArabic
+            ? "العودة إلى المنتجات"
+            : "Back to Portfolio",
+
+        price: isArabic
+            ? "السعر"
+            : "Price",
+
+        material: isArabic
+            ? "الخامة"
+            : "Material",
+
+        size: isArabic
+            ? "المقاس"
+            : "Size",
+
+        addedToCart: isArabic
+            ? "✓ تمت الإضافة إلى السلة"
+            : "✓ Added to Cart",
+
+        addToCart: isArabic
+            ? "+ أضف إلى السلة"
+            : "+ Add to Cart",
+
+        viewCart: isArabic
+            ? "🛒 عرض السلة"
+            : "🛒 View Cart",
+
+        cartInfo: isArabic
+            ? "💡 يمكنك إضافة أكثر من منتج إلى السلة وتعديل الكمية قبل إرسال طلبك."
+            : "💡 You can add multiple products to your cart and adjust the quantity before submitting your request.",
+    };
+
+    /*
+     * =========================
+     * Product Not Found
+     * =========================
      */
 
     if (!product) {
@@ -33,14 +82,14 @@ export default function ProductPage() {
                 <div className="text-center">
 
                     <h1 className="text-4xl font-bold">
-                        Product Not Found
+                        {text.productNotFound}
                     </h1>
 
                     <Link
                         href="/portfolio"
                         className="inline-block mt-6 bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold hover:bg-yellow-300 transition"
                     >
-                        Back to Portfolio
+                        {text.backToPortfolio}
                     </Link>
 
                 </div>
@@ -50,36 +99,44 @@ export default function ProductPage() {
     }
 
     /*
-     * Check if product is already in Cart
+     * =========================
+     * Product Data
+     * =========================
+     *
+     * حالياً بيانات المنتجات نفسها موجودة بالإنجليزي
+     * في products.ts.
+     *
+     * لذلك سنستخدم البيانات كما هي مؤقتاً.
+     *
+     * ترجمة أسماء ووصف المنتجات نضيفها بعد ذلك
+     * في translations.ts.
      */
 
     const added = isInQuote(product.slug);
 
     /*
-     * Add / Remove product
+     * =========================
+     * Add / Remove Product
+     * =========================
      */
 
     const handleQuote = () => {
-
         if (added) {
-
             removeFromQuote(product.slug);
-
         } else {
-
             addToQuote(product);
-
         }
-
     };
 
     return (
-        <main className="min-h-screen bg-slate-950 text-white py-32">
+        <main
+            className={`min-h-screen bg-slate-950 text-white py-32 ${isArabic ? "text-right" : "text-left"
+                }`}
+        >
 
             <div className="max-w-7xl mx-auto px-6">
 
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
-
 
                     {/* =========================
                         Product Image
@@ -132,7 +189,7 @@ export default function ProductPage() {
                         <div className="mt-8">
 
                             <p className="text-gray-400 text-sm uppercase tracking-wider">
-                                Price
+                                {text.price}
                             </p>
 
                             <p className="text-4xl font-bold text-yellow-400 mt-1">
@@ -150,11 +207,17 @@ export default function ProductPage() {
 
                             <p>
                                 🪵{" "}
+
                                 <span className="text-gray-300">
-                                    Material:
+                                    {text.material}:
                                 </span>
 
-                                <span className="text-yellow-400 ml-2">
+                                <span
+                                    className={`text-yellow-400 ${isArabic
+                                        ? "mr-2"
+                                        : "ml-2"
+                                        }`}
+                                >
                                     {product.material}
                                 </span>
                             </p>
@@ -162,11 +225,17 @@ export default function ProductPage() {
 
                             <p>
                                 📏{" "}
+
                                 <span className="text-gray-300">
-                                    Size:
+                                    {text.size}:
                                 </span>
 
-                                <span className="text-yellow-400 ml-2">
+                                <span
+                                    className={`text-yellow-400 ${isArabic
+                                        ? "mr-2"
+                                        : "ml-2"
+                                        }`}
+                                >
                                     {product.size}
                                 </span>
                             </p>
@@ -178,10 +247,14 @@ export default function ProductPage() {
                             Actions
                         ========================= */}
 
-                        <div className="flex flex-col sm:flex-row gap-4 mt-12">
+                        <div
+                            className={`flex flex-col sm:flex-row gap-4 mt-12 ${isArabic
+                                ? "sm:flex-row-reverse"
+                                : ""
+                                }`}
+                        >
 
-
-                            {/* Add To Quote */}
+                            {/* Add To Cart */}
 
                             <button
                                 onClick={handleQuote}
@@ -190,11 +263,9 @@ export default function ProductPage() {
                                     : "bg-yellow-400 text-black hover:bg-yellow-300"
                                     }`}
                             >
-
                                 {added
-                                    ? "✓ Added to Cart"
-                                    : "+ Add to Cart"}
-
+                                    ? text.addedToCart
+                                    : text.addToCart}
                             </button>
 
 
@@ -204,7 +275,7 @@ export default function ProductPage() {
                                 href="/quote"
                                 className="px-8 py-4 rounded-xl border border-slate-700 text-white font-semibold text-center hover:border-yellow-400 hover:text-yellow-400 transition"
                             >
-                                🛒 View Cart
+                                {text.viewCart}
                             </Link>
 
                         </div>
@@ -217,9 +288,7 @@ export default function ProductPage() {
                         <div className="mt-8 bg-slate-900 border border-slate-800 rounded-2xl p-5">
 
                             <p className="text-gray-400 text-sm leading-6">
-                                💡 You can add multiple products to your cart
-                                and adjust the quantity before submitting your
-                                request.
+                                {text.cartInfo}
                             </p>
 
                         </div>
@@ -231,7 +300,7 @@ export default function ProductPage() {
                             href="/portfolio"
                             className="inline-block mt-8 text-gray-400 hover:text-yellow-400 transition"
                         >
-                            ← Back to Portfolio
+                            {text.backToPortfolio}
                         </Link>
 
                     </div>

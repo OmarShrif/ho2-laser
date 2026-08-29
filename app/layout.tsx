@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { LanguageProvider } from "@/context/LanguageContext";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { QuoteProvider } from "@/context/QuoteContext";
 
@@ -33,19 +34,23 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
 
-        <QuoteProvider>
+        <LanguageProvider>
 
-          <Navbar />
+          <QuoteProvider>
 
-          <main className="flex-1">
-            {children}
-          </main>
+            <Navbar />
 
-          <Footer />
+            <main className="flex-1">
+              {children}
+            </main>
 
-          <WhatsAppButton />
+            <Footer />
 
-        </QuoteProvider>
+            <WhatsAppButton />
+
+          </QuoteProvider>
+          
+        </LanguageProvider>
 
       </body>
     </html>

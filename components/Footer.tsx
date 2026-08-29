@@ -1,15 +1,29 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+    const { isArabic } = useLanguage();
+
     return (
-        <footer className="bg-slate-950 text-gray-400 border-t border-slate-800">
+        <footer
+            className="
+                bg-slate-950
+                text-gray-400
+                border-t
+                border-slate-800
+            "
+        >
 
             <div className="max-w-7xl mx-auto px-6 py-16">
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
 
 
+                    {/* ========================= */}
                     {/* Company */}
+                    {/* ========================= */}
 
                     <div>
 
@@ -18,19 +32,24 @@ export default function Footer() {
                         </h2>
 
                         <p className="mt-4 leading-7">
-                            Premium laser cutting and engraving services
-                            for homes, businesses, and personalized gifts.
+                            {isArabic
+                                ? "خدمات قص وحفر بالليزر بجودة عالية للمنازل والشركات والهدايا المخصصة."
+                                : "Premium laser cutting and engraving services for homes, businesses, and personalized gifts."}
                         </p>
 
                     </div>
 
 
+                    {/* ========================= */}
                     {/* Quick Links */}
+                    {/* ========================= */}
 
                     <div>
 
                         <h3 className="text-white font-bold mb-4">
-                            Quick Links
+                            {isArabic
+                                ? "روابط سريعة"
+                                : "Quick Links"}
                         </h3>
 
                         <ul className="space-y-3">
@@ -40,52 +59,59 @@ export default function Footer() {
                                     href="/"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    Home
+                                    {isArabic ? "الرئيسية" : "Home"}
                                 </Link>
                             </li>
+
 
                             <li>
                                 <Link
                                     href="/services"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    Services
+                                    {isArabic ? "الخدمات" : "Services"}
                                 </Link>
                             </li>
+
 
                             <li>
                                 <Link
                                     href="/portfolio"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    Products
+                                    {isArabic ? "المنتجات" : "Products"}
                                 </Link>
                             </li>
+
 
                             <li>
                                 <Link
                                     href="/about"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    About
+                                    {isArabic ? "من نحن" : "About"}
                                 </Link>
                             </li>
+
 
                             <li>
                                 <Link
                                     href="/contact"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    Contact
+                                    {isArabic ? "تواصل معنا" : "Contact"}
                                 </Link>
                             </li>
+
 
                             <li>
                                 <Link
                                     href="/quote"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    Request a Quote
+                                    {isArabic
+                                        ? "اطلب عرض سعر"
+                                        : "Request a Quote"}
                                 </Link>
                             </li>
 
@@ -94,12 +120,16 @@ export default function Footer() {
                     </div>
 
 
+                    {/* ========================= */}
                     {/* Services */}
+                    {/* ========================= */}
 
                     <div>
 
                         <h3 className="text-white font-bold mb-4">
-                            Services
+                            {isArabic
+                                ? "الخدمات"
+                                : "Services"}
                         </h3>
 
                         <ul className="space-y-3">
@@ -109,7 +139,9 @@ export default function Footer() {
                                     href="/portfolio?category=Laser%20Cutting"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    Laser Cutting
+                                    {isArabic
+                                        ? "قص بالليزر"
+                                        : "Laser Cutting"}
                                 </Link>
                             </li>
 
@@ -119,7 +151,9 @@ export default function Footer() {
                                     href="/portfolio?category=Custom%20Gifts"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    Custom Gifts
+                                    {isArabic
+                                        ? "هدايا مخصصة"
+                                        : "Custom Gifts"}
                                 </Link>
                             </li>
 
@@ -129,7 +163,9 @@ export default function Footer() {
                                     href="/portfolio?category=MDF%20Wall%20Art"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    MDF Wall Art
+                                    {isArabic
+                                        ? "ديكورات MDF للحائط"
+                                        : "MDF Wall Art"}
                                 </Link>
                             </li>
 
@@ -139,7 +175,9 @@ export default function Footer() {
                                     href="/portfolio?category=Business%20Signs"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    Business Signs
+                                    {isArabic
+                                        ? "لافتات تجارية"
+                                        : "Business Signs"}
                                 </Link>
                             </li>
 
@@ -149,7 +187,9 @@ export default function Footer() {
                                     href="/portfolio?category=Interior%20Decoration"
                                     className="hover:text-yellow-400 transition"
                                 >
-                                    Interior Decoration
+                                    {isArabic
+                                        ? "ديكور داخلي"
+                                        : "Interior Decoration"}
                                 </Link>
                             </li>
 
@@ -158,19 +198,28 @@ export default function Footer() {
                     </div>
 
 
+                    {/* ========================= */}
                     {/* Contact */}
+                    {/* ========================= */}
 
                     <div>
 
                         <h3 className="text-white font-bold mb-4">
-                            Contact
+                            {isArabic
+                                ? "تواصل معنا"
+                                : "Contact"}
                         </h3>
+
 
                         <div className="space-y-3">
 
                             <p>
-                                📍 Egypt
+                                📍{" "}
+                                {isArabic
+                                    ? "مصر"
+                                    : "Egypt"}
                             </p>
+
 
                             <a
                                 href="tel:+201158636667"
@@ -178,6 +227,7 @@ export default function Footer() {
                             >
                                 📞 +20 115 863 6667
                             </a>
+
 
                             <a
                                 href="mailto:ho2laser@gmail.com"
@@ -193,11 +243,24 @@ export default function Footer() {
                 </div>
 
 
+                {/* ========================= */}
                 {/* Bottom */}
+                {/* ========================= */}
 
-                <div className="border-t border-slate-800 mt-12 pt-6 text-center text-sm">
+                <div
+                    className="
+                        border-t
+                        border-slate-800
+                        mt-12
+                        pt-6
+                        text-center
+                        text-sm
+                    "
+                >
 
-                    © 2026 HO2 Creations. All rights reserved.
+                    {isArabic
+                        ? "© 2026 HO2 Creations. جميع الحقوق محفوظة."
+                        : "© 2026 HO2 Creations. All rights reserved."}
 
                 </div>
 
