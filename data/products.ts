@@ -384,7 +384,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "Elegant tree artwork combining natural inspiration with precision laser-cut craftsmanship.",
-        price: 550,
+        price: 670,
         featured: false,
     },
 
