@@ -65,7 +65,9 @@ export default function PortfolioContent() {
     };
 
     /*
+     * =========================
      * Category translations
+     * =========================
      *
      * Internal category values remain English
      * so filtering and URLs continue to work.
@@ -98,7 +100,9 @@ export default function PortfolioContent() {
     };
 
     /*
+     * =========================
      * Portfolio translations
+     * =========================
      */
 
     const text = {
@@ -173,10 +177,9 @@ export default function PortfolioContent() {
                     </p>
 
                     <h1 className="text-5xl md:text-6xl font-bold mt-4">
+
                         {isArabic ? (
-                            <>
-                                {text.products}
-                            </>
+                            text.products
                         ) : (
                             <>
                                 Our{" "}
@@ -185,6 +188,7 @@ export default function PortfolioContent() {
                                 </span>
                             </>
                         )}
+
                     </h1>
 
                     <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
@@ -192,6 +196,7 @@ export default function PortfolioContent() {
                     </p>
 
                 </div>
+
 
                 {/* =========================
                     Categories
@@ -218,6 +223,7 @@ export default function PortfolioContent() {
 
                 </div>
 
+
                 {/* =========================
                     Products Count
                 ========================= */}
@@ -228,10 +234,15 @@ export default function PortfolioContent() {
                             : "text-left"
                         }`}
                 >
+
                     {text.showing}{" "}
 
                     <span className="text-yellow-400 font-semibold">
-                        {filteredProducts.length}
+
+                        {isArabic
+                            ? filteredProducts.length.toLocaleString("ar-EG")
+                            : filteredProducts.length}
+
                     </span>{" "}
 
                     {filteredProducts.length === 1
@@ -248,7 +259,9 @@ export default function PortfolioContent() {
                             </span>
                         </>
                     )}
+
                 </div>
+
 
                 {/* =========================
                     Products Grid
@@ -264,13 +277,9 @@ export default function PortfolioContent() {
                                 isInQuote(product.slug);
 
                             /*
-                             * Get translated product data.
-                             *
-                             * productTranslations is safely
-                             * accessed using the product slug.
-                             *
-                             * If translation is missing,
-                             * original product data is used.
+                             * =========================
+                             * Translated Product Data
+                             * =========================
                              */
 
                             const translatedProduct =
@@ -298,11 +307,37 @@ export default function PortfolioContent() {
                                 translatedProduct?.size ??
                                 product.size;
 
+                            /*
+                             * =========================
+                             * Price
+                             * =========================
+                             *
+                             * English:
+                             * 280 LE
+                             *
+                             * Arabic:
+                             * ٢٨٠ جنيه
+                             */
+
+                            const formattedPrice =
+                                isArabic
+                                    ? product.price.toLocaleString("ar-EG")
+                                    : product.price.toLocaleString("en-US");
+
                             return (
 
                                 <div
                                     key={product.slug}
-                                    className="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-yellow-400/50 transition duration-300"
+                                    className="
+                                        bg-slate-900
+                                        rounded-2xl
+                                        overflow-hidden
+                                        border
+                                        border-slate-800
+                                        hover:border-yellow-400/50
+                                        transition
+                                        duration-300
+                                    "
                                 >
 
                                     {/* =========================
@@ -310,7 +345,12 @@ export default function PortfolioContent() {
                                     ========================= */}
 
                                     <div
-                                        className="relative h-80 overflow-hidden cursor-zoom-in"
+                                        className="
+                                            relative
+                                            h-80
+                                            overflow-hidden
+                                            cursor-zoom-in
+                                        "
                                         onClick={() =>
                                             setSelectedProduct(product)
                                         }
@@ -320,10 +360,16 @@ export default function PortfolioContent() {
                                             src={product.image}
                                             alt={productTitle}
                                             fill
-                                            className="object-cover hover:scale-105 transition duration-500"
+                                            className="
+                                                object-cover
+                                                hover:scale-105
+                                                transition
+                                                duration-500
+                                            "
                                         />
 
                                     </div>
+
 
                                     {/* =========================
                                         Details
@@ -342,6 +388,7 @@ export default function PortfolioContent() {
                                             {productCategory}
                                         </p>
 
+
                                         {/* Title */}
 
                                         <h2
@@ -353,7 +400,10 @@ export default function PortfolioContent() {
                                             {productTitle}
                                         </h2>
 
-                                        {/* Price */}
+
+                                        {/* =========================
+                                            Price
+                                        ========================= */}
 
                                         <div
                                             className={`mt-4 ${isArabic
@@ -362,22 +412,35 @@ export default function PortfolioContent() {
                                                 }`}
                                         >
 
-                                            <span className="text-3xl font-bold text-yellow-400">
-                                                {product.price}
-                                            </span>
-
                                             <span
-                                                className={`text-gray-400 text-lg ${isArabic
-                                                        ? "mr-2"
-                                                        : "ml-2"
-                                                    }`}
+                                                className="
+                                                    text-3xl
+                                                    font-bold
+                                                    text-yellow-400
+                                                "
                                             >
-                                                LE
+
+                                                <bdi
+                                                    dir={
+                                                        isArabic
+                                                            ? "rtl"
+                                                            : "ltr"
+                                                    }
+                                                >
+                                                    {formattedPrice}{" "}
+                                                    {isArabic
+                                                        ? "جنيه"
+                                                        : "LE"}
+                                                </bdi>
+
                                             </span>
 
                                         </div>
 
-                                        {/* Description */}
+
+                                        {/* =========================
+                                            Description
+                                        ========================= */}
 
                                         <p
                                             className={`text-gray-400 mt-3 line-clamp-2 ${isArabic
@@ -387,6 +450,7 @@ export default function PortfolioContent() {
                                         >
                                             {productDescription}
                                         </p>
+
 
                                         {/* =========================
                                             Product Information
@@ -399,15 +463,38 @@ export default function PortfolioContent() {
                                                 }`}
                                         >
 
-                                            <span className="bg-slate-950 border border-slate-700 text-gray-300 text-sm px-3 py-1.5 rounded-full">
+                                            <span
+                                                className="
+                                                    bg-slate-950
+                                                    border
+                                                    border-slate-700
+                                                    text-gray-300
+                                                    text-sm
+                                                    px-3
+                                                    py-1.5
+                                                    rounded-full
+                                                "
+                                            >
                                                 {productMaterial}
                                             </span>
 
-                                            <span className="bg-slate-950 border border-slate-700 text-gray-300 text-sm px-3 py-1.5 rounded-full">
+                                            <span
+                                                className="
+                                                    bg-slate-950
+                                                    border
+                                                    border-slate-700
+                                                    text-gray-300
+                                                    text-sm
+                                                    px-3
+                                                    py-1.5
+                                                    rounded-full
+                                                "
+                                            >
                                                 {productSize}
                                             </span>
 
                                         </div>
+
 
                                         {/* =========================
                                             Buttons
@@ -417,10 +504,22 @@ export default function PortfolioContent() {
 
                                             <Link
                                                 href={`/product/${product.slug}`}
-                                                className="text-center border border-slate-700 text-white py-3 rounded-xl font-semibold hover:border-yellow-400 hover:text-yellow-400 transition"
+                                                className="
+                                                    text-center
+                                                    border
+                                                    border-slate-700
+                                                    text-white
+                                                    py-3
+                                                    rounded-xl
+                                                    font-semibold
+                                                    hover:border-yellow-400
+                                                    hover:text-yellow-400
+                                                    transition
+                                                "
                                             >
                                                 {text.viewDetails}
                                             </Link>
+
 
                                             <button
                                                 onClick={() => {
@@ -484,7 +583,18 @@ export default function PortfolioContent() {
 
                         <Link
                             href="/quote"
-                            className="inline-block mt-8 bg-yellow-400 text-black px-8 py-4 rounded-xl font-bold hover:bg-yellow-300 transition"
+                            className="
+                                inline-block
+                                mt-8
+                                bg-yellow-400
+                                text-black
+                                px-8
+                                py-4
+                                rounded-xl
+                                font-bold
+                                hover:bg-yellow-300
+                                transition
+                            "
                         >
                             {text.customDesign}
                         </Link>
@@ -494,6 +604,7 @@ export default function PortfolioContent() {
                 )}
 
             </div>
+
 
             {/* =========================
                 Lightbox

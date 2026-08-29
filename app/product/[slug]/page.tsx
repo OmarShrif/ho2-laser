@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 
 import { products } from "@/data/products";
+import { productTranslations } from "@/data/productTranslations";
 import { useQuote } from "@/context/QuoteContext";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -23,11 +24,11 @@ export default function ProductPage() {
         isInQuote,
     } = useQuote();
 
-    const { isArabic } = useLanguage();
+    const { language, isArabic } = useLanguage();
 
     /*
      * =========================
-     * Product Page Translations
+     * Product Not Found Text
      * =========================
      */
 
@@ -57,7 +58,7 @@ export default function ProductPage() {
             : "✓ Added to Cart",
 
         addToCart: isArabic
-            ? "+ أضف إلى السلة"
+            ? "أضف إلى السلة +"
             : "+ Add to Cart",
 
         viewCart: isArabic
@@ -77,7 +78,18 @@ export default function ProductPage() {
 
     if (!product) {
         return (
-            <main className="min-h-screen bg-slate-950 text-white flex items-center justify-center">
+            <main
+                dir={isArabic ? "rtl" : "ltr"}
+                className="
+                    min-h-screen
+                    bg-slate-950
+                    text-white
+                    flex
+                    items-center
+                    justify-center
+                    px-6
+                "
+            >
 
                 <div className="text-center">
 
@@ -87,7 +99,18 @@ export default function ProductPage() {
 
                     <Link
                         href="/portfolio"
-                        className="inline-block mt-6 bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold hover:bg-yellow-300 transition"
+                        className="
+                            inline-block
+                            mt-6
+                            bg-yellow-400
+                            text-black
+                            px-6
+                            py-3
+                            rounded-xl
+                            font-semibold
+                            hover:bg-yellow-300
+                            transition
+                        "
                     >
                         {text.backToPortfolio}
                     </Link>
@@ -100,16 +123,51 @@ export default function ProductPage() {
 
     /*
      * =========================
-     * Product Data
+     * Product Translation
      * =========================
      *
-     * حالياً بيانات المنتجات نفسها موجودة بالإنجليزي
-     * في products.ts.
+     * Get translated product information
+     * from productTranslations.ts
+     */
+
+    const translation =
+        productTranslations[
+        product.slug as keyof typeof productTranslations
+        ]?.[language];
+
+    /*
+     * =========================
+     * Display Data
+     * =========================
      *
-     * لذلك سنستخدم البيانات كما هي مؤقتاً.
-     *
-     * ترجمة أسماء ووصف المنتجات نضيفها بعد ذلك
-     * في translations.ts.
+     * If translation exists, use it.
+     * Otherwise fallback to products.ts
+     */
+
+    const title =
+        translation?.title ??
+        product.title;
+
+    const category =
+        translation?.category ??
+        product.category;
+
+    const material =
+        translation?.material ??
+        product.material;
+
+    const size =
+        translation?.size ??
+        product.size;
+
+    const description =
+        translation?.description ??
+        product.description;
+
+    /*
+     * =========================
+     * Cart State
+     * =========================
      */
 
     const added = isInQuote(product.slug);
@@ -130,26 +188,45 @@ export default function ProductPage() {
 
     return (
         <main
-            className={`min-h-screen bg-slate-950 text-white py-32 ${isArabic ? "text-right" : "text-left"
-                }`}
+            dir={isArabic ? "rtl" : "ltr"}
+            className="
+                min-h-screen
+                bg-slate-950
+                text-white
+                py-32
+            "
         >
 
             <div className="max-w-7xl mx-auto px-6">
 
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="
+                    grid
+                    lg:grid-cols-2
+                    gap-16
+                    items-center
+                ">
 
                     {/* =========================
                         Product Image
                     ========================= */}
 
-                    <div className="relative h-[500px] lg:h-[600px]">
+                    <div
+                        className="
+                            relative
+                            h-[500px]
+                            lg:h-[600px]
+                        "
+                    >
 
                         <Image
                             src={product.image}
-                            alt={product.title}
+                            alt={title}
                             fill
                             priority
-                            className="object-cover rounded-3xl"
+                            className="
+                                object-cover
+                                rounded-3xl
+                            "
                         />
 
                     </div>
@@ -161,24 +238,53 @@ export default function ProductPage() {
 
                     <div>
 
-                        {/* Category */}
+                        {/* =========================
+                            Category
+                        ========================= */}
 
-                        <p className="text-yellow-400 uppercase tracking-[0.2em] text-sm font-semibold">
-                            {product.category}
+                        <p
+                            className="
+                                text-yellow-400
+                                uppercase
+                                tracking-[0.2em]
+                                text-sm
+                                font-semibold
+                            "
+                        >
+                            {category}
                         </p>
 
 
-                        {/* Title */}
+                        {/* =========================
+                            Title
+                        ========================= */}
 
-                        <h1 className="text-5xl md:text-6xl font-bold mt-5">
-                            {product.title}
+                        <h1
+                            className="
+                                text-5xl
+                                md:text-6xl
+                                font-bold
+                                mt-5
+                            "
+                        >
+                            {title}
                         </h1>
 
 
-                        {/* Description */}
+                        {/* =========================
+                            Description
+                        ========================= */}
 
-                        <p className="text-gray-300 text-lg md:text-xl mt-8 leading-9">
-                            {product.description}
+                        <p
+                            className="
+                                text-gray-300
+                                text-lg
+                                md:text-xl
+                                mt-8
+                                leading-9
+                            "
+                        >
+                            {description}
                         </p>
 
 
@@ -188,12 +294,31 @@ export default function ProductPage() {
 
                         <div className="mt-8">
 
-                            <p className="text-gray-400 text-sm uppercase tracking-wider">
+                            <p
+                                className="
+                                    text-gray-400
+                                    text-sm
+                                    uppercase
+                                    tracking-wider
+                                "
+                            >
                                 {text.price}
                             </p>
 
-                            <p className="text-4xl font-bold text-yellow-400 mt-1">
-                                {product.price} LE
+                            <p
+                                className="
+                                    text-4xl
+                                    font-bold
+                                    text-yellow-400
+                                    mt-1
+                                "
+                            >
+                                <bdi dir={isArabic ? "rtl" : "ltr"}>
+                                    {isArabic
+                                        ? product.price.toLocaleString("ar-EG")
+                                        : product.price}{" "}
+                                    {isArabic ? "جنيه" : "LE"}
+                                </bdi>
                             </p>
 
                         </div>
@@ -203,42 +328,62 @@ export default function ProductPage() {
                             Product Information
                         ========================= */}
 
-                        <div className="mt-8 space-y-5 text-lg">
+                        <div className="
+                            mt-8
+                            space-y-5
+                            text-lg
+                        ">
 
-                            <p>
-                                🪵{" "}
+                            {/* Material */}
+
+                            <div
+                                className="
+                                    flex
+                                    items-center
+                                    gap-3
+                                    flex-wrap
+                                "
+                            >
+
+                                <span className="text-xl">
+                                    🪵
+                                </span>
 
                                 <span className="text-gray-300">
                                     {text.material}:
                                 </span>
 
-                                <span
-                                    className={`text-yellow-400 ${isArabic
-                                        ? "mr-2"
-                                        : "ml-2"
-                                        }`}
-                                >
-                                    {product.material}
+                                <span className="text-yellow-400 font-semibold">
+                                    {material}
                                 </span>
-                            </p>
+
+                            </div>
 
 
-                            <p>
-                                📏{" "}
+                            {/* Size */}
+
+                            <div
+                                className="
+                                    flex
+                                    items-center
+                                    gap-3
+                                    flex-wrap
+                                "
+                            >
+
+                                <span className="text-xl">
+                                    📏
+                                </span>
 
                                 <span className="text-gray-300">
                                     {text.size}:
                                 </span>
 
-                                <span
-                                    className={`text-yellow-400 ${isArabic
-                                        ? "mr-2"
-                                        : "ml-2"
-                                        }`}
-                                >
-                                    {product.size}
+                                <span className="text-yellow-400 font-semibold">
+                                    {size}
                                 </span>
-                            </p>
+
+                            </div>
 
                         </div>
 
@@ -248,20 +393,30 @@ export default function ProductPage() {
                         ========================= */}
 
                         <div
-                            className={`flex flex-col sm:flex-row gap-4 mt-12 ${isArabic
-                                ? "sm:flex-row-reverse"
-                                : ""
-                                }`}
+                            className="
+                                flex
+                                flex-col
+                                sm:flex-row
+                                gap-4
+                                mt-12
+                            "
                         >
 
                             {/* Add To Cart */}
 
                             <button
                                 onClick={handleQuote}
-                                className={`px-8 py-4 rounded-xl font-bold transition ${added
-                                    ? "bg-slate-700 text-white hover:bg-red-500"
-                                    : "bg-yellow-400 text-black hover:bg-yellow-300"
-                                    }`}
+                                className={`
+                                    px-8
+                                    py-4
+                                    rounded-xl
+                                    font-bold
+                                    transition
+                                    ${added
+                                        ? "bg-slate-700 text-white hover:bg-red-500"
+                                        : "bg-yellow-400 text-black hover:bg-yellow-300"
+                                    }
+                                `}
                             >
                                 {added
                                     ? text.addedToCart
@@ -273,7 +428,19 @@ export default function ProductPage() {
 
                             <Link
                                 href="/quote"
-                                className="px-8 py-4 rounded-xl border border-slate-700 text-white font-semibold text-center hover:border-yellow-400 hover:text-yellow-400 transition"
+                                className="
+                                    px-8
+                                    py-4
+                                    rounded-xl
+                                    border
+                                    border-slate-700
+                                    text-white
+                                    font-semibold
+                                    text-center
+                                    hover:border-yellow-400
+                                    hover:text-yellow-400
+                                    transition
+                                "
                             >
                                 {text.viewCart}
                             </Link>
@@ -282,25 +449,50 @@ export default function ProductPage() {
 
 
                         {/* =========================
-                            Info
+                            Cart Information
                         ========================= */}
 
-                        <div className="mt-8 bg-slate-900 border border-slate-800 rounded-2xl p-5">
+                        <div
+                            className="
+                                mt-8
+                                bg-slate-900
+                                border
+                                border-slate-800
+                                rounded-2xl
+                                p-5
+                            "
+                        >
 
-                            <p className="text-gray-400 text-sm leading-6">
+                            <p
+                                className="
+                                    text-gray-400
+                                    text-sm
+                                    leading-6
+                                "
+                            >
                                 {text.cartInfo}
                             </p>
 
                         </div>
 
 
-                        {/* Back */}
+                        {/* =========================
+                            Back To Portfolio
+                        ========================= */}
 
                         <Link
                             href="/portfolio"
-                            className="inline-block mt-8 text-gray-400 hover:text-yellow-400 transition"
+                            className="
+                                inline-block
+                                mt-8
+                                text-gray-400
+                                hover:text-yellow-400
+                                transition
+                            "
                         >
-                            {text.backToPortfolio}
+                            {isArabic
+                                ? "← العودة إلى المنتجات"
+                                : "← Back to Portfolio"}
                         </Link>
 
                     </div>
