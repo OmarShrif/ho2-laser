@@ -259,7 +259,68 @@ export const productTranslations: Record<
         },
     },
 
-    "cr7": {
+    "owl": 
+    {
+        en: {
+            title: "OWL",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed owl design wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "بومة",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم فني مفصل لبومة منفذ بالقص بالليزر بأسلوب عصري، مناسب لمحبي الحيوانات والديكورات الحديثة.",
+        },
+    },
+
+    "butterfly": 
+    {
+        en: {
+            title: "Butterfly",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed butterfly design wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "فراشة",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم فني مفصل لفراشة منفذ بالقص بالليزر بأسلوب عصري، مناسب لمحبي الحيوانات والديكورات الحديثة.",
+        },
+    },
+
+    "crow": 
+    {
+        en: {
+            title: "Crow",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed crow design wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "غراب",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم فني مفصل لغراب منفذ بالقص بالليزر بأسلوب عصري، مناسب لمحبي الحيوانات والديكورات الحديثة.",
+        },
+    },
+
+    "cr7": 
+    {
         en: {
             title: "CR7",
             category: "Custom Gifts",

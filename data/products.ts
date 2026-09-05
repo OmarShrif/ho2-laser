@@ -207,6 +207,45 @@ export const products: Product[] = [
     },
 
     {
+        slug: "owl",
+        title: "OWL",
+        category: "MDF Wall Art",
+        image: "/products/owl.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "A detailed owl design wall artwork created with precision laser cutting for modern interior decoration.",
+        price: 250,
+        featured: true,
+    },
+
+    {
+        slug: "butterfly",
+        title: "Butterfly",
+        category: "MDF Wall Art",
+        image: "/products/butterfly.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "A detailed butterfly design wall artwork created with precision laser cutting for modern interior decoration.",
+        price: 250,
+        featured: true,
+    },
+
+    {
+        slug: "crow",
+        title: "Crow",
+        category: "MDF Wall Art",
+        image: "/products/crow.jpeg",
+        material: "7mm MDF",
+        size: "50 × 70 cm",
+        description:
+            "A detailed crow design wall artwork created with precision laser cutting for modern interior decoration.",
+        price: 250,
+        featured: true,
+    },
+
+    {
         slug: "cr7",
         title: "CR7",
         category: "Custom Gifts",
@@ -821,7 +860,7 @@ export const products: Product[] = [
         slug: "nature",
         title: "Nature",
         category: "Custom Gifts",
-        image: "/products/octopus.jpeg",
+        image: "/products/nature.jpeg",
         material: "7mm MDF",
         size: "45 × 45 cm",
         description:
