@@ -1,4 +1,17 @@
-export const productTranslations = {
+export type ProductLanguage = "en" | "ar";
+
+export type ProductTranslation = {
+    title: string;
+    category: string;
+    material: string;
+    size: string;
+    description: string;
+};
+
+export const productTranslations: Record<
+    string,
+    Record<ProductLanguage, ProductTranslation>
+> = {
     "twin-wolf-shadows": {
         en: {
             title: "Twin Wolf Shadows",
@@ -682,4 +695,670 @@ export const productTranslations = {
                 "تصميم فني مستوحى من بيكاتشو ومنفذ بالقص بالليزر، مناسب لمحبي الأنمي وغرف النوم وغرف الألعاب وهواة التجميع.",
         },
     },
+
+    "astronaut": {
+        en: {
+            title: "Astronaut",
+            category: "Custom Gifts",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed astronaut-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
+        },
+        ar: {
+            title: "رائد الفضاء",
+            category: "هدايا مخصصة",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم فني مستوحى من رائد الفضاء ومنفذ بالقص بالليزر، مناسب للهدايا وغرف النوم وغرف الألعاب والمساحات الشخصية.",
+        },
+    },
+
+    "batman": {
+        en: {
+            title: "Batman",
+            category: "Custom Gifts",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed batman-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
+        },
+        ar: {
+            title: "باتمان",
+            category: "هدايا مخصصة",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم فني مستوحى من باتمان ومنفذ بالقص بالليزر، مناسب للهدايا وغرف النوم وغرف الألعاب والمساحات الشخصية.",
+        },
+    },
+
+    "birds": {
+        en: {
+            title: "Birds",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "45 × 45 cm",
+            description:
+                "A detailed birds wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "الطيور",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "45 × 45 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من الطيور ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "car": {
+        en: {
+            title: "Car",
+            category: "Custom Gifts",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed car-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
+        },
+        ar: {
+            title: "السيارة",
+            category: "هدايا مخصصة",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم فني مستوحى من السيارة ومنفذ بالقص بالليزر، مناسب للهدايا وغرف النوم وغرف الألعاب والمساحات الشخصية.",
+        },
+    },
+
+    "cat-5": {
+        en: {
+            title: "Cat Design V",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed cat design v wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "تصميم القطة V",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم القطة V ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "crab": {
+        en: {
+            title: "Crab",
+            category: "Interior Decoration",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative crab-inspired laser-cut artwork designed to add character and style to modern interiors.",
+        },
+        ar: {
+            title: "السلطعون",
+            category: "ديكور داخلي",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم ديكوري مستوحى من السلطعون ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
+        },
+    },
+
+    "deer-3": {
+        en: {
+            title: "Deer Design III",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed deer design iii wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "تصميم الغزال III",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم الغزال III ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "eagle": {
+        en: {
+            title: "Eagle",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed eagle wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "النسر",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من النسر ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "fish-2": {
+        en: {
+            title: "Fish Design II",
+            category: "Interior Decoration",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative fish design ii-inspired laser-cut artwork designed to add character and style to modern interiors.",
+        },
+        ar: {
+            title: "تصميم السمكة II",
+            category: "ديكور داخلي",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم ديكوري مستوحى من تصميم السمكة II ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
+        },
+    },
+
+    "goku-2": {
+        en: {
+            title: "Goku Design II",
+            category: "Custom Gifts",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed goku design ii-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
+        },
+        ar: {
+            title: "تصميم غوكو II",
+            category: "هدايا مخصصة",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم فني مستوحى من تصميم غوكو II ومنفذ بالقص بالليزر، مناسب للهدايا وغرف النوم وغرف الألعاب والمساحات الشخصية.",
+        },
+    },
+
+    "guitar": {
+        en: {
+            title: "Guitar",
+            category: "Interior Decoration",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative guitar-inspired laser-cut artwork designed to add character and style to modern interiors.",
+        },
+        ar: {
+            title: "الجيتار",
+            category: "ديكور داخلي",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم ديكوري مستوحى من الجيتار ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
+        },
+    },
+
+    "hammerhead-shark": {
+        en: {
+            title: "Hammerhead Shark",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "35 × 85 cm",
+            description:
+                "A detailed hammerhead shark wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "قرش المطرقة",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "35 × 85 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من قرش المطرقة ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic": {
+        en: {
+            title: "Islamic Design",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic-2": {
+        en: {
+            title: "Islamic Design II",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي II",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي II ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic-3": {
+        en: {
+            title: "Islamic Design III",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي III",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي III ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic-4": {
+        en: {
+            title: "Islamic Design IV",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي IV",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي IV ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic-5": {
+        en: {
+            title: "Islamic Design V",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي V",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي V ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic-6": {
+        en: {
+            title: "Islamic Design VI",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي VI",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي VI ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic-7": {
+        en: {
+            title: "Islamic Design VII",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي VII",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي VII ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic-8": {
+        en: {
+            title: "Islamic Design VIII",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي VIII",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي VIII ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic-9": {
+        en: {
+            title: "Islamic Design IX",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي IX",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي IX ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic-10": {
+        en: {
+            title: "Islamic Design X",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي X",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي X ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic-11": {
+        en: {
+            title: "Islamic Design XI",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي XI",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي XI ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "islamic-12": {
+        en: {
+            title: "Islamic Design XII",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
+        },
+        ar: {
+            title: "تصميم إسلامي XII",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم إسلامي XII ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "island": {
+        en: {
+            title: "Island",
+            category: "Interior Decoration",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative island-inspired laser-cut artwork designed to add character and style to modern interiors.",
+        },
+        ar: {
+            title: "الجزيرة",
+            category: "ديكور داخلي",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم ديكوري مستوحى من الجزيرة ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
+        },
+    },
+
+    "motorcycle": {
+        en: {
+            title: "Motorcycle",
+            category: "Custom Gifts",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed motorcycle-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
+        },
+        ar: {
+            title: "الدراجة النارية",
+            category: "هدايا مخصصة",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم فني مستوحى من الدراجة النارية ومنفذ بالقص بالليزر، مناسب للهدايا وغرف النوم وغرف الألعاب والمساحات الشخصية.",
+        },
+    },
+
+    "nature": {
+        en: {
+            title: "Nature",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "45 × 45 cm",
+            description:
+                "A detailed nature wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "الطبيعة",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "45 × 45 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من الطبيعة ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "octopus": {
+        en: {
+            title: "Octopus",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed octopus wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "الأخطبوط",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من الأخطبوط ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "seahorse": {
+        en: {
+            title: "Seahorse",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed seahorse wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "فرس البحر",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من فرس البحر ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "seashell": {
+        en: {
+            title: "Seashell",
+            category: "Interior Decoration",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative seashell-inspired laser-cut artwork designed to add character and style to modern interiors.",
+        },
+        ar: {
+            title: "صدفة البحر",
+            category: "ديكور داخلي",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم ديكوري مستوحى من صدفة البحر ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
+        },
+    },
+
+    "shark": {
+        en: {
+            title: "Shark",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "45 × 90 cm",
+            description:
+                "A detailed shark wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "سمكة القرش",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "45 × 90 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من سمكة القرش ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "wave": {
+        en: {
+            title: "Wave",
+            category: "Interior Decoration",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative wave-inspired laser-cut artwork designed to add character and style to modern interiors.",
+        },
+        ar: {
+            title: "الموجة",
+            category: "ديكور داخلي",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم ديكوري مستوحى من الموجة ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
+        },
+    },
+
+    "wave-2": {
+        en: {
+            title: "Wave Design II",
+            category: "Interior Decoration",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A decorative wave design ii-inspired laser-cut artwork designed to add character and style to modern interiors.",
+        },
+        ar: {
+            title: "تصميم الموجة II",
+            category: "ديكور داخلي",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم ديكوري مستوحى من تصميم الموجة II ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
+        },
+    },
+
+    "whale": {
+        en: {
+            title: "Whale",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed whale wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "الحوت",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من الحوت ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
+    "whale-2": {
+        en: {
+            title: "Whale Design II",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "50 × 70 cm",
+            description:
+                "A detailed whale design ii wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "تصميم الحوت II",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "50 × 70 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم الحوت II ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
+        },
+    },
+
 };
