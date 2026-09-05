@@ -923,6 +923,25 @@ export const productTranslations: Record<
                 "تصميم حائطي مفصل مستوحى من قرش المطرقة ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
     },
+    "gravity-architects-logo": {
+        en: {
+            title: "Gravity Architects",
+            category: "Business Signs",
+            material: "7mm MDF",
+            size: "80 × 80 cm",
+            description:
+                "A modern laser-cut business logo designed for professional offices, reception areas, and commercial spaces.",
+        },
+
+        ar: {
+            title: "شعار Gravity Architects",
+            category: "شعارات تجارية",
+            material: "MDF بسُمك 7 مم",
+            size: "80 × 80 سم",
+            description:
+                "شعار تجاري عصري منفذ بتقنية القص بالليزر، مناسب للمكاتب والشركات ومناطق الاستقبال والمساحات التجارية.",
+        },
+    },
 
     "islamic": {
         en: {
@@ -1233,7 +1252,7 @@ export const productTranslations: Record<
             title: "Seahorse",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "42 × 80 cm",
             description:
                 "A detailed seahorse wall artwork created with precision laser cutting for modern interior decoration.",
         },
@@ -1241,7 +1260,7 @@ export const productTranslations: Record<
             title: "فرس البحر",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "42 × 80 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من فرس البحر ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -1347,7 +1366,7 @@ export const productTranslations: Record<
             title: "Whale Design II",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "60 × 73 cm",
             description:
                 "A detailed whale design ii wall artwork created with precision laser cutting for modern interior decoration.",
         },

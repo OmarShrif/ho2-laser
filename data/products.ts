@@ -623,6 +623,19 @@ export const products: Product[] = [
     },
 
     {
+        slug: "gravity-architects-logo",
+        title: "Gravity Architects",
+        category: "Business Signs",
+        image: "/products/gravitylogo.jpeg",
+        material: "7mm MDF",
+        size: "80 × 80 cm",
+        description:
+            "A modern laser-cut business logo designed for professional offices, reception areas, and commercial spaces.",
+        price: 1360,
+        featured: false,
+    },
+
+    {
         slug: "islamic",
         title: "Islamic Design",
         category: "MDF Wall Art",
@@ -836,10 +849,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/seahorse.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "42 × 80 cm",
         description:
             "A detailed seahorse wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 250,
+        price: 280,
         featured: false,
     },
 
