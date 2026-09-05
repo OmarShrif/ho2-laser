@@ -829,7 +829,7 @@ export const products: Product[] = [
         price: 400,
         featured: false,
     },
-
+    
     {
         slug: "octopus",
         title: "Octopus",
