@@ -820,7 +820,7 @@ export const products: Product[] = [
     {
         slug: "nature",
         title: "Nature",
-        category: "MDF Wall Art",
+        category: "Custom Gifts",
         image: "/products/nature.jpeg",
         material: "7mm MDF",
         size: "45 × 45 cm",
