@@ -1271,7 +1271,7 @@ export const productTranslations: Record<
             title: "Seashell",
             category: "Interior Decoration",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "60 × 80 cm",
             description:
                 "A decorative seashell-inspired laser-cut artwork designed to add character and style to modern interiors.",
         },
@@ -1279,7 +1279,7 @@ export const productTranslations: Record<
             title: "صدفة البحر",
             category: "ديكور داخلي",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "60 × 80 سم",
             description:
                 "تصميم ديكوري مستوحى من صدفة البحر ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
         },
@@ -1309,7 +1309,7 @@ export const productTranslations: Record<
             title: "Wave",
             category: "Interior Decoration",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "60 × 70 cm",
             description:
                 "A decorative wave-inspired laser-cut artwork designed to add character and style to modern interiors.",
         },
@@ -1317,7 +1317,7 @@ export const productTranslations: Record<
             title: "الموجة",
             category: "ديكور داخلي",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "60 × 70 سم",
             description:
                 "تصميم ديكوري مستوحى من الموجة ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
         },

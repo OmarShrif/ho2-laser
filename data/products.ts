@@ -862,10 +862,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/seashell.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "60 × 80 cm",
         description:
             "A decorative seashell-inspired laser-cut artwork designed to add character and style to modern interiors.",
-        price: 250,
+        price: 400,
         featured: false,
     },
 
@@ -901,10 +901,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/wave.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "60 × 70 cm",
         description:
             "A decorative wave-inspired laser-cut artwork designed to add character and style to modern interiors.",
-        price: 250,
+        price: 400,
         featured: false,
     },
 
