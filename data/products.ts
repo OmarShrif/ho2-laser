@@ -927,10 +927,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/whale2.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "60 × 73 cm",
         description:
             "A detailed whale design ii wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 250,
+        price: 350,
         featured: false,
     },
 

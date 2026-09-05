@@ -1355,7 +1355,7 @@ export const productTranslations: Record<
             title: "تصميم الحوت II",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "60 × 73 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من تصميم الحوت II ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
