@@ -670,7 +670,7 @@ export const products: Product[] = [
         size: "80 × 80 cm",
         description:
             "A modern laser-cut business logo designed for professional offices, reception areas, and commercial spaces.",
-        price: 1360,
+        price: 300,
         featured: false,
     },
 
