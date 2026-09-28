@@ -16,7 +16,7 @@ export const products: Product[] = [
         title: "Twin Wolf Shadows",
         category: "MDF Wall Art",
         image: "/products/twin-wolf-shadows.jpeg",
-        material: "7mm MDF",
+        material: "5mm MDF Formica",
         size: "53 × 79 cm",
         description:
             "A premium laser-cut wall art featuring two wolves in a modern layered design.",
@@ -55,7 +55,7 @@ export const products: Product[] = [
         title: "Deer",
         category: "MDF Wall Art",
         image: "/products/deer.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "46 × 63 cm",
         description:
             "Elegant deer wall decoration with a natural artistic style, perfect for modern interiors.",

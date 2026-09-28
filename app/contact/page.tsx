@@ -116,7 +116,7 @@ ${email}
 ${text.messageLabel}:
 ${message}`;
 
-        const whatsappNumber = "201158636667";
+        const whatsappNumber = "201094244235"; // Replace with your WhatsApp number
 
         sendWhatsAppMessage(
             whatsappNumber,
@@ -181,7 +181,7 @@ ${message}`;
                                 </p>
 
                                 <p className="text-gray-300 mt-2" dir="ltr">
-                                    +20 115 863 6667
+                                    +20 109 424 4235
                                 </p>
 
                             </div>
@@ -240,7 +240,7 @@ ${message}`;
                         {/* WhatsApp Button */}
 
                         <a
-                            href="https://wa.me/201158636667"
+                            href="https://wa.me/201094244235"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block mt-10 bg-yellow-400 text-black px-8 py-4 rounded-xl font-bold hover:bg-yellow-300 transition"

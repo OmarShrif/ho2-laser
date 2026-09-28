@@ -16,7 +16,7 @@ export const productTranslations: Record<
         en: {
             title: "Twin Wolf Shadows",
             category: "MDF Wall Art",
-            material: "7mm MDF",
+            material: "5 mm MDF Formica",
             size: "53 × 79 cm",
             description:
                 "A premium laser-cut wall art featuring two wolves in a modern layered design.",
@@ -24,7 +24,7 @@ export const productTranslations: Record<
         ar: {
             title: "ظلال الذئبين",
             category: "ديكورات حائط MDF",
-            material: "MDF بسُمك 7 مم",
+            material: "5 مم MDF فورميكا",
             size: "53 × 79 سم",
             description:
                 "ديكور حائطي فاخر بتقنية القص بالليزر، يجمع بين ذئبين في تصميم عصري متعدد الطبقات.",
@@ -73,7 +73,7 @@ export const productTranslations: Record<
         en: {
             title: "Deer",
             category: "MDF Wall Art",
-            material: "7mm MDF",
+            material: "7 mm MDF Melamine",
             size: "46 × 63 cm",
             description:
                 "Elegant deer wall decoration with a natural artistic style, perfect for modern interiors.",
