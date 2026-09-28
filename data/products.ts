@@ -16,7 +16,7 @@ export const products: Product[] = [
         title: "Twin Wolf Shadows",
         category: "MDF Wall Art",
         image: "/products/twin-wolf-shadows.jpeg",
-        material: "5mm MDF Formica",
+        material: "5 mm MDF Formica",
         size: "53 × 79 cm",
         description:
             "A premium laser-cut wall art featuring two wolves in a modern layered design.",
@@ -29,7 +29,7 @@ export const products: Product[] = [
         title: "Wolf",
         category: "MDF Wall Art",
         image: "/products/wolf.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "52 × 78 cm",
         description:
             "Bold wolf wall art featuring a strong artistic silhouette, perfect for modern interior decoration.",
@@ -42,7 +42,7 @@ export const products: Product[] = [
         title: "Wolf II",
         category: "MDF Wall Art",
         image: "/products/wolf2.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "50 × 70 cm",
         description:
             "A second wolf-inspired laser-cut artwork with a distinctive artistic style for modern wall decoration.",
@@ -51,7 +51,7 @@ export const products: Product[] = [
     },
 
     {
-        slug: "deer-wall-art",
+        slug: "deer",
         title: "Deer",
         category: "MDF Wall Art",
         image: "/products/deer.jpeg",
@@ -68,7 +68,7 @@ export const products: Product[] = [
         title: "Deer II",
         category: "MDF Wall Art",
         image: "/products/deer2.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "40 × 78 cm",
         description:
             "A detailed deer silhouette created with precision laser cutting for elegant and natural wall decoration.",
@@ -81,7 +81,7 @@ export const products: Product[] = [
         title: "Deer Design III",
         category: "MDF Wall Art",
         image: "/products/deer3.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "50 × 70 cm",
         description:
             "A detailed deer design iii wall artwork created with precision laser cutting for modern interior decoration.",
@@ -94,7 +94,7 @@ export const products: Product[] = [
         title: "Batman Logo",
         category: "Custom Gifts",
         image: "/products/batman-logo.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "47 × 70 cm",
         description:
             "Laser-cut Batman logo decoration, ideal for gaming rooms, bedrooms, and offices.",
@@ -107,7 +107,7 @@ export const products: Product[] = [
         title: "Horse",
         category: "MDF Wall Art",
         image: "/products/horse.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "30 × 40 cm",
         description:
             "Laser-cut horse silhouette designed to add a bold artistic touch to any space.",
@@ -120,7 +120,7 @@ export const products: Product[] = [
         title: "Horse II",
         category: "MDF Wall Art",
         image: "/products/horse2.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "59 × 65 cm",
         description:
             "A second horse-inspired laser-cut artwork designed to add an elegant artistic character to modern interiors.",
@@ -133,7 +133,7 @@ export const products: Product[] = [
         title: "Anchor",
         category: "Interior Decoration",
         image: "/products/anchor.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "43 × 47 cm",
         description:
             "Nautical anchor wall decoration inspired by the sea and coastal lifestyle.",
@@ -146,7 +146,7 @@ export const products: Product[] = [
         title: "Cat",
         category: "MDF Wall Art",
         image: "/products/cat.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "37 × 70 cm",
         description:
             "Minimalist laser-cut cat artwork designed for modern homes and stylish spaces.",
@@ -159,7 +159,7 @@ export const products: Product[] = [
         title: "Cat Design II",
         category: "MDF Wall Art",
         image: "/products/cat2.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "31 × 78 cm",
         description:
             "A second artistic cat design created with precision laser cutting for decorative interiors.",
@@ -172,7 +172,7 @@ export const products: Product[] = [
         title: "Cat Design III",
         category: "MDF Wall Art",
         image: "/products/cat3.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "55 × 65 cm",
         description:
             "A stylish laser-cut cat artwork that brings a unique decorative character to your space.",
@@ -185,7 +185,7 @@ export const products: Product[] = [
         title: "Cat Design IV",
         category: "MDF Wall Art",
         image: "/products/cat4.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "56 × 78 cm",
         description:
             "A detailed laser-cut cat artwork with a modern decorative style, perfect for animal lovers and contemporary interiors.",
@@ -198,7 +198,7 @@ export const products: Product[] = [
         title: "Cat Design V",
         category: "MDF Wall Art",
         image: "/products/cat5.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "57 × 63 cm",
         description:
             "A detailed cat design v wall artwork created with precision laser cutting for modern interior decoration.",
@@ -211,7 +211,7 @@ export const products: Product[] = [
         title: "OWL",
         category: "MDF Wall Art",
         image: "/products/owl.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "60 × 80 cm",
         description:
             "A detailed owl design wall artwork created with precision laser cutting for modern interior decoration.",
@@ -224,7 +224,7 @@ export const products: Product[] = [
         title: "Butterfly",
         category: "MDF Wall Art",
         image: "/products/butterfly.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "56 × 58 cm",
         description:
             "A detailed butterfly design wall artwork created with precision laser cutting for modern interior decoration.",
@@ -237,7 +237,7 @@ export const products: Product[] = [
         title: "Crow",
         category: "MDF Wall Art",
         image: "/products/crow.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "59 × 59 cm",
         description:
             "A detailed crow design wall artwork created with precision laser cutting for modern interior decoration.",
@@ -250,7 +250,7 @@ export const products: Product[] = [
         title: "CR7",
         category: "Custom Gifts",
         image: "/products/cr7.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "59 × 77 cm",
         description:
             "A custom football-inspired laser-cut artwork designed for fans and sports enthusiasts.",
@@ -263,7 +263,7 @@ export const products: Product[] = [
         title: "Formula",
         category: "Custom Gifts",
         image: "/products/formula.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "27 × 79 cm",
         description:
             "A precision laser-cut Formula racing inspired design for motorsport enthusiasts.",
@@ -276,7 +276,7 @@ export const products: Product[] = [
         title: "Dolphin",
         category: "MDF Wall Art",
         image: "/products/dolphin.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "32 × 39 cm",
         description:
             "Elegant dolphin artwork with a clean laser-cut design inspired by the beauty of the sea.",
@@ -289,7 +289,7 @@ export const products: Product[] = [
         title: "Fish",
         category: "Interior Decoration",
         image: "/products/fish.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "58 × 58 cm",
         description:
             "Decorative fish artwork suitable for coastal, marine, and modern interior spaces.",
@@ -302,7 +302,7 @@ export const products: Product[] = [
         title: "Starfish",
         category: "Interior Decoration",
         image: "/products/starfish.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "38 × 38 cm",
         description:
             "Ocean-inspired starfish decoration perfect for coastal and beach-themed interiors.",
@@ -315,7 +315,7 @@ export const products: Product[] = [
         title: "Billiards Player",
         category: "Custom Gifts",
         image: "/products/billiards-player.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "29 × 77 cm",
         description:
             "Laser-cut billiards artwork created for game rooms, entertainment spaces, and sports fans.",
@@ -328,7 +328,7 @@ export const products: Product[] = [
         title: "Bow",
         category: "MDF Wall Art",
         image: "/products/bow.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "59 × 65 cm",
         description:
             "Detailed laser-cut bow artwork with a strong decorative presence and artistic character.",
@@ -341,7 +341,7 @@ export const products: Product[] = [
         title: "Lion",
         category: "MDF Wall Art",
         image: "/products/lion.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "57 × 78 cm",
         description:
             "Bold lion wall art designed with precision laser cutting for a powerful modern look.",
@@ -354,7 +354,7 @@ export const products: Product[] = [
         title: "Penguins",
         category: "MDF Wall Art",
         image: "/products/penguins.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "28 × 65 cm",
         description:
             "Charming penguin artwork with a clean decorative design suitable for homes and gifts.",
@@ -367,7 +367,7 @@ export const products: Product[] = [
         title: "Phoenix",
         category: "MDF Wall Art",
         image: "/products/phoenix.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "55 × 79 cm",
         description:
             "Striking phoenix artwork representing strength and transformation through detailed laser cutting.",
@@ -380,7 +380,7 @@ export const products: Product[] = [
         title: "Pulse of Life",
         category: "Interior Decoration",
         image: "/products/pulse-of-life.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "20 × 68 cm",
         description:
             "A creative decorative design inspired by life, movement, and modern artistic expression.",
@@ -393,7 +393,7 @@ export const products: Product[] = [
         title: "Race Man",
         category: "Custom Gifts",
         image: "/products/raceman.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "58 × 67 cm",
         description:
             "Dynamic racing-inspired laser-cut artwork designed for motorsport and speed enthusiasts.",
@@ -406,7 +406,7 @@ export const products: Product[] = [
         title: "Spider-Man",
         category: "Custom Gifts",
         image: "/products/spiderman.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "57 × 70 cm",
         description:
             "Laser-cut Spider-Man inspired artwork, perfect for bedrooms, gaming rooms, and collectors.",
@@ -419,7 +419,7 @@ export const products: Product[] = [
         title: "Peter & Gwen",
         category: "Custom Gifts",
         image: "/products/peter-and-gwen.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "18 × 78 cm",
         description:
             "Peter & Gwen inspired laser-cut artwork created as a unique decorative piece for fans and collectors.",
@@ -432,7 +432,7 @@ export const products: Product[] = [
         title: "Sunset",
         category: "Interior Decoration",
         image: "/products/sunset.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "50 × 78 cm",
         description:
             "A relaxing sunset-inspired wall decoration designed to add warmth and character to interiors.",
@@ -445,7 +445,7 @@ export const products: Product[] = [
         title: "Tree",
         category: "MDF Wall Art",
         image: "/products/tree.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "50 × 70 cm",
         description:
             "Elegant tree artwork combining natural inspiration with precision laser-cut craftsmanship.",
@@ -458,7 +458,7 @@ export const products: Product[] = [
         title: "Toothless Dragon",
         category: "Custom Gifts",
         image: "/products/toothless-dragon.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "36 × 43 cm",
         description:
             "Toothless-inspired laser-cut artwork designed for fans and fantasy-themed interior decoration.",
@@ -471,7 +471,7 @@ export const products: Product[] = [
         title: "Captain America's Shield",
         category: "Custom Gifts",
         image: "/products/captain-america-shield.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "57 × 77 cm",
         description:
             "Captain America's Shield inspired laser-cut artwork, perfect for fans, bedrooms, gaming rooms, and collectors.",
@@ -484,7 +484,7 @@ export const products: Product[] = [
         title: "Coffee Pulse",
         category: "Interior Decoration",
         image: "/products/coffee-pulse.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "24 × 78 cm",
         description:
             "A creative coffee-inspired laser-cut artwork designed for coffee lovers and modern interior spaces.",
@@ -497,7 +497,7 @@ export const products: Product[] = [
         title: "Dragon",
         category: "MDF Wall Art",
         image: "/products/dragon.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "58 × 65 cm",
         description:
             "A powerful dragon-inspired laser-cut artwork designed for fantasy lovers and bold interior decoration.",
@@ -510,7 +510,7 @@ export const products: Product[] = [
         title: "Goku",
         category: "Custom Gifts",
         image: "/products/goku.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "34 × 68 cm",
         description:
             "Goku-inspired laser-cut artwork, perfect for anime fans, bedrooms, gaming rooms, and collectors.",
@@ -523,7 +523,7 @@ export const products: Product[] = [
         title: "Honeybee",
         category: "MDF Wall Art",
         image: "/products/honeybee.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "50 × 58 cm",
         description:
             "Detailed honeybee wall art combining a natural theme with precise laser-cut craftsmanship.",
@@ -536,7 +536,7 @@ export const products: Product[] = [
         title: "Pikachu",
         category: "Custom Gifts",
         image: "/products/pikachu.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "58 × 63 cm",
         description:
             "Pikachu-inspired laser-cut artwork, perfect for anime fans, bedrooms, gaming rooms, and collectors.",
@@ -549,7 +549,7 @@ export const products: Product[] = [
         title: "Astronaut",
         category: "Custom Gifts",
         image: "/products/astronaut.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "50 × 78 cm",
         description:
             "A detailed astronaut-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
@@ -562,7 +562,7 @@ export const products: Product[] = [
         title: "Batman",
         category: "Custom Gifts",
         image: "/products/batman.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "59 × 66 cm",
         description:
             "A detailed batman-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
@@ -575,7 +575,7 @@ export const products: Product[] = [
         title: "Birds",
         category: "MDF Wall Art",
         image: "/products/birds.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "59 × 57 cm",
         description:
             "A detailed birds wall artwork created with precision laser cutting for modern interior decoration.",
@@ -588,7 +588,7 @@ export const products: Product[] = [
         title: "Car",
         category: "Custom Gifts",
         image: "/products/car.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "18 × 78 cm",
         description:
             "A detailed car-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
@@ -601,7 +601,7 @@ export const products: Product[] = [
         title: "Crab",
         category: "Interior Decoration",
         image: "/products/crab.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "59 × 49 cm",
         description:
             "A decorative crab-inspired laser-cut artwork designed to add character and style to modern interiors.",
@@ -614,7 +614,7 @@ export const products: Product[] = [
         title: "Eagle",
         category: "MDF Wall Art",
         image: "/products/eagle.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "58 × 62 cm",
         description:
             "A detailed eagle wall artwork created with precision laser cutting for modern interior decoration.",
@@ -627,7 +627,7 @@ export const products: Product[] = [
         title: "Fish Design II",
         category: "Interior Decoration",
         image: "/products/fish2.jpg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "50 × 70 cm",
         description:
             "A decorative fish design ii-inspired laser-cut artwork designed to add character and style to modern interiors.",
@@ -640,7 +640,7 @@ export const products: Product[] = [
         title: "Goku Design II",
         category: "Custom Gifts",
         image: "/products/goku2.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "57 × 58 cm",
         description:
             "A detailed goku design ii-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
@@ -653,7 +653,7 @@ export const products: Product[] = [
         title: "Guitar",
         category: "Interior Decoration",
         image: "/products/guitar.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "50 × 70 cm",
         description:
             "A decorative guitar-inspired laser-cut artwork designed to add character and style to modern interiors.",
@@ -666,7 +666,7 @@ export const products: Product[] = [
         title: "Gravity Architects",
         category: "Business Signs",
         image: "/products/gravitylogo.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "80 × 80 cm",
         description:
             "A modern laser-cut business logo designed for professional offices, reception areas, and commercial spaces.",
@@ -679,7 +679,7 @@ export const products: Product[] = [
         title: "Islamic Design",
         category: "MDF Wall Art",
         image: "/products/islamic.jpeg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "50 × 70 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -692,7 +692,7 @@ export const products: Product[] = [
         title: "Islamic Design II",
         category: "MDF Wall Art",
         image: "/products/islamic2.jpg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "50 × 70 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -705,7 +705,7 @@ export const products: Product[] = [
         title: "Islamic Design III",
         category: "MDF Wall Art",
         image: "/products/islamic3.jpg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "48 × 77 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -718,7 +718,7 @@ export const products: Product[] = [
         title: "Islamic Design IV",
         category: "MDF Wall Art",
         image: "/products/islamic4.jpg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "50 × 70 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -731,7 +731,7 @@ export const products: Product[] = [
         title: "Islamic Design V",
         category: "MDF Wall Art",
         image: "/products/islamic5.jpg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "58 × 72 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -744,7 +744,7 @@ export const products: Product[] = [
         title: "Islamic Design VI",
         category: "MDF Wall Art",
         image: "/products/islamic6.jpg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "50 × 70 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -757,7 +757,7 @@ export const products: Product[] = [
         title: "Islamic Design VII",
         category: "MDF Wall Art",
         image: "/products/islamic7.jpg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "28 × 77 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -770,7 +770,7 @@ export const products: Product[] = [
         title: "Islamic Design VIII",
         category: "MDF Wall Art",
         image: "/products/islamic8.jpg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "54 × 79 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -783,7 +783,7 @@ export const products: Product[] = [
         title: "Islamic Design IX",
         category: "MDF Wall Art",
         image: "/products/islamic9.jpg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "59 × 62 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -796,7 +796,7 @@ export const products: Product[] = [
         title: "Islamic Design X",
         category: "MDF Wall Art",
         image: "/products/islamic10.jpg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "58 × 75 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -809,7 +809,7 @@ export const products: Product[] = [
         title: "Islamic Design XI",
         category: "MDF Wall Art",
         image: "/products/islamic11.jpg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "19 × 78 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -822,7 +822,7 @@ export const products: Product[] = [
         title: "Islamic Design XII",
         category: "MDF Wall Art",
         image: "/products/islamic12.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "42 × 77 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
@@ -835,7 +835,7 @@ export const products: Product[] = [
         title: "Island",
         category: "Interior Decoration",
         image: "/products/island.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "44 × 59 cm",
         description:
             "A decorative island-inspired laser-cut artwork designed to add character and style to modern interiors.",
@@ -848,7 +848,7 @@ export const products: Product[] = [
         title: "Motorcycle",
         category: "Custom Gifts",
         image: "/products/motorcycle.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "38 × 78 cm",
         description:
             "A detailed motorcycle-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
@@ -861,7 +861,7 @@ export const products: Product[] = [
         title: "Nature",
         category: "Custom Gifts",
         image: "/products/nature.jpg",
-        material: "7mm MDF",
+        material: "7 mm MDF Melamine",
         size: "58 × 58 cm",
         description:
             "A detailed nature wall artwork created with precision laser cutting for modern interior decoration.",
@@ -874,7 +874,7 @@ export const products: Product[] = [
         title: "Octopus",
         category: "MDF Wall Art",
         image: "/products/octopus.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "57 × 58 cm",
         description:
             "A detailed octopus wall artwork created with precision laser cutting for modern interior decoration.",
@@ -887,7 +887,7 @@ export const products: Product[] = [
         title: "Seahorse",
         category: "MDF Wall Art",
         image: "/products/seahorse.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "42 × 80 cm",
         description:
             "A detailed seahorse wall artwork created with precision laser cutting for modern interior decoration.",
@@ -900,7 +900,7 @@ export const products: Product[] = [
         title: "Seashell",
         category: "Interior Decoration",
         image: "/products/seashell.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "60 × 80 cm",
         description:
             "A decorative seashell-inspired laser-cut artwork designed to add character and style to modern interiors.",
@@ -913,7 +913,7 @@ export const products: Product[] = [
         title: "Shark",
         category: "MDF Wall Art",
         image: "/products/shark.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "45 × 90 cm",
         description:
             "A detailed shark wall artwork created with precision laser cutting for modern interior decoration.",
@@ -926,7 +926,7 @@ export const products: Product[] = [
         title: "Hammerhead Shark",
         category: "MDF Wall Art",
         image: "/products/hammerhead-shark.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "35 × 85 cm",
         description:
             "A detailed hammerhead shark wall artwork created with precision laser cutting for modern interior decoration.",
@@ -939,7 +939,7 @@ export const products: Product[] = [
         title: "Wave",
         category: "Interior Decoration",
         image: "/products/wave.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "60 × 70 cm",
         description:
             "A decorative wave-inspired laser-cut artwork designed to add character and style to modern interiors.",
@@ -952,7 +952,7 @@ export const products: Product[] = [
         title: "Wave Design II",
         category: "Interior Decoration",
         image: "/products/wave2.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "58 × 68 cm",
         description:
             "A decorative wave design ii-inspired laser-cut artwork designed to add character and style to modern interiors.",
@@ -965,7 +965,7 @@ export const products: Product[] = [
         title: "Whale",
         category: "MDF Wall Art",
         image: "/products/whale.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "41 × 78 cm",
         description:
             "A detailed whale wall artwork created with precision laser cutting for modern interior decoration.",
@@ -978,7 +978,7 @@ export const products: Product[] = [
         title: "Whale Design II",
         category: "MDF Wall Art",
         image: "/products/whale2.jpeg",
-        material: "7mm MDF",
+        material: "5 mm MDF Formica",
         size: "60 × 73 cm",
         description:
             "A detailed whale design ii wall artwork created with precision laser cutting for modern interior decoration.",
