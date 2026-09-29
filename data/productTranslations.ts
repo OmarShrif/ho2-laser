@@ -17,7 +17,7 @@ export const productTranslations: Record<
             title: "Twin Wolf Shadows",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "53 × 79 cm",
             description:
                 "A premium laser-cut wall art featuring two wolves in a modern layered design.",
         },
@@ -25,7 +25,7 @@ export const productTranslations: Record<
             title: "ظلال الذئبين",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "53 × 79 سم",
             description:
                 "ديكور حائطي فاخر بتقنية القص بالليزر، يجمع بين ذئبين في تصميم عصري متعدد الطبقات.",
         },
@@ -36,7 +36,7 @@ export const productTranslations: Record<
             title: "Wolf",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "52 × 78 cm",
             description:
                 "Bold wolf wall art featuring a strong artistic silhouette, perfect for modern interior decoration.",
         },
@@ -44,7 +44,7 @@ export const productTranslations: Record<
             title: "الذئب",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "52 × 78 سم",
             description:
                 "ديكور حائطي مميز بتصميم ذئب ذو طابع فني قوي، مناسب للديكورات الداخلية العصرية.",
         },
@@ -69,7 +69,7 @@ export const productTranslations: Record<
         },
     },
 
-    "deer-wall-art": {
+    "deer": {
         en: {
             title: "Deer",
             category: "MDF Wall Art",
@@ -93,7 +93,7 @@ export const productTranslations: Record<
             title: "Deer II",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "40 × 78 cm",
             description:
                 "A detailed deer silhouette created with precision laser cutting for elegant and natural wall decoration.",
         },
@@ -101,9 +101,29 @@ export const productTranslations: Record<
             title: "الغزال II",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "40 × 78 سم",
             description:
                 "تصميم غزال بتفاصيل دقيقة منفذ بتقنية القص بالليزر، لإضافة لمسة طبيعية وأنيقة إلى الحائط.",
+        },
+    },
+
+    "deer-3": 
+    {
+        en: {
+            title: "Deer Design III",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "46 × 78 cm",
+            description:
+                "A detailed deer design iii wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "تصميم الغزال III",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "46 × 78 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم الغزال III ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
     },
 
@@ -150,7 +170,7 @@ export const productTranslations: Record<
             title: "Horse II",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "59 × 65 cm",
             description:
                 "A second horse-inspired laser-cut artwork designed to add an elegant artistic character to modern interiors.",
         },
@@ -158,7 +178,7 @@ export const productTranslations: Record<
             title: "الحصان II",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "59 × 65 سم",
             description:
                 "تصميم آخر مستوحى من الحصان منفذ بالقص بالليزر لإضافة طابع فني أنيق إلى الديكورات العصرية.",
         },
@@ -207,7 +227,7 @@ export const productTranslations: Record<
             title: "Cat Design II",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "31 × 78 cm",
             description:
                 "A second artistic cat design created with precision laser cutting for decorative interiors.",
         },
@@ -215,7 +235,7 @@ export const productTranslations: Record<
             title: "تصميم القطة II",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "31 × 78 سم",
             description:
                 "تصميم فني آخر للقطة منفذ بدقة باستخدام القص بالليزر للديكورات الداخلية.",
         },
@@ -226,7 +246,7 @@ export const productTranslations: Record<
             title: "Cat Design III",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "55 × 65 cm",
             description:
                 "A stylish laser-cut cat artwork that brings a unique decorative character to your space.",
         },
@@ -234,7 +254,7 @@ export const productTranslations: Record<
             title: "تصميم القطة III",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "55 × 65 سم",
             description:
                 "تصميم فني أنيق لقطة منفذ بالقص بالليزر ليضيف طابعًا ديكوريًا مميزًا إلى مساحتك.",
         },
@@ -245,7 +265,7 @@ export const productTranslations: Record<
             title: "Cat Design IV",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "56 × 78 cm",
             description:
                 "A detailed laser-cut cat artwork with a modern decorative style, perfect for animal lovers and contemporary interiors.",
         },
@@ -253,9 +273,28 @@ export const productTranslations: Record<
             title: "تصميم القطة IV",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "56 × 78 سم",
             description:
                 "تصميم فني مفصل لقطة منفذ بالقص بالليزر بأسلوب عصري، مناسب لمحبي الحيوانات والديكورات الحديثة.",
+        },
+    },
+
+    "cat-5": {
+        en: {
+            title: "Cat Design V",
+            category: "MDF Wall Art",
+            material: "7mm MDF",
+            size: "57 × 63 cm",
+            description:
+                "A detailed cat design v wall artwork created with precision laser cutting for modern interior decoration.",
+        },
+        ar: {
+            title: "تصميم القطة V",
+            category: "ديكورات حائط MDF",
+            material: "MDF بسُمك 7 مم",
+            size: "57 × 63 سم",
+            description:
+                "تصميم حائطي مفصل مستوحى من تصميم القطة V ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
     },
 
@@ -285,7 +324,7 @@ export const productTranslations: Record<
             title: "Butterfly",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "56 × 58 cm",
             description:
                 "A detailed butterfly design wall artwork created with precision laser cutting for modern interior decoration.",
         },
@@ -293,7 +332,7 @@ export const productTranslations: Record<
             title: "فراشة",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "56 × 58 سم",
             description:
                 "تصميم فني مفصل لفراشة منفذ بالقص بالليزر بأسلوب عصري، مناسب لمحبي الحيوانات والديكورات الحديثة.",
         },
@@ -305,7 +344,7 @@ export const productTranslations: Record<
             title: "Crow",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "59 × 59 cm",
             description:
                 "A detailed crow design wall artwork created with precision laser cutting for modern interior decoration.",
         },
@@ -313,7 +352,7 @@ export const productTranslations: Record<
             title: "غراب",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "59 × 59 سم",
             description:
                 "تصميم فني مفصل لغراب منفذ بالقص بالليزر بأسلوب عصري، مناسب لمحبي الحيوانات والديكورات الحديثة.",
         },
@@ -325,7 +364,7 @@ export const productTranslations: Record<
             title: "CR7",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "59 × 77 cm",
             description:
                 "A custom football-inspired laser-cut artwork designed for fans and sports enthusiasts.",
         },
@@ -333,7 +372,7 @@ export const productTranslations: Record<
             title: "CR7",
             category: "هدايا مخصصة",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "59 × 77 سم",
             description:
                 "تصميم فني مستوحى من كرة القدم ومنفذ بالقص بالليزر لمحبي الرياضة وعشاق كرة القدم.",
         },
@@ -344,7 +383,7 @@ export const productTranslations: Record<
             title: "Formula",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "27 × 79 cm",
             description:
                 "A precision laser-cut Formula racing inspired design for motorsport enthusiasts.",
         },
@@ -352,7 +391,7 @@ export const productTranslations: Record<
             title: "فورمولا",
             category: "هدايا مخصصة",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "27 × 79 سم",
             description:
                 "تصميم مستوحى من سباقات الفورمولا منفذ بدقة باستخدام القص بالليزر لعشاق رياضة السيارات.",
         },
@@ -382,7 +421,7 @@ export const productTranslations: Record<
             title: "Fish",
             category: "Interior Decoration",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "58 × 58 cm",
             description:
                 "Decorative fish artwork suitable for coastal, marine, and modern interior spaces.",
         },
@@ -390,7 +429,7 @@ export const productTranslations: Record<
             title: "السمكة",
             category: "ديكور داخلي",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "58 × 58 سم",
             description:
                 "تصميم ديكوري لسمكة مناسب للمساحات الساحلية والبحرية والديكورات الداخلية العصرية.",
         },
@@ -420,7 +459,7 @@ export const productTranslations: Record<
             title: "Billiards Player",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "29 × 77 cm",
             description:
                 "Laser-cut billiards artwork created for game rooms, entertainment spaces, and sports fans.",
         },
@@ -428,7 +467,7 @@ export const productTranslations: Record<
             title: "لاعب البلياردو",
             category: "هدايا مخصصة",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "29 × 77 سم",
             description:
                 "تصميم فني للاعب بلياردو منفذ بالقص بالليزر، مناسب لغرف الألعاب والمساحات الترفيهية ومحبي الرياضة.",
         },
@@ -439,7 +478,7 @@ export const productTranslations: Record<
             title: "Bow",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "59 × 65 cm",
             description:
                 "Detailed laser-cut bow artwork with a strong decorative presence and artistic character.",
         },
@@ -447,7 +486,7 @@ export const productTranslations: Record<
             title: "القوس",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "59 × 65 سم",
             description:
                 "تصميم فني مفصل لقوس منفذ بالقص بالليزر، يتميز بحضور ديكوري قوي وطابع فني مميز.",
         },
@@ -458,7 +497,7 @@ export const productTranslations: Record<
             title: "Lion",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "57 × 78 cm",
             description:
                 "Bold lion wall art designed with precision laser cutting for a powerful modern look.",
         },
@@ -466,7 +505,7 @@ export const productTranslations: Record<
             title: "الأسد",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "57 × 78 سم",
             description:
                 "تصميم حائطي مميز للأسد منفذ بدقة باستخدام القص بالليزر لإطلالة عصرية وقوية.",
         },
@@ -496,7 +535,7 @@ export const productTranslations: Record<
             title: "Phoenix",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "55 × 79 cm",
             description:
                 "Striking phoenix artwork representing strength and transformation through detailed laser cutting.",
         },
@@ -504,7 +543,7 @@ export const productTranslations: Record<
             title: "العنقاء",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "55 × 79 سم",
             description:
                 "تصميم فني مميز لطائر العنقاء يرمز إلى القوة والتحول ومنفذ بتفاصيل دقيقة باستخدام القص بالليزر.",
         },
@@ -534,7 +573,7 @@ export const productTranslations: Record<
             title: "Race Man",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "58 × 67 cm",
             description:
                 "Dynamic racing-inspired laser-cut artwork designed for motorsport and speed enthusiasts.",
         },
@@ -542,7 +581,7 @@ export const productTranslations: Record<
             title: "متسابق",
             category: "هدايا مخصصة",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "58 × 67 سم",
             description:
                 "تصميم فني ديناميكي مستوحى من السباقات ومنفذ بالقص بالليزر لعشاق رياضة السيارات والسرعة.",
         },
@@ -572,7 +611,7 @@ export const productTranslations: Record<
             title: "Peter & Gwen",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "18 × 78 cm",
             description:
                 "Peter & Gwen inspired laser-cut artwork created as a unique decorative piece for fans and collectors.",
         },
@@ -580,7 +619,7 @@ export const productTranslations: Record<
             title: "بيتر وجوين",
             category: "هدايا مخصصة",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "18 × 78 سم",
             description:
                 "تصميم فني مستوحى من بيتر وجوين ومنفذ بالقص بالليزر كقطعة ديكورية مميزة لمحبي الشخصيات وهواة التجميع.",
         },
@@ -591,7 +630,7 @@ export const productTranslations: Record<
             title: "Sunset",
             category: "Interior Decoration",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "50 × 78 cm",
             description:
                 "A relaxing sunset-inspired wall decoration designed to add warmth and character to interiors.",
         },
@@ -599,7 +638,7 @@ export const productTranslations: Record<
             title: "غروب الشمس",
             category: "ديكور داخلي",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "50 × 78 سم",
             description:
                 "ديكور حائطي مستوحى من غروب الشمس لإضافة الدفء والطابع المميز إلى المساحات الداخلية.",
         },
@@ -648,7 +687,7 @@ export const productTranslations: Record<
             title: "Captain America's Shield",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "57 × 77 cm",
             description:
                 "Captain America's Shield inspired laser-cut artwork, perfect for fans, bedrooms, gaming rooms, and collectors.",
         },
@@ -656,7 +695,7 @@ export const productTranslations: Record<
             title: "درع كابتن أمريكا",
             category: "هدايا مخصصة",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "57 × 77 سم",
             description:
                 "تصميم فني مستوحى من درع كابتن أمريكا ومنفذ بالقص بالليزر، مناسب للمعجبين وغرف النوم وغرف الألعاب وهواة التجميع.",
         },
@@ -667,7 +706,7 @@ export const productTranslations: Record<
             title: "Coffee Pulse",
             category: "Interior Decoration",
             material: "7mm MDF",
-            size: "20 × 68 cm",
+            size: "24 × 78 cm",
             description:
                 "A creative coffee-inspired laser-cut artwork designed for coffee lovers and modern interior spaces.",
         },
@@ -675,7 +714,7 @@ export const productTranslations: Record<
             title: "نبض القهوة",
             category: "ديكور داخلي",
             material: "MDF بسُمك 7 مم",
-            size: "20 × 68 سم",
+            size: "24 × 78 سم",
             description:
                 "تصميم فني إبداعي مستوحى من القهوة ومنفذ بالقص بالليزر لعشاق القهوة والمساحات الداخلية العصرية.",
         },
@@ -686,7 +725,7 @@ export const productTranslations: Record<
             title: "Dragon",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "58 × 65 cm",
             description:
                 "A powerful dragon-inspired laser-cut artwork designed for fantasy lovers and bold interior decoration.",
         },
@@ -694,7 +733,7 @@ export const productTranslations: Record<
             title: "التنين",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "58 × 65 سم",
             description:
                 "تصميم فني قوي مستوحى من التنين ومنفذ بالقص بالليزر لعشاق الخيال والديكورات الجريئة.",
         },
@@ -724,7 +763,7 @@ export const productTranslations: Record<
             title: "Honeybee",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "50 × 58 cm",
             description:
                 "Detailed honeybee wall art combining a natural theme with precise laser-cut craftsmanship.",
         },
@@ -732,7 +771,7 @@ export const productTranslations: Record<
             title: "نحلة العسل",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "50 × 58 سم",
             description:
                 "تصميم حائطي مفصل لنحلة العسل يجمع بين الطابع الطبيعي ودقة التصنيع بالقص بالليزر.",
         },
@@ -743,7 +782,7 @@ export const productTranslations: Record<
             title: "Pikachu",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "58 × 63 cm",
             description:
                 "Pikachu-inspired laser-cut artwork, perfect for anime fans, bedrooms, gaming rooms, and collectors.",
         },
@@ -751,7 +790,7 @@ export const productTranslations: Record<
             title: "بيكاتشو",
             category: "هدايا مخصصة",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "58 × 63 سم",
             description:
                 "تصميم فني مستوحى من بيكاتشو ومنفذ بالقص بالليزر، مناسب لمحبي الأنمي وغرف النوم وغرف الألعاب وهواة التجميع.",
         },
@@ -762,7 +801,7 @@ export const productTranslations: Record<
             title: "Astronaut",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "50 × 78 cm",
             description:
                 "A detailed astronaut-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
         },
@@ -770,7 +809,7 @@ export const productTranslations: Record<
             title: "رائد الفضاء",
             category: "هدايا مخصصة",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "50 × 78 سم",
             description:
                 "تصميم فني مستوحى من رائد الفضاء ومنفذ بالقص بالليزر، مناسب للهدايا وغرف النوم وغرف الألعاب والمساحات الشخصية.",
         },
@@ -781,7 +820,7 @@ export const productTranslations: Record<
             title: "Batman",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "59 × 66 cm",
             description:
                 "A detailed batman-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
         },
@@ -789,7 +828,7 @@ export const productTranslations: Record<
             title: "باتمان",
             category: "هدايا مخصصة",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "59 × 66 سم",
             description:
                 "تصميم فني مستوحى من باتمان ومنفذ بالقص بالليزر، مناسب للهدايا وغرف النوم وغرف الألعاب والمساحات الشخصية.",
         },
@@ -800,7 +839,7 @@ export const productTranslations: Record<
             title: "Birds",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "45 × 45 cm",
+            size: "59 × 57 cm",
             description:
                 "A detailed birds wall artwork created with precision laser cutting for modern interior decoration.",
         },
@@ -808,7 +847,7 @@ export const productTranslations: Record<
             title: "الطيور",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "45 × 45 سم",
+            size: "59 × 57 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من الطيور ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -819,7 +858,7 @@ export const productTranslations: Record<
             title: "Car",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "18 × 78 cm",
             description:
                 "A detailed car-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
         },
@@ -827,28 +866,9 @@ export const productTranslations: Record<
             title: "السيارة",
             category: "هدايا مخصصة",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "18 × 78 سم",
             description:
                 "تصميم فني مستوحى من السيارة ومنفذ بالقص بالليزر، مناسب للهدايا وغرف النوم وغرف الألعاب والمساحات الشخصية.",
-        },
-    },
-
-    "cat-5": {
-        en: {
-            title: "Cat Design V",
-            category: "MDF Wall Art",
-            material: "7mm MDF",
-            size: "50 × 70 cm",
-            description:
-                "A detailed cat design v wall artwork created with precision laser cutting for modern interior decoration.",
-        },
-        ar: {
-            title: "تصميم القطة V",
-            category: "ديكورات حائط MDF",
-            material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
-            description:
-                "تصميم حائطي مفصل مستوحى من تصميم القطة V ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
     },
 
@@ -857,7 +877,7 @@ export const productTranslations: Record<
             title: "Crab",
             category: "Interior Decoration",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "59 × 49 cm",
             description:
                 "A decorative crab-inspired laser-cut artwork designed to add character and style to modern interiors.",
         },
@@ -865,28 +885,9 @@ export const productTranslations: Record<
             title: "السلطعون",
             category: "ديكور داخلي",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "59 × 49 سم",
             description:
                 "تصميم ديكوري مستوحى من السلطعون ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
-        },
-    },
-
-    "deer-3": {
-        en: {
-            title: "Deer Design III",
-            category: "MDF Wall Art",
-            material: "7mm MDF",
-            size: "50 × 70 cm",
-            description:
-                "A detailed deer design iii wall artwork created with precision laser cutting for modern interior decoration.",
-        },
-        ar: {
-            title: "تصميم الغزال III",
-            category: "ديكورات حائط MDF",
-            material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
-            description:
-                "تصميم حائطي مفصل مستوحى من تصميم الغزال III ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
     },
 
@@ -895,7 +896,7 @@ export const productTranslations: Record<
             title: "Eagle",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "58 × 62 cm",
             description:
                 "A detailed eagle wall artwork created with precision laser cutting for modern interior decoration.",
         },
@@ -903,7 +904,7 @@ export const productTranslations: Record<
             title: "النسر",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "58 × 62 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من النسر ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -933,7 +934,7 @@ export const productTranslations: Record<
             title: "Goku Design II",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "57 × 58 cm",
             description:
                 "A detailed goku design ii-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
         },
@@ -1047,7 +1048,7 @@ export const productTranslations: Record<
             title: "Islamic Design III",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "48 × 77 cm",
             description:
                 "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
         },
@@ -1055,7 +1056,7 @@ export const productTranslations: Record<
             title: "تصميم إسلامي III",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "48 × 77 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من تصميم إسلامي III ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -1085,7 +1086,7 @@ export const productTranslations: Record<
             title: "Islamic Design V",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "58 × 72 cm",
             description:
                 "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
         },
@@ -1093,7 +1094,7 @@ export const productTranslations: Record<
             title: "تصميم إسلامي V",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "58 × 72 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من تصميم إسلامي V ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -1104,7 +1105,7 @@ export const productTranslations: Record<
             title: "Islamic Design VI",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "28 × 77 cm",
             description:
                 "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
         },
@@ -1112,7 +1113,7 @@ export const productTranslations: Record<
             title: "تصميم إسلامي VI",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "28 × 77 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من تصميم إسلامي VI ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -1123,7 +1124,7 @@ export const productTranslations: Record<
             title: "Islamic Design VII",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "54 × 79 cm",
             description:
                 "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
         },
@@ -1131,7 +1132,7 @@ export const productTranslations: Record<
             title: "تصميم إسلامي VII",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "54 × 79 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من تصميم إسلامي VII ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -1142,7 +1143,7 @@ export const productTranslations: Record<
             title: "Islamic Design VIII",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "55 × 78 cm",
             description:
                 "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
         },
@@ -1150,7 +1151,7 @@ export const productTranslations: Record<
             title: "تصميم إسلامي VIII",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "55 × 78 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من تصميم إسلامي VIII ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -1161,7 +1162,7 @@ export const productTranslations: Record<
             title: "Islamic Design IX",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "59 × 62 cm",
             description:
                 "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
         },
@@ -1169,7 +1170,7 @@ export const productTranslations: Record<
             title: "تصميم إسلامي IX",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "59 × 62 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من تصميم إسلامي IX ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -1180,7 +1181,7 @@ export const productTranslations: Record<
             title: "Islamic Design X",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "58 × 75 cm",
             description:
                 "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
         },
@@ -1188,7 +1189,7 @@ export const productTranslations: Record<
             title: "تصميم إسلامي X",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "58 × 75 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من تصميم إسلامي X ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -1199,7 +1200,7 @@ export const productTranslations: Record<
             title: "Islamic Design XI",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "19 × 78 cm",
             description:
                 "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
         },
@@ -1218,7 +1219,7 @@ export const productTranslations: Record<
             title: "Islamic Design XII",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "42 × 77 cm",
             description:
                 "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
         },
@@ -1226,7 +1227,7 @@ export const productTranslations: Record<
             title: "تصميم إسلامي XII",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "42 × 77 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من تصميم إسلامي XII ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -1237,7 +1238,7 @@ export const productTranslations: Record<
             title: "Island",
             category: "Interior Decoration",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "44 × 59 cm",
             description:
                 "A decorative island-inspired laser-cut artwork designed to add character and style to modern interiors.",
         },
@@ -1245,7 +1246,7 @@ export const productTranslations: Record<
             title: "الجزيرة",
             category: "ديكور داخلي",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "44 × 59s سم",
             description:
                 "تصميم ديكوري مستوحى من الجزيرة ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
         },
@@ -1256,7 +1257,7 @@ export const productTranslations: Record<
             title: "Motorcycle",
             category: "Custom Gifts",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "38 × 78 cm",
             description:
                 "A detailed motorcycle-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
         },
@@ -1264,7 +1265,7 @@ export const productTranslations: Record<
             title: "الدراجة النارية",
             category: "هدايا مخصصة",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "38 × 78 سم",
             description:
                 "تصميم فني مستوحى من الدراجة النارية ومنفذ بالقص بالليزر، مناسب للهدايا وغرف النوم وغرف الألعاب والمساحات الشخصية.",
         },
@@ -1275,7 +1276,7 @@ export const productTranslations: Record<
             title: "Nature",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "45 × 45 cm",
+            size: "58 × 58 cm",
             description:
                 "A detailed nature wall artwork created with precision laser cutting for modern interior decoration.",
         },
@@ -1283,7 +1284,7 @@ export const productTranslations: Record<
             title: "الطبيعة",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "45 × 45 سم",
+            size: "58 × 58 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من الطبيعة ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -1294,7 +1295,7 @@ export const productTranslations: Record<
             title: "Octopus",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "57 × 58 cm",
             description:
                 "A detailed octopus wall artwork created with precision laser cutting for modern interior decoration.",
         },
@@ -1302,7 +1303,7 @@ export const productTranslations: Record<
             title: "الأخطبوط",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "57 × 58 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من الأخطبوط ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },
@@ -1389,7 +1390,7 @@ export const productTranslations: Record<
             title: "Wave Design II",
             category: "Interior Decoration",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "58 × 68 cm",
             description:
                 "A decorative wave design ii-inspired laser-cut artwork designed to add character and style to modern interiors.",
         },
@@ -1397,7 +1398,7 @@ export const productTranslations: Record<
             title: "تصميم الموجة II",
             category: "ديكور داخلي",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "58 × 68 سم",
             description:
                 "تصميم ديكوري مستوحى من تصميم الموجة II ومنفذ بالقص بالليزر لإضافة طابع مميز وأنيق إلى الديكورات الداخلية العصرية.",
         },
@@ -1408,7 +1409,7 @@ export const productTranslations: Record<
             title: "Whale",
             category: "MDF Wall Art",
             material: "7mm MDF",
-            size: "50 × 70 cm",
+            size: "41 × 78 cm",
             description:
                 "A detailed whale wall artwork created with precision laser cutting for modern interior decoration.",
         },
@@ -1416,7 +1417,7 @@ export const productTranslations: Record<
             title: "الحوت",
             category: "ديكورات حائط MDF",
             material: "MDF بسُمك 7 مم",
-            size: "50 × 70 سم",
+            size: "41 × 78 سم",
             description:
                 "تصميم حائطي مفصل مستوحى من الحوت ومنفذ بدقة باستخدام القص بالليزر للديكورات الداخلية العصرية.",
         },

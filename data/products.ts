@@ -17,10 +17,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/twin-wolf-shadows.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "53 × 79 cm",
         description:
             "A premium laser-cut wall art featuring two wolves in a modern layered design.",
-        price: 400,
+        price: 430,
         featured: true,
     },
 
@@ -30,10 +30,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/wolf.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "52 × 78 cm",
         description:
             "Bold wolf wall art featuring a strong artistic silhouette, perfect for modern interior decoration.",
-        price: 250,
+        price: 400,
         featured: false,
     },
 
@@ -69,10 +69,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/deer2.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "40 × 78 cm",
         description:
             "A detailed deer silhouette created with precision laser cutting for elegant and natural wall decoration.",
-        price: 250,
+        price: 420,
         featured: false,
     },
 
@@ -85,7 +85,7 @@ export const products: Product[] = [
         size: "50 × 70 cm",
         description:
             "A detailed deer design iii wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 300,
+        price: 370,
         featured: false,
     },
 
@@ -121,10 +121,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/horse2.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "59 × 65 cm",
         description:
             "A second horse-inspired laser-cut artwork designed to add an elegant artistic character to modern interiors.",
-        price: 250,
+        price: 420,
         featured: false,
     },
 
@@ -160,10 +160,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/cat2.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "31 × 78 cm",
         description:
             "A second artistic cat design created with precision laser cutting for decorative interiors.",
-        price: 250,
+        price: 340,
         featured: true,
     },
 
@@ -173,10 +173,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/cat3.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "55 × 65 cm",
         description:
             "A stylish laser-cut cat artwork that brings a unique decorative character to your space.",
-        price: 250,
+        price: 380,
         featured: false,
     },
 
@@ -186,10 +186,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/cat4.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "56 × 78 cm",
         description:
             "A detailed laser-cut cat artwork with a modern decorative style, perfect for animal lovers and contemporary interiors.",
-        price: 250,
+        price: 350,
         featured: false,
     },
 
@@ -199,10 +199,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/cat5.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "57 × 63 cm",
         description:
             "A detailed cat design v wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 250,
+        price: 400,
         featured: false,
     },
 
@@ -212,10 +212,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/owl.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "60 × 80 cm",
         description:
             "A detailed owl design wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 250,
+        price: 490,
         featured: true,
     },
 
@@ -225,10 +225,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/butterfly.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "56 × 58 cm",
         description:
             "A detailed butterfly design wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 250,
+        price: 420,
         featured: true,
     },
 
@@ -238,10 +238,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/crow.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "59 × 59 cm",
         description:
             "A detailed crow design wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 250,
+        price: 420,
         featured: true,
     },
 
@@ -251,10 +251,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/cr7.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "59 × 77 cm",
         description:
             "A custom football-inspired laser-cut artwork designed for fans and sports enthusiasts.",
-        price: 250,
+        price: 380,
         featured: true,
     },
 
@@ -264,10 +264,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/formula.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "27 × 79 cm",
         description:
             "A precision laser-cut Formula racing inspired design for motorsport enthusiasts.",
-        price: 250,
+        price: 410,
         featured: true,
     },
 
@@ -290,10 +290,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/fish.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "58 × 58 cm",
         description:
             "Decorative fish artwork suitable for coastal, marine, and modern interior spaces.",
-        price: 250,
+        price: 440,
         featured: false,
     },
 
@@ -316,10 +316,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/billiards-player.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "29 × 77 cm",
         description:
             "Laser-cut billiards artwork created for game rooms, entertainment spaces, and sports fans.",
-        price: 250,
+        price: 350,
         featured: true,
     },
 
@@ -329,10 +329,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/bow.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "59 × 65 cm",
         description:
             "Detailed laser-cut bow artwork with a strong decorative presence and artistic character.",
-        price: 250,
+        price: 430,
         featured: false,
     },
 
@@ -342,10 +342,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/lion.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "57 × 78 cm",
         description:
             "Bold lion wall art designed with precision laser cutting for a powerful modern look.",
-        price: 250,
+        price: 500,
         featured: false,
     },
 
@@ -368,10 +368,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/phoenix.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "55 × 79 cm",
         description:
             "Striking phoenix artwork representing strength and transformation through detailed laser cutting.",
-        price: 250,
+        price: 350,
         featured: false,
     },
 
@@ -394,10 +394,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/raceman.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "58 × 67 cm",
         description:
             "Dynamic racing-inspired laser-cut artwork designed for motorsport and speed enthusiasts.",
-        price: 250,
+        price: 450,
         featured: false,
     },
 
@@ -407,10 +407,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/spiderman.jpeg",
         material: "7mm MDF",
-        size: "25 × 55 cm",
+        size: "57 × 70 cm",
         description:
             "Laser-cut Spider-Man inspired artwork, perfect for bedrooms, gaming rooms, and collectors.",
-        price: 170,
+        price: 420,
         featured: false,
     },
 
@@ -420,10 +420,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/peter-and-gwen.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "18 × 78 cm",
         description:
             "Peter & Gwen inspired laser-cut artwork created as a unique decorative piece for fans and collectors.",
-        price: 250,
+        price: 340,
         featured: false,
     },
 
@@ -433,10 +433,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/sunset.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "50 × 78 cm",
         description:
             "A relaxing sunset-inspired wall decoration designed to add warmth and character to interiors.",
-        price: 250,
+        price: 380,
         featured: false,
     },
 
@@ -472,10 +472,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/captain-america-shield.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "57 × 77 cm",
         description:
             "Captain America's Shield inspired laser-cut artwork, perfect for fans, bedrooms, gaming rooms, and collectors.",
-        price: 250,
+        price: 360,
         featured: false,
     },
 
@@ -485,10 +485,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/coffee-pulse.jpeg",
         material: "7mm MDF",
-        size: "20 × 68 cm",
+        size: "24 × 78 cm",
         description:
             "A creative coffee-inspired laser-cut artwork designed for coffee lovers and modern interior spaces.",
-        price: 190,
+        price: 350,
         featured: false,
     },
 
@@ -498,10 +498,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/dragon.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "58 × 65 cm",
         description:
             "A powerful dragon-inspired laser-cut artwork designed for fantasy lovers and bold interior decoration.",
-        price: 250,
+        price: 460,
         featured: false,
     },
 
@@ -524,10 +524,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/honeybee.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "50 × 58 cm",
         description:
             "Detailed honeybee wall art combining a natural theme with precise laser-cut craftsmanship.",
-        price: 250,
+        price: 380,
         featured: false,
     },
 
@@ -537,10 +537,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/pikachu.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "58 × 63 cm",
         description:
             "Pikachu-inspired laser-cut artwork, perfect for anime fans, bedrooms, gaming rooms, and collectors.",
-        price: 250,
+        price: 390,
         featured: false,
     },
 
@@ -550,10 +550,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/astronaut.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "50 × 78 cm",
         description:
             "A detailed astronaut-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
-        price: 250,
+        price: 480,
         featured: false,
     },
 
@@ -563,10 +563,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/batman.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "59 × 66 cm",
         description:
             "A detailed batman-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
-        price: 250,
+        price: 400,
         featured: false,
     },
 
@@ -576,10 +576,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/birds.jpeg",
         material: "7mm MDF",
-        size: "45 × 45 cm",
+        size: "59 × 57 cm",
         description:
             "A detailed birds wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 250,
+        price: 430,
         featured: false,
     },
 
@@ -589,10 +589,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/car.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "18 × 78 cm",
         description:
             "A detailed car-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
-        price: 250,
+        price: 370,
         featured: false,
     },
 
@@ -602,10 +602,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/crab.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "59 × 49 cm",
         description:
             "A decorative crab-inspired laser-cut artwork designed to add character and style to modern interiors.",
-        price: 250,
+        price: 380,
         featured: false,
     },
 
@@ -615,10 +615,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/eagle.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "58 × 62 cm",
         description:
             "A detailed eagle wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 250,
+        price: 410,
         featured: false,
     },
 
@@ -641,10 +641,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/goku2.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "57 × 58 cm",
         description:
             "A detailed goku design ii-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
-        price: 250,
+        price: 340,
         featured: false,
     },
 
@@ -706,10 +706,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/islamic3.jpg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "48 × 77 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
-        price: 250,
+        price: 370,
         featured: false,
     },
 
@@ -732,10 +732,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/islamic5.jpg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "58 × 72 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
-        price: 250,
+        price: 380,
         featured: false,
     },
 
@@ -758,10 +758,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/islamic7.jpg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "28 × 77 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
-        price: 250,
+        price: 390,
         featured: false,
     },
 
@@ -771,10 +771,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/islamic8.jpg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "54 × 79 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
-        price: 250,
+        price: 390,
         featured: false,
     },
 
@@ -784,10 +784,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/islamic9.jpg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "59 × 62 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
-        price: 250,
+        price: 370,
         featured: false,
     },
 
@@ -797,10 +797,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/islamic10.jpg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "58 × 75 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
-        price: 250,
+        price: 410,
         featured: false,
     },
 
@@ -810,10 +810,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/islamic11.jpg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "19 × 78 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
-        price: 250,
+        price: 380,
         featured: false,
     },
 
@@ -823,10 +823,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/islamic12.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "42 × 77 cm",
         description:
             "A decorative Islamic-inspired laser-cut wall artwork with a refined geometric character.",
-        price: 250,
+        price: 470,
         featured: false,
     },
 
@@ -836,10 +836,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/island.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "44 × 59 cm",
         description:
             "A decorative island-inspired laser-cut artwork designed to add character and style to modern interiors.",
-        price: 250,
+        price: 390,
         featured: false,
     },
 
@@ -849,10 +849,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/motorcycle.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "38 × 78 cm",
         description:
             "A detailed motorcycle-inspired laser-cut artwork, designed for gifts, bedrooms, gaming rooms, and personal spaces.",
-        price: 250,
+        price: 420,
         featured: false,
     },
 
@@ -862,10 +862,10 @@ export const products: Product[] = [
         category: "Custom Gifts",
         image: "/products/nature.jpg",
         material: "7mm MDF",
-        size: "45 × 45 cm",
+        size: "58 × 58 cm",
         description:
             "A detailed nature wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 400,
+        price: 440,
         featured: false,
     },
     
@@ -875,10 +875,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/octopus.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "57 × 58 cm",
         description:
             "A detailed octopus wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 250,
+        price: 400,
         featured: false,
     },
 
@@ -953,10 +953,10 @@ export const products: Product[] = [
         category: "Interior Decoration",
         image: "/products/wave2.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "58 × 68 cm",
         description:
             "A decorative wave design ii-inspired laser-cut artwork designed to add character and style to modern interiors.",
-        price: 250,
+        price: 370,
         featured: false,
     },
 
@@ -966,10 +966,10 @@ export const products: Product[] = [
         category: "MDF Wall Art",
         image: "/products/whale.jpeg",
         material: "7mm MDF",
-        size: "50 × 70 cm",
+        size: "41 × 78 cm",
         description:
             "A detailed whale wall artwork created with precision laser cutting for modern interior decoration.",
-        price: 250,
+        price: 410,
         featured: false,
     },
 
